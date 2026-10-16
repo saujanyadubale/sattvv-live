@@ -2,13 +2,21 @@ services:
   - type: web
     name: satvv-live
     runtime: docker
-    plan: starter
+    plan: free
     healthCheckPath: /api/health
     autoDeployTrigger: commit
     envVars:
       - key: PORT
         value: "10000"
       - key: SATVV_MAX_COMPUTE
-        value: "3"
+        value: "1"
       - key: SATVV_POSTS_PER_MINUTE
-        value: "60"
+        value: "12"
+      - key: OPENBLAS_NUM_THREADS
+        value: "1"
+      - key: OMP_NUM_THREADS
+        value: "1"
+      - key: MKL_NUM_THREADS
+        value: "1"
+      - key: NUMEXPR_NUM_THREADS
+        value: "1"
