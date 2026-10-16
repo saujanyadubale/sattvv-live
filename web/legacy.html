@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SAT-V&V · Verification Laboratory</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:#dfe9fc;background:#07101d;color-scheme:dark;--muted:#90a6c4;--line:#25354b;--card:#101d2e;--panel:#0d1929;--a:#55d8b4;--b:#f9ba78;--c:#a5a8ff;--d:#63b7ef}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 70% -10%,#152744 0%,#07101d 55%);min-height:100vh}button,select,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:wait} .mono,.eyebrow,.overline{font-family:ui-monospace,SFMono-Regular,monospace}.shell{max-width:1450px;margin:auto;padding:0 30px 34px}
+header{height:70px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-weight:800;letter-spacing:.06em;font-size:17px}.brandmark{color:var(--a);font-size:24px;margin-right:12px}.brand em{font-weight:400;font-style:normal;color:var(--muted)}.topright{display:flex;gap:14px;align-items:center;font-size:11px;color:var(--muted)}.indicator{background:#17362e;color:#7ae8bd;border:1px solid #28624e;border-radius:20px;padding:6px 10px}.indicator:before{content:'●';font-size:9px;margin-right:6px}
+.hero{padding:32px 0 22px;display:flex;justify-content:space-between;align-items:center}.eyebrow{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#7bb7e7}h1{font-size:clamp(25px,3vw,39px);letter-spacing:-.04em;margin:10px 0}h2{font-size:17px;margin:0}p{color:var(--muted);line-height:1.65;margin:7px 0;font-size:13px}.version{border:1px solid #425572;padding:8px 12px;border-radius:7px;font-size:11px;color:#abc1e2;background:#142338}.tabs{display:flex;gap:8px;margin:0 0 18px}.tab{background:transparent;border:1px solid var(--line);padding:10px 14px;color:#9bb0c9;border-radius:7px;font-weight:650}.tab.active{background:#19423e;color:#9df3da;border-color:#427a68}
+.layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:17px}.card{border:1px solid var(--line);background:rgba(16,29,46,.94);border-radius:12px;box-shadow:0 10px 40px #02081325}.controls{padding:20px;height:fit-content}.overline{font-size:11px;text-transform:uppercase;color:#a6bad4;letter-spacing:.14em;margin-bottom:15px}.field{margin-bottom:19px}.field label{font-size:12px;color:#b6c8dc;display:flex;justify-content:space-between;gap:5px;margin-bottom:8px}.field small{color:#8ee4c4;font-family:ui-monospace,monospace}.field select,.field input[type=number]{width:100%;background:#081422;border:1px solid #34485f;border-radius:7px;color:#e7effd;padding:10px 12px;font-size:13px;outline:none}.field input[type=range]{width:100%;accent-color:#54d6b3}.inlinefield{display:grid;grid-template-columns:1fr 1fr;gap:12px}.switch{display:flex;align-items:center;gap:9px;color:#bacbe3;font-size:13px}.switch input{accent-color:#5bd8b6}.primary{width:100%;border:0;border-radius:8px;background:linear-gradient(95deg,#45c9ad,#8ee7ce);padding:13px;color:#05261f;font-weight:800}.hint{color:#8094ae;font-size:11px;line-height:1.6;margin-top:14px}.error{color:#ff9a9b;margin-top:9px;font-size:12px;min-height:12px}.separator{height:1px;background:var(--line);margin:20px 0}.content{min-width:0;display:grid;gap:16px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.metric{padding:17px}.metric span{display:block;color:var(--muted);font-size:11px;margin-bottom:10px}.metric strong{font-size:23px;letter-spacing:-.03em}.metric small{display:block;font-size:10px;color:#8195b0;margin-top:5px}.panel{padding:21px}.paneltop{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:15px}.paneltop h2 small{font-size:11px;color:#8195b0;font-weight:400}.outline{background:transparent;border:1px solid #425974;padding:8px 10px;border-radius:7px;color:#b8d5ef;font-size:11px;font-weight:650}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:12px;min-width:560px}th{text-align:left;font-size:10px;color:#8ea7c5;letter-spacing:.06em;text-transform:uppercase;padding:12px;border-bottom:1px solid var(--line)}td{padding:13px 12px;border-bottom:1px solid #223147}tr.selected{background:#1a3342}tbody tr{cursor:pointer}tbody tr:hover{background:#1d2d40}.policy{font-weight:750}.dot{width:8px;height:8px;border-radius:100%;display:inline-block;margin-right:8px}.fixed{background:#60bceb}.random{background:#bd9ef8}.model_fixed{background:#ffbc75}.adaptive{background:#55d9b6}.scheduled_retest{background:#e68fbd}.temporal_blind{background:#d2d6e0}.temporal_adaptive{background:#f2de72}.pill{font-size:10px;padding:5px 8px;border-radius:5px;background:#29384d;color:#bfcee1;white-space:nowrap}.pill.fail{background:#432c36;color:#ffb5ba}.pill.pass{background:#1c4a3e;color:#8df4c7}.pill.na{background:#373c50;color:#b5c0da}.line{height:8px;border-radius:5px;background:#1d2d40;overflow:hidden;min-width:75px}.fill{height:100%;background:#55d8b4}.plot{width:100%;height:244px;display:block;border-radius:7px;background:#0a1727}.key{font-size:11px;color:#8fa8c5;display:flex;gap:14px;flex-wrap:wrap}.key .dot{margin-right:5px}.muted{color:#8ea4bf}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.step{border:1px solid #314257;border-radius:8px;padding:10px;min-height:75px;background:#0b1726}.step h3{font-size:12px;margin:0 0 6px}.step .time{font-size:10px;color:#8296af}.step .status{font-size:11px;color:#c7d4e5;margin-top:5px}.step.fail{border-color:#98505d;background:#281b2a}.step.pass{border-color:#296455}.step.inconclusive{border-color:#8b7854}.step.wait{border-color:#68728a;border-style:dashed}.step.repeat{box-shadow:inset 0 3px 0 #e9d871}.stepslabel{font-size:11px;color:#a1b7d1;margin:12px 0}.detailgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.infoblock{border:1px solid #24364d;border-radius:8px;padding:12px;background:#0a1727}.infoblock strong{font-size:12px}.infoblock p{font-size:11px;margin:4px 0 0}.statnote{padding:14px 17px;border:1px solid #314158;border-radius:8px;color:#a2b7d0;font-size:12px;line-height:1.6}.charts{display:grid;grid-template-columns:1fr 1fr;gap:14px}.foot{padding:27px 0 0;color:#7186a0;font-size:11px;display:flex;justify-content:space-between;gap:15px}#comparisonScreen[hidden],#simulationScreen[hidden],#healthScreen[hidden],#forecastScreen[hidden],#advancedScreen[hidden]{display:none}
+@media(max-width:1050px){.layout{grid-template-columns:260px minmax(0,1fr)}.metrics{grid-template-columns:repeat(2,1fr)}.timeline{grid-template-columns:repeat(3,1fr)}}@media(max-width:730px){.shell{padding:0 15px 20px}.layout{grid-template-columns:1fr}.hero{display:block}.hero .version{display:none}.timeline,.charts{grid-template-columns:repeat(2,1fr)}.topright{display:none}}@media(max-width:470px){.timeline,.charts{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.metric strong{font-size:19px}.panel{padding:14px}.foot{display:block}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header><div class="brand"><span class="brandmark">◈</span>SAT-V&amp;V <em>/ ENGINEERING RESEARCH LAB</em></div><div class="topright"><span class="indicator">LOCAL ENGINE READY</span><span class="mono">v0.9.1 · SIMULATED</span></div></header>
+<div class="hero"><div><div class="eyebrow">PROJECT 01 / SPACECRAFT VERIFICATION</div><h1>Adaptive Verification Laboratory</h1><p>Seven strategies. One evolving spacecraft. Discover when a test must be repeated—and inspect the evidence behind each decision.</p></div><div class="version mono">RESEARCH PROTOTYPE · NOT FLIGHT VALIDATED</div></div>
+<div class="tabs"><button class="tab active" id="compareTab">01 / Verification comparison</button><button class="tab" id="simTab">02 / Spacecraft simulator</button><button class="tab" id="healthTab">03 / Predictive health v0.5</button><button class="tab" id="forecastTab">04 / Forecasting v0.6</button><button class="tab" id="advancedTab">05 / Research lab v0.9</button></div>
+<div id="comparisonScreen" class="layout">
+<aside class="card controls">
+<div class="overline">Verification experiment</div>
+<div class="field"><label for="fault">Injected fault</label><select id="fault"><option value="undervoltage">Undervoltage</option><option value="thermal_runaway">Thermal runaway</option><option value="overcurrent">Overcurrent</option><option value="sensor_stuck">Stuck temperature sensor</option><option value="payload_boot_fail">Payload boot failure</option><option value="packet_loss">Packet loss</option><option value="late_telemetry">Delayed telemetry</option><option value="watchdog_failure">Watchdog failure</option><option value="illegal_transition">Illegal mode transition</option><option value="corrupt_packet">Corrupt downlink packets</option><option value="none">Healthy control (no injected fault)</option></select></div>
+<div class="field"><label for="budget">Test-time budget <small id="budgetLabel">20 min</small></label><input type="range" id="budget" min="4" max="33" step="1" value="20"></div>
+<div class="field"><label for="severity">Fault severity <small id="severityLabel">1.0×</small></label><input type="range" id="severity" min="0" max="3" step="0.1" value="1"></div>
+<div class="field"><label for="faultStart">Fault introduction</label><select id="faultStart"><option value="0">Before first test · t = 0</option><option value="180">After 3 simulated minutes</option><option value="600">After 10 simulated minutes</option></select></div>
+<div class="field"><label for="soc">Initial battery charge <small id="socLabel">80%</small></label><input type="range" id="soc" min="30" max="100" step="5" value="80"></div>
+<div class="inlinefield"><div class="field"><label for="seed">Random seed</label><input id="seed" type="number" min="0" max="1000000" step="1" value="7"></div><div class="field"><label>Solar panels</label><div class="switch"><input id="sunlit" type="checkbox" checked> Sunlit</div></div></div>
+<div class="field"><label class="switch"><input id="temporalOnly" type="checkbox"> Display only temporal strategies</label></div>
+<div class="separator"></div>
+<button id="runCompare" class="primary">▶ &nbsp; Run seven-policy comparison</button><div id="compareError" class="error" role="status"></div>
+<div class="hint">All seven policies share the same simulator and budget limit. Temporal strategies may repeat procedures or wait; waiting alone never constitutes verification evidence. Failures are scored only at test completion.</div>
+</aside>
+<main class="content">
+<div class="metrics"><div class="card metric"><span>Best detection time</span><strong id="bestTime">—</strong><small>Elapsed simulated test time</small></div><div class="card metric"><span>Policies that detect</span><strong id="detectedCount">—</strong><small>Out of seven policies</small></div><div class="card metric"><span>Budget configured</span><strong id="totalBudget">—</strong><small>Same limit for every strategy</small></div><div class="card metric"><span>Fault injected</span><strong id="faultName">—</strong><small>Known to evaluator, hidden from controller</small></div></div>
+<div class="card panel"><div class="paneltop"><h2>Policy comparison <small>/ click a policy to inspect its test evidence</small></h2><button class="outline" id="downloadCompare">↓ Export JSON</button></div><div class="tablewrap"><table><thead><tr><th>Strategy</th><th>Detection</th><th>Time spent</th><th>Tests run</th><th>Requirements</th><th>Repeats / wait</th><th>Budget used</th></tr></thead><tbody id="policyRows"><tr><td colspan="7">Running…</td></tr></tbody></table></div></div>
+<div class="card panel"><div class="paneltop"><h2>Test sequences <small>/ ⏱ wait · ↻ repeat · ✓ pass · ✕ failure</small></h2></div><div id="sequenceRows" class="detailgrid"></div></div>
+<div class="card panel"><div class="paneltop"><h2 id="traceTitle">Adaptive testing trace</h2><span class="muted mono" id="traceCount"></span></div><div id="traceSteps" class="timeline"></div><p id="traceExplain">Select a strategy to inspect what was checked.</p></div>
+<div class="card panel"><div class="paneltop"><h2 id="signalTitle">Worst-case telemetry during each test</h2><button id="measureToggle" class="outline" title="Switch voltage/temperature">View temperature ↔ voltage</button></div><canvas id="dynamicChart" class="plot"></canvas><p class="muted">Each plotted point is a test window, excluding passive waiting: plotted telemetry is not automatically a verified requirement. Compare test traces to determine actual fault detection.</p></div>
+<div class="statnote"><strong>Interpretation:</strong> This is a controlled single-seed simulation, not a statistically significant result. The chosen fault is never directly revealed to any strategy. For scientific conclusions, run the <span class="mono">bench-temporal</span> multi-seed benchmark and inspect healthy-control false failures.</div>
+</main></div>
+<div id="simulationScreen" class="layout" hidden>
+<aside class="card controls"><div class="overline">Dynamic spacecraft model · v0.2 retained</div><div class="field"><label for="simFault">Injected fault</label><select id="simFault"><option value="thermal_runaway">Thermal runaway</option><option value="undervoltage">Undervoltage</option><option value="overcurrent">Overcurrent</option><option value="sensor_stuck">Sensor stuck</option><option value="payload_boot_fail">Payload fails</option><option value="packet_loss">Packet loss</option><option value="late_telemetry">Telemetry delayed</option><option value="watchdog_failure">Watchdog failure</option><option value="illegal_transition">Illegal transition</option><option value="corrupt_packet">Checksum corruption</option><option value="none">Healthy</option></select></div><div class="field"><label for="simDuration">Duration</label><select id="simDuration"><option value="2400">40 min</option><option value="3000" selected>50 min</option><option value="5400">90 min</option></select></div><div class="field"><label for="simStep">Sampling</label><select id="simStep"><option value="10">10 s</option><option value="30" selected>30 s</option><option value="60">60 s</option></select></div><button class="primary" id="runSim">▶ &nbsp; Simulate spacecraft</button><div class="error" id="simError"></div><p>Fixed nominal command sequence, simulated 10-minute fault introduction and optional watchdog probe at 25 minutes.</p></aside>
+<main class="content"><div class="metrics"><div class="card metric"><span>First evidence</span><strong id="simEvidence">—</strong><small>Threshold or incident</small></div><div class="card metric"><span>Peak temperature</span><strong id="simPeak">—</strong><small>Maximum °C</small></div><div class="card metric"><span>Lowest charge</span><strong id="simSoc">—</strong><small>Battery state-of-charge</small></div><div class="card metric"><span>SAFE entries</span><strong id="simSafe">—</strong><small>Automatic safety response</small></div></div><div class="card panel"><div class="paneltop"><h2>Spacecraft telemetry</h2><button id="downloadSim" class="outline">↓ Export JSON</button></div><div class="charts"><div><div class="overline">Bus voltage · V</div><canvas id="simVoltage" class="plot"></canvas></div><div><div class="overline">Temperature · °C</div><canvas id="simThermal" class="plot"></canvas></div><div><div class="overline">Charge · % SOC</div><canvas id="simCharge" class="plot"></canvas></div><div><div class="overline">Current · A</div><canvas id="simCurrent" class="plot"></canvas></div></div></div><div class="card panel"><div class="paneltop"><h2>Command and alarm events</h2></div><div id="simEvents" class="timeline"></div></div></main>
+</div>
+
+<div id="healthScreen" class="layout" hidden>
+  <aside class="card controls">
+    <div class="overline">v0.5 · coupled health laboratory</div>
+    <div class="field"><label for="v05Scenario">Scenario</label><select id="v05Scenario">
+      <option value="resistance_ramp">Gradual battery resistance growth</option>
+      <option value="intermittent_resistance">Recurring battery resistance fault</option>
+      <option value="sensor_drift">Temperature sensor drift</option>
+      <option value="heater_fault">Heater fault</option>
+      <option value="radio_burst">Intermittent packet loss</option>
+      <option value="normal_load_cycle">Healthy transient load — distractor</option>
+      <option value="healthy">Healthy baseline</option>
+    </select></div>
+    <div class="field"><label for="v05Severity">Severity <small id="v05SeverityLabel">1.0×</small></label><input id="v05Severity" type="range" min="0" max="2.5" step="0.1" value="1"></div>
+    <div class="field"><label for="v05Onset">Fault/event onset</label><select id="v05Onset"><option value="180">3 min</option><option value="480" selected>8 min</option><option value="900">15 min</option></select></div>
+    <div class="field"><label for="v05Budget">Verification budget</label><select id="v05Budget"><option value="20">20 min</option><option value="35" selected>35 min</option><option value="50">50 min</option></select></div>
+    <div class="field"><label for="v05Mode">Monitoring mode</label><select id="v05Mode"><option value="NOMINAL" selected>NOMINAL</option><option value="PAYLOAD">PAYLOAD</option><option value="DOWNLINK">DOWNLINK</option></select></div>
+    <div class="field"><label class="switch"><input id="v05Eclipse" type="checkbox" checked> Eclipse during minute 10–20</label></div>
+    <button class="primary" id="runHealth">▶ &nbsp; Run v0.5 scenario</button>
+    <div id="v05Error" class="error"></div>
+    <div class="hint">Six monitoring methods include two ML models trained on independent synthetic campaigns. Alerts are not formal verification failures. Seven strategies execute the expanded 16-test catalog separately.</div>
+  </aside>
+  <main class="content">
+    <div class="metrics">
+      <div class="card metric"><span>Current scenario</span><strong id="v05Fault">—</strong><small>Simulation only</small></div>
+      <div class="card metric"><span>First detector warning</span><strong id="v05First">—</strong><small>Across all six methods</small></div>
+      <div class="card metric"><span>Strategies detecting failure</span><strong id="v05Verified">—</strong><small>Formal executed checks</small></div>
+      <div class="card metric"><span>Verification procedures</span><strong>16</strong><small>12 original + T13–T16</small></div>
+    </div>
+    <div class="card panel"><div class="paneltop"><h2>Coupled spacecraft measurements</h2><button class="outline" id="exportHealth">↓ Export JSON</button></div>
+      <div class="charts"><div><div class="overline">Measured bus voltage (V)</div><canvas id="v05Voltage" class="plot"></canvas></div>
+      <div><div class="overline">Model residual (expected − measured, V)</div><canvas id="v05Residual" class="plot"></canvas></div>
+      <div><div class="overline">Temperature (°C)</div><canvas id="v05Temp" class="plot"></canvas></div>
+      <div><div class="overline">Battery charge (%)</div><canvas id="v05Soc" class="plot"></canvas></div></div>
+    </div>
+    <div class="card panel"><div class="paneltop"><h2>Detectors and warning times <small>/ synthetic ML models</small></h2></div><div class="tablewrap"><table><thead><tr><th>Detector</th><th>First warning</th><th>Number of alert episodes</th><th>Interpretation</th></tr></thead><tbody id="v05Detectors"></tbody></table></div></div>
+    <div class="card panel"><div class="paneltop"><h2>Sixteen-procedure verification comparison</h2></div><div class="tablewrap"><table><thead><tr><th>Policy</th><th>First failed check</th><th>Tests executed</th><th>Repeated tests</th><th>Time spent</th><th>Evidence</th></tr></thead><tbody id="v05Verification"></tbody></table></div></div>
+    <div class="card panel"><div class="paneltop"><h2>Verification catalog <small>/ original + new tests</small></h2></div><div id="v05Catalog" class="detailgrid"></div></div>
+    <div class="statnote"><b>Research caution:</b> Flight validation, root-cause classification, and reliable remaining-life prediction are not claimed. The monitoring window and the verification test schedules are two distinct experiments on the same scenario definition.</div>
+  </main>
+</div>
+<div id="forecastScreen" class="layout" hidden>
+<aside class="card controls">
+ <div class="overline">Version 0.6 / Forecast Lab</div>
+ <div class="field"><label for="f06Scenario">Simulation scenario</label><select id="f06Scenario">
+   <option value="resistance_ramp">Gradual battery resistance</option><option value="intermittent_resistance">Recurring battery resistance</option>
+   <option value="heater_fault">Heater fault</option><option value="sensor_drift">Sensor drift</option><option value="normal_load_cycle">Healthy load-cycle control</option><option value="healthy">Healthy spacecraft</option><option value="radio_burst">Radio interference burst</option></select></div>
+ <div class="field"><label for="f06Signal">Signal to forecast</label><select id="f06Signal"><option value="bus_voltage_v">Bus voltage · V</option><option value="temperature_c">Temperature · °C</option></select></div>
+ <div class="field"><label for="f06Horizon">Prediction horizon</label><select id="f06Horizon"><option value="120">2 simulated minutes</option><option value="300" selected>5 simulated minutes</option><option value="600">10 simulated minutes</option></select></div>
+ <div class="field"><label for="f06Severity">Severity <small id="f06SeverityVal">1.0×</small></label><input type="range" id="f06Severity" min="0" max="2.5" step="0.1" value="1.0"></div>
+ <div class="field"><label for="f06Onset">Fault onset</label><select id="f06Onset"><option value="180">3 min</option><option value="480" selected>8 min</option><option value="900">15 min</option></select></div>
+ <div class="field"><label for="f06Mode">Operating mode</label><select id="f06Mode"><option value="NOMINAL">NOMINAL</option><option value="PAYLOAD" selected>PAYLOAD</option><option value="DOWNLINK">DOWNLINK</option></select></div>
+ <div class="field"><label class="switch"><input id="f06Eclipse" type="checkbox"> Include eclipse</label></div>
+ <button class="primary" id="runForecast">▶ &nbsp; Run forecast simulation</button><div class="error" id="forecastError"></div>
+ <p class="hint">Compare persistence, physical extrapolation, causal linear trend, and trained gradient boosting. Synthetic-calibrated bands are illustrative. Forecasts are not completed verification tests.</p>
+</aside>
+<main class="content">
+ <div class="metrics">
+  <div class="card metric"><span>Prediction horizon</span><strong id="f06H">5 min</strong><small>Forecast issue → target</small></div>
+  <div class="card metric"><span>First ML future warning</span><strong id="f06Warning">—</strong><small>Predicted limit violation, not failure</small></div>
+  <div class="card metric"><span>Calibration band ±</span><strong id="f06Width">—</strong><small>Separate synthetic calibration campaigns</small></div>
+  <div class="card metric"><span>Actual limit violations</span><strong id="f06Violations">—</strong><small>Observed simulation samples</small></div>
+ </div>
+ <div class="card panel"><div class="paneltop"><h2>Observed vs forecast values <small>/ prediction plotted at target time</small></h2><button class="outline" id="exportForecast">↓ Export JSON</button></div>
+ <canvas id="f06Chart" class="plot" style="height:310px"></canvas>
+ <div class="key"><span><i class="dot" style="background:#55d9b6"></i>Measured</span><span><i class="dot" style="background:#f9ba78"></i>ML point</span><span><i class="dot" style="background:#a5a8ff"></i>Physics</span><span><i class="dot" style="background:#63b7ef"></i>Linear trend</span><span>Dashed = requirement limit</span></div>
+ </div>
+ <div class="card panel"><div class="paneltop"><h2>Predicted uncertainty envelope <small>/ synthetic calibration</small></h2></div><canvas id="f06BandChart" class="plot"></canvas><p class="hint">Upper and lower ML bands are calibrated across entire synthetic campaigns. They are not certified real-world probabilities, and may undercover unfamiliar operating conditions.</p></div>
+ <div class="card panel"><div class="paneltop"><h2>Most recent forecast snapshots</h2></div><div class="tablewrap"><table><thead><tr><th>Issued at</th><th>Forecast for</th><th>Measured now</th><th>ML target</th><th>90% band</th><th>Status</th></tr></thead><tbody id="f06Rows"></tbody></table></div></div>
+ <div class="statnote"><b>Research boundary:</b> A future-warning is not a formal verification FAIL. Training, calibration and evaluation are separated by simulated campaign. This model is not yet used to select test procedures, nor is it validated on spacecraft flight telemetry.</div>
+</main>
+</div>
+<div id="advancedScreen" hidden>
+<div class="layout"><aside class="card controls"><div class="overline">Research experiments</div>
+<div class="field"><label>Experiment</label><select id="advExp"><option value="active">v0.7 — Bayesian active verification</option><option value="integrated">v0.8 — 20-test coupled campaign</option><option value="adcs_suite">v0.8 — ADCS test suite</option><option value="stress">v0.9 — Held-out stress experiments</option></select></div>
+<div class="field"><label>Fault scenario</label><select id="advScenario"><option>healthy</option><option>resistance_ramp</option><option>intermittent_resistance</option><option>sensor_drift</option><option>heater_fault</option><option>radio_burst</option><option>normal_load_cycle</option></select></div>
+<div class="field"><label>Test selection</label><select id="advPolicy"><option value="information_gain">Information gain + temporal</option><option value="coverage">Coverage + temporal</option><option value="temporal_adaptive">Temporal adaptive</option><option value="fixed">Fixed</option><option value="learned_risk">v0.9 Learned risk ranker</option></select></div>
+<div class="field"><label>Budget (minutes)</label><input id="advBudget" type="number" min="5" max="90" value="35"></div>
+<div class="field"><label>Fault onset (seconds)</label><input id="advOnset" type="number" min="0" max="5400" step="10" value="600"></div>
+<button class="primary" id="advRun">▶ Run research experiment</button><div id="advError" class="error"></div>
+<div class="hint">Controlled synthetic experiments, not hardware qualification. A diagnosis is an estimate, not verified root cause.</div></aside>
+<main class="content"><div class="metrics"><div class="card metric"><span>Requirement failure</span><strong id="advDetected">—</strong></div><div class="card metric"><span>Estimated cause</span><strong id="advCause" style="font-size:14px">—</strong></div><div class="card metric"><span>Confidence*</span><strong id="advProb">—</strong></div><div class="card metric"><span>Test effort</span><strong id="advTime">—</strong></div></div>
+<div class="card panel"><div class="paneltop"><h2>Test-selection decision trace</h2><button class="outline" id="advExport">↓ Export JSON</button></div><div class="tablewrap"><table><thead><tr><th>Test</th><th>Time</th><th>Status</th><th>Expected information</th><th>Top cause afterward</th></tr></thead><tbody id="advRows"></tbody></table></div></div>
+<div class="card panel"><div class="paneltop"><h2>Probabilistic fault hypotheses</h2></div><canvas id="advPlot" class="plot"></canvas></div>
+<div class="statnote">*Probability from a tiny calibrated synthetic likelihood model; not established real-world confidence. Verification failures and root-cause identification are separate outcomes.</div>
+</main></div></div>
+<div class="foot"><span>All spacecraft values are synthetic and uncalibrated. Not flight software, not an ECSS-qualified test bench.</span><span class="mono">MODEL → TEST → MEASURE → REVISE</span></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);let compared=null,simulated=null,selectedPolicy='temporal_adaptive';const names={fixed:'Fixed',random:'Random',model_fixed:'Model-fixed',adaptive:'Adaptive v0.3',scheduled_retest:'Scheduled retesting',temporal_blind:'Temporal (no risk)',temporal_adaptive:'Temporal + telemetry'};const colors={fixed:'#60bceb',random:'#bd9ef8',model_fixed:'#ffbc75',adaptive:'#55d9b6',scheduled_retest:'#e68fbd',temporal_blind:'#d2d6e0',temporal_adaptive:'#f2de72'};
+function switchTab(tab){let a=tab==='compare',b=tab==='sim',c=tab==='health',d=tab==='forecast',e=tab==='advanced';$('comparisonScreen').hidden=!a;$('simulationScreen').hidden=!b;$('healthScreen').hidden=!c;$('forecastScreen').hidden=!d;$('advancedScreen').hidden=!e;$('compareTab').classList.toggle('active',a);$('simTab').classList.toggle('active',b);$('healthTab').classList.toggle('active',c);$('forecastTab').classList.toggle('active',d);$('advancedTab').classList.toggle('active',e);if(d&&forecastData)renderForecast(forecastData);if(a&&compared)renderCompare(compared);if(b&&simulated)renderSim(simulated);if(c&&healthData)renderHealth(healthData)}$('compareTab').onclick=()=>switchTab('compare');$('simTab').onclick=()=>switchTab('sim');$('healthTab').onclick=()=>switchTab('health');$('forecastTab').onclick=()=>switchTab('forecast');$('advancedTab').onclick=()=>switchTab('advanced');
+for(const [id,lab,sfx] of [['budget','budgetLabel',' min'],['severity','severityLabel','×'],['soc','socLabel','%']]){$(id).oninput=()=>$(lab).textContent=(id==='severity'?Number($(id).value).toFixed(1):$(id).value)+sfx}
+function exportJSON(data,filename){if(!data)return;const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+$('downloadCompare').onclick=()=>exportJSON(compared,'satvv-v0.4-comparison.json');$('downloadSim').onclick=()=>exportJSON(simulated,'satvv-v0.4-scenario.json');
+async function post(url,payload){const resp=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}),data=await resp.json();if(!resp.ok)throw new Error(data.error||'API error');return data}
+function drawSeries(id,series,{maxX=null,reference=null}={}){const canvas=$(id),width=Math.max(260,canvas.getBoundingClientRect().width),height=Math.max(170,canvas.getBoundingClientRect().height),dpr=window.devicePixelRatio||1;canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);ctx.clearRect(0,0,width,height);const left=44,right=13,top=14,bottom=28,pw=width-left-right,ph=height-top-bottom;let all=series.flatMap(s=>s.points.map(p=>p.y));if(reference!==null)all.push(reference);if(!all.length)return;let low=Math.min(...all),high=Math.max(...all);const pad=Math.max((high-low)*.15,.5);low-=pad;high+=pad;const xmin=0,xmax=maxX!==null?maxX:Math.max(...series.flatMap(s=>s.points.map(p=>p.x)),1),X=v=>left+pw*(v-xmin)/Math.max(xmax-xmin,.01),Y=v=>top+ph*(high-v)/(high-low);ctx.font='10px ui-monospace,monospace';ctx.lineWidth=1;ctx.fillStyle='#8095ad';for(let i=0;i<4;i++){const y=top+i*ph/3,v=high-i*(high-low)/3;ctx.beginPath();ctx.strokeStyle='#26374a';ctx.moveTo(left,y);ctx.lineTo(width-right,y);ctx.stroke();ctx.textAlign='right';ctx.fillText(v.toFixed(1),left-8,y+3)}if(reference!==null){ctx.beginPath();ctx.setLineDash([4,4]);ctx.strokeStyle='#f9ba78';ctx.moveTo(left,Y(reference));ctx.lineTo(width-right,Y(reference));ctx.stroke();ctx.setLineDash([])}for(const s of series){if(!s.points.length)continue;ctx.strokeStyle=s.color;ctx.lineWidth=2;ctx.beginPath();s.points.forEach((p,i)=>{const x=X(p.x),y=Y(p.y);i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.stroke();s.points.forEach(p=>{ctx.beginPath();ctx.arc(X(p.x),Y(p.y),2.7,0,Math.PI*2);ctx.fillStyle=s.color;ctx.fill()})}ctx.textAlign='center';ctx.fillStyle='#8195b0';ctx.fillText('0 min',left,height-8);ctx.fillText(xmax.toFixed(0)+' min',width-right-23,height-8)}
+function statusPill(txt){const el=document.createElement('span');el.className='pill '+(txt==='DETECTED'||txt==='FAIL'?'fail':txt==='PASS'||txt==='CLEAR'?'pass':'na');el.textContent=txt;return el}
+function renderCompare(data){compared=data;const rows=data.policies; if(!rows[selectedPolicy])selectedPolicy=Object.keys(rows)[0]; const active=rows[selectedPolicy];const detected=Object.values(rows).filter(r=>r.detected),best=detected.length?Math.min(...detected.map(r=>r.detection_s))/60:null;$('bestTime').textContent=best===null?'Not detected':best+' min';$('detectedCount').textContent=detected.length+'/'+Object.keys(rows).length;$('totalBudget').textContent=data.meta.budget_min+' min';$('faultName').textContent=data.meta.fault==='none'?'Healthy':data.meta.fault.replaceAll('_',' ');const tb=$('policyRows');tb.replaceChildren();const seq=$('sequenceRows');seq.replaceChildren();for(const [p,c] of Object.entries(rows)){if($('temporalOnly').checked&&!p.startsWith('temporal_')&&p!=='scheduled_retest')continue;const tr=document.createElement('tr');if(p===selectedPolicy)tr.className='selected';const td1=document.createElement('td');const dot=document.createElement('span');dot.className='dot '+p;td1.append(dot);const label=document.createElement('span');label.className='policy';label.textContent=names[p];td1.append(label);tr.append(td1);const td2=document.createElement('td');td2.append(statusPill(c.detected?'DETECTED':'NOT FOUND'));tr.append(td2);for(const v of [c.spent_s/60+' min',c.evidence.filter(e=>e.kind!=='wait').length,c.requirements_checked.length]){const td=document.createElement('td');td.textContent=v;tr.append(td)}const tdExtra=document.createElement('td');const tests=c.evidence.filter(e=>e.kind!=='wait');const repeatCount=tests.filter(e=>e.repeat_index>0).length;const waitCount=c.evidence.filter(e=>e.kind==='wait').reduce((n,e)=>n+(e.end_s-e.start_s)/60,0);tdExtra.textContent=repeatCount+' / '+waitCount+' min';tr.append(tdExtra);const td6=document.createElement('td'),bar=document.createElement('div');bar.className='line';const fill=document.createElement('div');fill.className='fill';fill.style.width=100*c.spent_s/60/c.budget_min+'%';fill.style.background=colors[p];bar.append(fill);td6.append(bar);tr.append(td6);tr.onclick=()=>{selectedPolicy=p;renderCompare(compared)};tb.append(tr);const block=document.createElement('div');block.className='infoblock';const heading=document.createElement('strong');heading.textContent=names[p];heading.style.color=colors[p];const txt=document.createElement('p');txt.textContent=c.evidence.map(e=>(e.kind==='wait'?'WAIT':e.test_id+(e.repeat_index>0?' ↻'+(e.repeat_index+1):''))+(e.status==='FAIL'?' ✕':e.status==='INCONCLUSIVE'?' ?':e.status==='WAIT'?' ⏱':' ✓')).join('  →  ')||'No tests fit the selected budget';block.append(heading,txt);seq.append(block)}
+$('traceTitle').textContent=names[selectedPolicy]+' — test evidence';$('traceCount').textContent=active.evidence.filter(e=>e.kind!=='wait').length+' TESTS · '+active.evidence.filter(e=>e.repeat_index>0).length+' REPEATS';const steps=$('traceSteps');steps.replaceChildren();for(const rec of active.evidence){const item=document.createElement('div');item.className='step '+rec.status.toLowerCase()+(rec.repeat_index>0?' repeat':'');const t=document.createElement('h3');t.textContent=rec.kind==='wait'?'WAIT · MONITOR':rec.test_id+(rec.repeat_index>0?' ↻'+(rec.repeat_index+1):'')+' · '+rec.subsystem;const timer=document.createElement('div');timer.className='time';timer.textContent=(rec.start_s/60).toFixed(0)+'–'+(rec.end_s/60).toFixed(0)+' min';const st=document.createElement('div');st.className='status';const failures=Object.entries(rec.checks).filter(([,v])=>v===false).map(([k])=>k);st.textContent=rec.status+(failures.length?' · '+failures.join(', '):'');const tip=rec.test_name+'\nDecision: '+(rec.decision||'Legacy scripted policy')+'\nObserved warning weights: '+JSON.stringify(rec.risk_signals_before||{})+'\n'+Object.entries(rec.checks).map(([k,v])=>k+': '+(v===null?'INCONCLUSIVE':v?'PASS':'FAIL')).join('\n')+'\nMin observed voltage: '+rec.window_extrema.minimum_bus_voltage_v+' V; max temperature: '+rec.window_extrema.maximum_temperature_c+' °C';item.title=tip;item.append(t,timer,st);steps.append(item)}$('traceExplain').textContent=active.detected?'Failed requirement found at the end of minute '+(active.detection_s/60)+'. Yellow-topped cards are repeated tests; hover cards for controller decisions and observed signals.':'No failed requirement was observed in the selected budget. This does not prove the spacecraft is healthy.';
+const voltage=active.evidence.filter(e=>e.kind!=='wait').map(e=>({x:e.end_s/60,y:e.window_extrema.minimum_bus_voltage_v})),temp=active.evidence.filter(e=>e.kind!=='wait').map(e=>({x:e.end_s/60,y:e.window_extrema.maximum_temperature_c}));
+const choice=window.dynamicMeasure||'voltage';$('signalTitle').textContent=names[selectedPolicy]+' — '+(choice==='voltage'?'minimum voltage':'maximum temperature')+' per test';const graphSeries=choice==='voltage'?voltage:temp;drawSeries('dynamicChart',[{color:colors[selectedPolicy],points:graphSeries}],{maxX:data.meta.budget_min,reference:choice==='voltage'?6.70:70});$('dynamicChart').title='Click to switch between voltage (V) and temperature (°C). Currently: '+choice+'; dashed line = requirement limit';$('measureToggle').textContent=choice==='voltage'?'↔ Show temperature':'↔ Show voltage';}
+function toggleMeasure(){window.dynamicMeasure=(window.dynamicMeasure||'voltage')==='voltage'?'temperature':'voltage';if(compared)renderCompare(compared)}$('dynamicChart').onclick=toggleMeasure;$('measureToggle').onclick=toggleMeasure;
+async function runCompare(){const btn=$('runCompare');btn.disabled=true;btn.textContent='Running policy experiments…';$('compareError').textContent='';try{const data=await post('/api/compare-temporal',{fault:$('fault').value,budget_min:Number($('budget').value),severity:Number($('severity').value),fault_start_s:Number($('faultStart').value),initial_soc:Number($('soc').value)/100,sunlit:$('sunlit').checked,seed:Number($('seed').value)});renderCompare(data)}catch(err){$('compareError').textContent='Error: '+err.message}finally{btn.disabled=false;btn.textContent='▶   Run seven-policy comparison'}}$('runCompare').onclick=runCompare;
+function renderSim(d){simulated=d;const s=d.summary;$('simEvidence').textContent=s.first_evidence_s===null?'None':s.first_evidence_s/60+' min';$('simPeak').textContent=s.maximum_temp_c+'°C';$('simSoc').textContent=s.minimum_soc_pct+'%';$('simSafe').textContent=s.autonomous_safe_entries;const a=d.telemetry;for(const [id,key,ref] of [['simVoltage','bus_voltage_v',6.7],['simThermal','temperature_c',70],['simCharge','battery_soc_pct',null],['simCurrent','bus_current_a',1.3]])drawSeries(id,[{color:'#60d3bf',points:a.map(p=>({x:p.time_s/60,y:p[key]}))}],{maxX:d.meta.duration_s/60,reference:ref});const target=$('simEvents');target.replaceChildren();const remarkable=d.events.filter(e=>e.type!=='command'||!e.accepted).slice(0,16);for(const e of remarkable){const box=document.createElement('div');box.className='step';const h=document.createElement('h3');h.textContent=e.type.replaceAll('_',' ');const p=document.createElement('p');p.textContent=e.time_s/60+' min';box.append(h,p);target.append(box)}if(!remarkable.length)target.textContent='No remarkable command events.'}
+async function runSim(){const b=$('runSim');b.disabled=true;$('simError').textContent='';try{const d=await post('/api/simulate',{fault:$('simFault').value,duration_s:Number($('simDuration').value),step_s:Number($('simStep').value),seed:7,fault_start_s:600,severity:1.0});renderSim(d)}catch(err){$('simError').textContent='Error: '+err.message}finally{b.disabled=false}}$('runSim').onclick=runSim;
+
+let healthData=null;
+$('v05Severity').oninput=()=>{$('v05SeverityLabel').textContent=Number($('v05Severity').value).toFixed(1)+'×'};
+function renderHealth(d){
+  healthData=d;
+  $('v05Fault').textContent=d.meta.scenario.replaceAll('_',' ');
+  const all=Object.values(d.detectors).flatMap(x=>x.warning_times_s);
+  $('v05First').textContent=all.length?Math.min(...all)/60+' min':'None';
+  $('v05Verified').textContent=Object.values(d.verification).filter(x=>x.detected).length+'/7';
+  const a=d.telemetry, f=d.features,m=d.meta.duration_s/60;
+  drawSeries('v05Voltage',[{color:'#55d9b6',points:a.map(p=>({x:p.time_s/60,y:p.bus_voltage_v}))}],{maxX:m,reference:6.7});
+  drawSeries('v05Residual',[{color:'#f9ba78',points:f.map(p=>({x:p.time_s/60,y:p.residual_v}))}],{maxX:m,reference:0});
+  drawSeries('v05Temp',[{color:'#c8a6ff',points:a.map(p=>({x:p.time_s/60,y:p.temperature_c}))}],{maxX:m,reference:70});
+  drawSeries('v05Soc',[{color:'#63b7ef',points:a.map(p=>({x:p.time_s/60,y:p.battery_soc_pct}))}],{maxX:m});
+  const names2={limit:'Requirement limits',trend:'Residual trend',cusum:'CUSUM change detection',physics_residual:'Physics residual',isolation_forest:'Isolation Forest (ML)',gradient_boosting:'Gradient boosting (ML)'};
+  let body=$('v05Detectors');body.replaceChildren();
+  for(const [key,x] of Object.entries(d.detectors)){
+    const tr=document.createElement('tr');
+    for(const val of [names2[key],x.warning_times_s.length?(x.warning_times_s[0]/60).toFixed(1)+' min':'None',x.warning_times_s.length,key==='limit'?'Measured limit violation':key==='trend'?'Causal slope estimate':key==='cusum'?'Accumulating residual':key==='physics_residual'?'Physics vs measurement':'Learned anomaly score']){
+       const td=document.createElement('td');td.textContent=val;tr.append(td);}
+    body.append(tr);
+  }
+  body=$('v05Verification');body.replaceChildren();
+  for(const [key,v] of Object.entries(d.verification)){
+    const tr=document.createElement('tr');
+    for(const val of [names[key]||key,v.detected?v.detection_s/60+' min':'Not detected',v.tests_run,v.repeats,v.spent_s/60+' min',v.evidence.map(e=>e.test_id+(e.status==='FAIL'?' ✕':'')).join(' → ')]){
+      const td=document.createElement('td');td.textContent=val;tr.append(td);}
+    body.append(tr);
+  }
+  const catalog=$('v05Catalog');catalog.replaceChildren();
+  for(const item of d.test_catalog){
+     const el=document.createElement('div');el.className='infoblock';
+     const h=document.createElement('strong');h.textContent=item.id+' · '+item.name;
+     const p=document.createElement('p');p.textContent=item.cost_min+' simulated minutes';el.append(h,p);catalog.append(el);
+  }
+}
+async function runHealth(){
+  const btn=$('runHealth');btn.disabled=true;btn.textContent='Computing models & comparisons…';$('v05Error').textContent='';
+  try{const d=await post('/api/v05',{scenario:$('v05Scenario').value,severity:Number($('v05Severity').value),onset_s:Number($('v05Onset').value),budget_min:Number($('v05Budget').value),eclipse:$('v05Eclipse').checked,mode:$('v05Mode').value,duration_s:2400,seed:7,initial_soc:.8});renderHealth(d)}
+  catch(err){$('v05Error').textContent='Error: '+err.message}
+  finally{btn.disabled=false;btn.textContent='▶   Run v0.5 scenario'}
+}
+$('runHealth').onclick=runHealth;$('exportHealth').onclick=()=>exportJSON(healthData,'satvv_v05_health.json');
+
+
+let forecastData=null;
+$('f06Severity').oninput=()=>{$('f06SeverityVal').textContent=Number($('f06Severity').value).toFixed(1)+'×'};
+function renderForecast(data){
+  forecastData=data;
+  const signal=data.meta.signal,arr=data.telemetry,key=signal;
+  $('f06H').textContent=data.meta.horizon_s/60+' min';
+  const first=data.forecasts.find(x=>x.forecast_warning);
+  $('f06Warning').textContent=first?(first.issue_time_s/60).toFixed(1)+' min':'None';
+  $('f06Width').textContent='±'+data.interval_half_width.toFixed(3)+(key==='temperature_c'?'°C':' V');
+  $('f06Violations').textContent=arr.filter(p=>key==='bus_voltage_v'?p[key]<data.limit:p[key]>data.limit).length;
+  const measured={color:'#55d9b6',points:arr.map(p=>({x:p.time_s/60,y:p[key]}))};
+  const pred=(method,color)=>({color,points:data.forecasts.filter(p=>p.target_time_s<=data.scenario_meta.duration_s).map(p=>({x:p.target_time_s/60,y:p.predictions[method]}))});
+  drawSeries('f06Chart',[measured,pred('gradient_boosting','#f9ba78'),pred('physics_baseline','#a5a8ff'),pred('linear_trend','#63b7ef')],{maxX:40,reference:data.limit});
+  drawSeries('f06BandChart',[measured,{color:'#8b79c2',points:data.forecasts.filter(p=>p.target_time_s<=2400).map(p=>({x:p.target_time_s/60,y:p.ml_lower}))},{color:'#d4a0eb',points:data.forecasts.filter(p=>p.target_time_s<=2400).map(p=>({x:p.target_time_s/60,y:p.ml_upper}))}],{maxX:40,reference:data.limit});
+  const tbody=$('f06Rows');tbody.replaceChildren();
+  const recent=data.forecasts.filter(x=>x.target_time_s<=2400).slice(-8).reverse();
+  for(const r of recent){const tr=document.createElement('tr');const vals=[(r.issue_time_s/60).toFixed(1)+' min',(r.target_time_s/60).toFixed(1)+' min',r.observed.toFixed(3),r.predictions.gradient_boosting.toFixed(3),r.ml_lower.toFixed(2)+' – '+r.ml_upper.toFixed(2),r.forecast_warning?'PREDICTED RISK':'No predicted crossing'];for(const v of vals){const td=document.createElement('td');td.textContent=v;tr.append(td)}tbody.append(tr)}
+}
+async function runForecast(){const btn=$('runForecast');btn.disabled=true;btn.textContent='Training & forecasting…';$('forecastError').textContent='';try{
+const d=await post('/api/forecast-v06',{scenario:$('f06Scenario').value,signal:$('f06Signal').value,horizon_s:Number($('f06Horizon').value),severity:Number($('f06Severity').value),onset_s:Number($('f06Onset').value),eclipse:$('f06Eclipse').checked,mode:$('f06Mode').value,duration_s:2400,initial_soc:0.8,seed:7});renderForecast(d)
+}catch(err){$('forecastError').textContent='Error: '+err.message}finally{btn.disabled=false;btn.textContent='▶   Run forecast simulation'}}
+$('runForecast').onclick=runForecast;$('exportForecast').onclick=()=>exportJSON(forecastData,'satvv_v06_forecast.json');
+
+
+let advancedData=null;
+async function runAdvanced(){const b=$('advRun');b.disabled=true;$('advError').textContent='';advancedData=null;$('advDetected').textContent='Running…';$('advCause').textContent='—';$('advProb').textContent='—';$('advTime').textContent='—';$('advRows').replaceChildren();try{
+  const d=await post('/api/research',{experiment:$('advExp').value,scenario:$('advScenario').value,policy:$('advPolicy').value,
+  onset_s:Number($('advOnset').value),budget_min:Number($('advBudget').value),seed:7});
+  advancedData=d;renderAdvanced(d);
+}catch(err){$('advError').textContent=err.message}finally{b.disabled=false}}
+function renderAdvanced(d){if(d.procedures){$('advDetected').textContent='4 checks';$('advCause').textContent=d.scenario;$('advProb').textContent='—';$('advTime').textContent='—';const b=$('advRows');b.replaceChildren();for(const [k,v] of Object.entries(d.procedures)){const tr=document.createElement('tr');for(const x of [k,'—',v.status,'—','—']){const td=document.createElement('td');td.textContent=x;tr.append(td)}b.append(tr)}return;} $('advDetected').textContent=d.detected?'FAIL FOUND':'None';$('advCause').textContent=d.estimated_cause||'—';
+$('advProb').textContent=d.cause_confidence!==undefined?(100*d.cause_confidence).toFixed(1)+'%':'—';$('advTime').textContent=(d.spent_s/60)+' min';
+const table=$('advRows');table.replaceChildren();let series=[];
+for(const [i,r] of d.evidence.entries()){
+ const tr=document.createElement('tr');const fields=[r.test_id,(r.end_s/60)+' min',r.status,r.decision?.estimated_information_bits??'—',r.posterior?Object.entries(r.posterior).sort((a,b)=>b[1]-a[1])[0][0]:'—'];
+ for(const f of fields){const td=document.createElement('td');td.textContent=String(f);tr.append(td)}table.append(tr);
+ if(r.posterior)series.push({x:r.end_s/60,y:Math.max(...Object.values(r.posterior))});}
+if(series.length)drawSeries('advPlot',[{color:'#5bd8b6',points:series}],{maxX:d.meta.budget_min,reference:null});
+}
+// v0.9.1: experiment-dependent scenario/policy menus. Values match Python's
+// SCENARIOS, ADCS_FAULTS and STRESS_CASES instead of reusing a v0.5 dropdown.
+const researchMenus = {
+  active: {
+    scenarios: ['healthy','resistance_ramp','intermittent_resistance','sensor_drift','heater_fault','radio_burst','normal_load_cycle'],
+    policies: ['information_gain','coverage'], preferred: 'resistance_ramp', budget: 35
+  },
+  integrated: {
+    scenarios: ['healthy','resistance_ramp','intermittent_resistance','sensor_drift','heater_fault','radio_burst','normal_load_cycle','adcs_wheel_weak','adcs_gyro_bias','adcs_star_dropout'],
+    policies: ['information_gain','temporal_adaptive','fixed','learned_risk'], preferred: 'adcs_gyro_bias', budget: 45
+  },
+  adcs_suite: {
+    scenarios: ['healthy','adcs_wheel_weak','adcs_gyro_bias','adcs_star_dropout'],
+    policies: [], preferred: 'adcs_wheel_weak', budget: 35
+  },
+  stress: {
+    scenarios: ['healthy_eclipse_and_load','dual_resistance_sensor','heater_plus_radio','wheel_plus_battery','slow_resistance_unseen','radio_plus_gyro_bias','healthy_eclipse'],
+    policies: ['information_gain','temporal_adaptive','fixed','learned_risk'], preferred: 'dual_resistance_sensor', budget: 25
+  }
+};
+const researchPolicyLabels = {
+  information_gain: 'Information gain + temporal', coverage: 'Coverage + temporal',
+  temporal_adaptive: 'Temporal adaptive', fixed: 'Fixed', learned_risk: 'v0.9 Learned risk ranker'
+};
+function researchLabel(value){return value.replaceAll('_',' ').replace(/\b\w/g,c=>c.toUpperCase())}
+function updateResearchControls(){
+  const exp=$('advExp').value, menu=researchMenus[exp];
+  const scenarioSelect=$('advScenario'), policySelect=$('advPolicy');
+  const oldScenario=scenarioSelect.value,oldPolicy=policySelect.value;
+  scenarioSelect.replaceChildren();
+  for(const value of menu.scenarios){const option=document.createElement('option');option.value=value;option.textContent=researchLabel(value);scenarioSelect.append(option)}
+  scenarioSelect.value=menu.scenarios.includes(oldScenario)?oldScenario:menu.preferred;
+  policySelect.replaceChildren();
+  if(menu.policies.length){
+    for(const value of menu.policies){const option=document.createElement('option');option.value=value;option.textContent=researchPolicyLabels[value];policySelect.append(option)}
+    policySelect.value=menu.policies.includes(oldPolicy)?oldPolicy:menu.policies[0];
+    policySelect.disabled=false;
+  }else{
+    const option=document.createElement('option');option.value='';option.textContent='Not applicable (standalone procedure suite)';policySelect.append(option);policySelect.disabled=true;
+  }
+  $('advBudget').value=menu.budget;
+  $('advError').textContent='';
+  advancedData=null;
+  $('advDetected').textContent='—';$('advCause').textContent='—';$('advProb').textContent='—';$('advTime').textContent='—';
+  $('advRows').replaceChildren();
+}
+$('advExp').onchange=updateResearchControls;
+updateResearchControls();
+$('advRun').onclick=runAdvanced;
+$('advExport').onclick=()=>exportJSON(advancedData,'satvv_research.json');
+
+window.addEventListener('resize',()=>{if(compared&&$('comparisonScreen').hidden===false)renderCompare(compared);if(simulated&&$('simulationScreen').hidden===false)renderSim(simulated);if(healthData&&!$('healthScreen').hidden)renderHealth(healthData);if(forecastData&&!$('forecastScreen').hidden)renderForecast(forecastData)});$('temporalOnly').onchange=()=>{if(compared){if($('temporalOnly').checked&&!selectedPolicy.startsWith('temporal_')&&selectedPolicy!=='scheduled_retest')selectedPolicy='temporal_adaptive';renderCompare(compared)}};runCompare();
+</script>
+</body></html>
