@@ -1,0 +1,9 @@
+tests/
+github-pages/
+*.zip
+README*
+CHART_FIX_NOTES.md
+**/__pycache__
+**/*.pyc
+.git/
+results/
