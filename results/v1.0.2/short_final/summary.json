@@ -1,0 +1,30 @@
+[
+  {
+    "difficulty": "mixed",
+    "intensity": "exploratory",
+    "budget": 35,
+    "policy": "predictive_active",
+    "n": 28,
+    "detected": 18,
+    "detection_pct": 64.3,
+    "mean_time_censored": 25.39,
+    "mean_distinct_tests": 6.07,
+    "mean_req_coverage": 9.18,
+    "audits_passed": 28,
+    "mean_relevant_exposure": 0.68
+  },
+  {
+    "difficulty": "mixed",
+    "intensity": "exploratory",
+    "budget": 35,
+    "policy": "predictive_greedy_v101",
+    "n": 28,
+    "detected": 18,
+    "detection_pct": 64.3,
+    "mean_time_censored": 25.39,
+    "mean_distinct_tests": 6.07,
+    "mean_req_coverage": 9.18,
+    "audits_passed": 28,
+    "mean_relevant_exposure": 0.68
+  }
+]
