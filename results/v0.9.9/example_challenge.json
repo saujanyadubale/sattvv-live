@@ -1,0 +1,3261 @@
+{
+ "meta": {
+  "version": "0.9.8",
+  "scenario": "random_challenge",
+  "policy": "fixed",
+  "budget_min": 35,
+  "seed": 7,
+  "onset_s": 0,
+  "severity": 1.0,
+  "initial_soc": 0.61,
+  "eclipse": true,
+  "horizon_s": 300,
+  "detector": "physics_residual",
+  "calibration": "Expert-specified requirement signatures; posterior weights not calibrated or validated",
+  "randomized_stress_environment": false,
+  "challenge_level": "mixed",
+  "challenge_seed": 7,
+  "challenge_intensity": "high_impact",
+  "generated_environment": {
+   "soc": 0.61,
+   "eclipse": true
+  }
+ },
+ "display_policy": "fixed",
+ "detected": true,
+ "detection_s": 1080,
+ "spent_s": 1080,
+ "tests_run": 7,
+ "estimated_cause": "intermittent_resistance",
+ "cause_confidence": 0.426692,
+ "posterior": {
+  "healthy": 0.015948,
+  "resistance_ramp": 0.376749,
+  "intermittent_resistance": 0.426692,
+  "sensor_drift": 0.032685,
+  "heater_fault": 0.026904,
+  "radio_burst": 0.022967,
+  "adcs_wheel_weak": 0.032685,
+  "adcs_gyro_bias": 0.032685,
+  "adcs_star_dropout": 0.032685
+ },
+ "requirements_checked": [
+  "REQ-COM-C",
+  "REQ-COM-L",
+  "REQ-COM-T",
+  "REQ-EPS-I",
+  "REQ-EPS-V",
+  "REQ-MODE",
+  "REQ-PAY",
+  "REQ-THM-T"
+ ],
+ "evidence": [
+  {
+   "test_id": "T01",
+   "test_name": "Boot to safe health",
+   "subsystem": "OBC",
+   "start_s": 0,
+   "end_s": 60,
+   "cost_min": 1,
+   "mode_requested": "SAFE",
+   "actions": [
+    {
+     "from": "BOOT",
+     "to": "SAFE",
+     "accepted": true,
+     "reason": "ACK"
+    }
+   ],
+   "transitions": [
+    "BOOT->SAFE"
+   ],
+   "checks": {
+    "REQ-MODE": true,
+    "REQ-EPS-V": true
+   },
+   "status": "PASS",
+   "detected": false,
+   "telemetry_start": {
+    "time_s": 0.0,
+    "mode": "SAFE",
+    "battery_soc_pct": 61.0,
+    "bus_voltage_v": 7.5923,
+    "bus_current_a": 0.2372,
+    "load_w": 1.8,
+    "solar_w": 7.2,
+    "temperature_c": 23.124,
+    "redundant_temperature_c": 23.03,
+    "packet_loss_fraction": 0.0,
+    "latency_ms": 0.0,
+    "checksum_ok": true,
+    "cpu_responsive": true,
+    "alarms": []
+   },
+   "telemetry_end": {
+    "time_s": 60.0,
+    "mode": "SAFE",
+    "battery_soc_pct": 61.367,
+    "bus_voltage_v": 7.5637,
+    "bus_current_a": 0.253,
+    "load_w": 1.92,
+    "solar_w": 7.2,
+    "temperature_c": 23.177,
+    "redundant_temperature_c": 23.327,
+    "packet_loss_fraction": 0.0,
+    "latency_ms": 0.0,
+    "checksum_ok": true,
+    "cpu_responsive": true,
+    "alarms": []
+   },
+   "samples": 7,
+   "window_extrema": {
+    "minimum_bus_voltage_v": 7.5637,
+    "maximum_temperature_c": 23.177,
+    "maximum_bus_current_a": 0.2531,
+    "maximum_sensor_disagreement_c": 0.286
+   },
+   "observed_events": [
+    {
+     "time_s": 0.0,
+     "type": "command",
+     "from_mode": "BOOT",
+     "to_mode": "SAFE",
+     "accepted": true,
+     "reason": "ACK"
+    }
+   ],
+   "communication_window": {},
+   "warnings": {},
+   "check_details": {
+    "REQ-EPS-V": {
+     "metric": "Minimum measured bus voltage",
+     "measured": 7.5637,
+     "operator": ">=",
+     "threshold": 6.7,
+     "unit": "V",
+     "context": "Worst sampled value during the executed procedure"
+    }
+   },
+   "test_window_monitor": {
+    "comms_warning": false,
+    "observed_comms_samples": 0
+   },
+   "repeat_index": 0,
+   "decision": {
+    "reason": "Fixed catalog order",
+    "observation_time_s": 0,
+    "selected_policy": "fixed",
+    "score": null,
+    "expected_information_bits": 0.24271,
+    "warning": false,
+    "test_window_comms_warning": false,
+    "forecast_voltage_risk": false,
+    "forecast_temperature_risk": false,
+    "safety_excluded": [],
+    "posterior_before": {
+     "healthy": 0.1111111111111111,
+     "resistance_ramp": 0.1111111111111111,
+     "intermittent_resistance": 0.1111111111111111,
+     "sensor_drift": 0.1111111111111111,
+     "heater_fault": 0.1111111111111111,
+     "radio_burst": 0.1111111111111111,
+     "adcs_wheel_weak": 0.1111111111111111,
+     "adcs_gyro_bias": 0.1111111111111111,
+     "adcs_star_dropout": 0.1111111111111111
+    }
+   },
+   "posterior": {
+    "healthy": 0.114555,
+    "resistance_ramp": 0.1032,
+    "intermittent_resistance": 0.098299,
+    "sensor_drift": 0.113991,
+    "heater_fault": 0.113991,
+    "radio_burst": 0.113991,
+    "adcs_wheel_weak": 0.113991,
+    "adcs_gyro_bias": 0.113991,
+    "adcs_star_dropout": 0.113991
+   }
+  },
+  {
+   "test_id": "T02",
+   "test_name": "Safe to nominal",
+   "subsystem": "OBC",
+   "start_s": 60,
+   "end_s": 120,
+   "cost_min": 1,
+   "mode_requested": "NOMINAL",
+   "actions": [
+    {
+     "from": "SAFE",
+     "to": "NOMINAL",
+     "accepted": true,
+     "reason": "ACK"
+    }
+   ],
+   "transitions": [
+    "SAFE->NOMINAL"
+   ],
+   "checks": {
+    "REQ-MODE": true
+   },
+   "status": "PASS",
+   "detected": false,
+   "telemetry_start": {
+    "time_s": 60.0,
+    "mode": "NOMINAL",
+    "battery_soc_pct": 61.367,
+    "bus_voltage_v": 7.564,
+    "bus_current_a": 0.5188,
+    "load_w": 3.92,
+    "solar_w": 7.2,
+    "temperature_c": 22.995,
+    "redundant_temperature_c": 23.27,
+    "packet_loss_fraction": 0.0,
+    "latency_ms": 0.0,
+    "checksum_ok": true,
+    "cpu_responsive": true,
+    "alarms": []
+   },
+   "telemetry_end": {
+    "time_s": 120.0,
+    "mode": "NOMINAL",
+    "battery_soc_pct": 61.547,
+    "bus_voltage_v": 7.5224,
+    "bus_current_a": 0.6096,
+    "load_w": 4.6,
+    "solar_w": 7.2,
+    "temperature_c": 23.817,
+    "redundant_temperature_c": 23.766,
+    "packet_loss_fraction": 0.0,
+    "latency_ms": 0.0,
+    "checksum_ok": true,
+    "cpu_responsive": true,
+    "alarms": []
+   },
+   "samples": 7,
+   "window_extrema": {
+    "minimum_bus_voltage_v": 7.5224,
+    "maximum_temperature_c": 23.817,
+    "maximum_bus_current_a": 0.6097,
+    "maximum_sensor_disagreement_c": 0.275
+   },
+   "observed_events": [
+    {
+     "time_s": 60.0,
+     "type": "command",
+     "from_mode": "SAFE",
+     "to_mode": "NOMINAL",
+     "accepted": true,
+     "reason": "ACK"
+    }
+   ],
+   "communication_window": {},
+   "warnings": {},
+   "check_details": {},
+   "test_window_monitor": {
+    "comms_warning": false,
+    "observed_comms_samples": 0
+   },
+   "repeat_index": 0,
+   "decision": {
+    "reason": "Fixed catalog order",
+    "observation_time_s": 60,
+    "selected_policy": "fixed",
+    "score": null,
+    "expected_information_bits": 0.00101,
+    "warning": false,
+    "test_window_comms_warning": false,
+    "forecast_voltage_risk": false,
+    "forecast_temperature_risk": false,
+    "safety_excluded": [],
+    "posterior_before": {
+     "healthy": 0.11455531406862367,
+     "resistance_ramp": 0.10319993096188625,
+     "intermittent_resistance": 0.09829885421668423,
+     "sensor_drift": 0.11399098345880096,
+     "heater_fault": 0.11399098345880096,
+     "radio_burst": 0.11399098345880096,
+     "adcs_wheel_weak": 0.11399098345880096,
+     "adcs_gyro_bias": 0.11399098345880096,
+     "adcs_star_dropout": 0.11399098345880096
+    }
+   },
+   "posterior": {
+    "healthy": 0.114806,
+    "resistance_ramp": 0.103171,
+    "intermittent_resistance": 0.098271,
+    "sensor_drift": 0.113959,
+    "heater_fault": 0.113959,
+    "radio_burst": 0.113959,
+    "adcs_wheel_weak": 0.113959,
+    "adcs_gyro_bias": 0.113959,
+    "adcs_star_dropout": 0.113959
+   }
+  },
+  {
+   "test_id": "T03",
+   "test_name": "Nominal EPS load",
+   "subsystem": "EPS",
+   "start_s": 120,
+   "end_s": 300,
+   "cost_min": 3,
+   "mode_requested": "NOMINAL",
+   "actions": [],
+   "transitions": [],
+   "checks": {
+    "REQ-EPS-V": true,
+    "REQ-EPS-I": true
+   },
+   "status": "PASS",
+   "detected": false,
+   "telemetry_start": {
+    "time_s": 120.0,
+    "mode": "NOMINAL",
+    "battery_soc_pct": 61.547,
+    "bus_voltage_v": 7.5528,
+    "bus_current_a": 0.6096,
+    "load_w": 4.6,
+    "solar_w": 7.2,
+    "temperature_c": 23.545,
+    "redundant_temperature_c": 23.896,
+    "packet_loss_fraction": 0.0,
+    "latency_ms": 0.0,
+    "checksum_ok": true,
+    "cpu_responsive": true,
+    "alarms": []
+   },
+   "telemetry_end": {
+    "time_s": 300.0,
+    "mode": "NOMINAL",
+    "battery_soc_pct": 62.089,
+    "bus_voltage_v": 7.5586,
+    "bus_current_a": 0.6093,
+    "load_w": 4.6,
+    "solar_w": 7.2,
+    "temperature_c": 25.244,
+    "redundant_temperature_c": 25.107,
+    "packet_loss_fraction": 0.0,
+    "latency_ms": 0.0,
+    "checksum_ok": true,
+    "cpu_responsive": true,
+    "alarms": []
+   },
+   "samples": 19,
+   "window_extrema": {
+    "minimum_bus_voltage_v": 7.5152,
+    "maximum_temperature_c": 25.322,
+    "maximum_bus_current_a": 0.6096,
+    "maximum_sensor_disagreement_c": 0.467
+   },
+   "observed_events": [],
+   "communication_window": {},
+   "warnings": {},
+   "check_details": {
+    "REQ-EPS-V": {
+     "metric": "Minimum measured bus voltage",
+     "measured": 7.5152,
+     "operator": ">=",
+     "threshold": 6.7,
+     "unit": "V",
+     "context": "Worst sampled value during the executed procedure"
+    },
+    "REQ-EPS-I": {
+     "metric": "Maximum measured bus current",
+     "measured": 0.6096,
+     "operator": "<=",
+     "threshold": 1.3,
+     "unit": "A",
+     "context": "Worst sampled value during the executed procedure"
+    }
+   },
+   "test_window_monitor": {
+    "comms_warning": false,
+    "observed_comms_samples": 0
+   },
+   "repeat_index": 0,
+   "decision": {
+    "reason": "Fixed catalog order",
+    "observation_time_s": 120,
+    "selected_policy": "fixed",
+    "score": null,
+    "expected_information_bits": 0.28128,
+    "warning": false,
+    "test_window_comms_warning": false,
+    "forecast_voltage_risk": false,
+    "forecast_temperature_risk": false,
+    "safety_excluded": [],
+    "posterior_before": {
+     "healthy": 0.11480601173504344,
+     "resistance_ramp": 0.10317071176583945,
+     "intermittent_resistance": 0.09827102267197523,
+     "sensor_drift": 0.11395870897119031,
+     "heater_fault": 0.11395870897119031,
+     "radio_burst": 0.11395870897119031,
+     "adcs_wheel_weak": 0.11395870897119031,
+     "adcs_gyro_bias": 0.11395870897119031,
+     "adcs_star_dropout": 0.11395870897119031
+    }
+   },
+   "posterior": {
+    "healthy": 0.118777,
+    "resistance_ramp": 0.093329,
+    "intermittent_resistance": 0.083976,
+    "sensor_drift": 0.11732,
+    "heater_fault": 0.11732,
+    "radio_burst": 0.11732,
+    "adcs_wheel_weak": 0.11732,
+    "adcs_gyro_bias": 0.11732,
+    "adcs_star_dropout": 0.11732
+   }
+  },
+  {
+   "test_id": "T04",
+   "test_name": "Payload power-up",
+   "subsystem": "PAYLOAD",
+   "start_s": 300,
+   "end_s": 420,
+   "cost_min": 2,
+   "mode_requested": "PAYLOAD",
+   "actions": [
+    {
+     "from": "NOMINAL",
+     "to": "SAFE",
+     "accepted": true,
+     "reason": "ACK"
+    },
+    {
+     "from": "SAFE",
+     "to": "NOMINAL",
+     "accepted": true,
+     "reason": "ACK"
+    },
+    {
+     "from": "NOMINAL",
+     "to": "PAYLOAD",
+     "accepted": true,
+     "reason": "ACK"
+    }
+   ],
+   "transitions": [
+    "NOMINAL->SAFE",
+    "SAFE->NOMINAL",
+    "NOMINAL->PAYLOAD"
+   ],
+   "checks": {
+    "REQ-MODE": true,
+    "REQ-PAY": true
+   },
+   "status": "PASS",
+   "detected": false,
+   "telemetry_start": {
+    "time_s": 300.0,
+    "mode": "PAYLOAD",
+    "battery_soc_pct": 62.089,
+    "bus_voltage_v": 7.5063,
+    "bus_current_a": 0.959,
+    "load_w": 7.2,
+    "solar_w": 7.2,
+    "temperature_c": 25.007,
+    "redundant_temperature_c": 25.413,
+    "packet_loss_fraction": 0.0,
+    "latency_ms": 0.0,
+    "checksum_ok": true,
+    "cpu_responsive": true,
+    "alarms": []
+   },
+   "telemetry_end": {
+    "time_s": 420.0,
+    "mode": "PAYLOAD",
+    "battery_soc_pct": 62.089,
+    "bus_voltage_v": 7.5161,
+    "bus_current_a": 0.959,
+    "load_w": 7.2,
+    "solar_w": 7.2,
+    "temperature_c": 26.865,
+    "redundant_temperature_c": 36.874,
+    "packet_loss_fraction": 0.0,
+    "latency_ms": 0.0,
+    "checksum_ok": true,
+    "cpu_responsive": true,
+    "alarms": [
+     "SENSOR_DISAGREEMENT"
+    ]
+   },
+   "samples": 13,
+   "window_extrema": {
+    "minimum_bus_voltage_v": 7.4852,
+    "maximum_temperature_c": 26.865,
+    "maximum_bus_current_a": 0.959,
+    "maximum_sensor_disagreement_c": 10.335
+   },
+   "observed_events": [
+    {
+     "time_s": 300.0,
+     "type": "command",
+     "from_mode": "NOMINAL",
+     "to_mode": "SAFE",
+     "accepted": true,
+     "reason": "ACK"
+    },
+    {
+     "time_s": 300.0,
+     "type": "command",
+     "from_mode": "SAFE",
+     "to_mode": "NOMINAL",
+     "accepted": true,
+     "reason": "ACK"
+    },
+    {
+     "time_s": 300.0,
+     "type": "command",
+     "from_mode": "NOMINAL",
+     "to_mode": "PAYLOAD",
+     "accepted": true,
+     "reason": "ACK"
+    }
+   ],
+   "communication_window": {},
+   "warnings": {
+    "THERMAL": 7.0
+   },
+   "check_details": {},
+   "test_window_monitor": {
+    "comms_warning": false,
+    "observed_comms_samples": 0
+   },
+   "repeat_index": 0,
+   "decision": {
+    "reason": "Fixed catalog order",
+    "observation_time_s": 300,
+    "selected_policy": "fixed",
+    "score": null,
+    "expected_information_bits": 0.00207,
+    "warning": false,
+    "test_window_comms_warning": false,
+    "forecast_voltage_risk": false,
+    "forecast_temperature_risk": false,
+    "safety_excluded": [],
+    "posterior_before": {
+     "healthy": 0.1187770655116018,
+     "resistance_ramp": 0.0933286314284589,
+     "intermittent_resistance": 0.08397643007763789,
+     "sensor_drift": 0.11731964549705023,
+     "heater_fault": 0.11731964549705023,
+     "radio_burst": 0.11731964549705023,
+     "adcs_wheel_weak": 0.11731964549705023,
+     "adcs_gyro_bias": 0.11731964549705023,
+     "adcs_star_dropout": 0.11731964549705023
+    }
+   },
+   "posterior": {
+    "healthy": 0.119295,
+    "resistance_ramp": 0.093274,
+    "intermittent_resistance": 0.083927,
+    "sensor_drift": 0.117251,
+    "heater_fault": 0.117251,
+    "radio_burst": 0.117251,
+    "adcs_wheel_weak": 0.117251,
+    "adcs_gyro_bias": 0.117251,
+    "adcs_star_dropout": 0.117251
+   }
+  },
+  {
+   "test_id": "T05",
+   "test_name": "Downlink packet test",
+   "subsystem": "COMMS",
+   "start_s": 420,
+   "end_s": 600,
+   "cost_min": 3,
+   "mode_requested": "DOWNLINK",
+   "actions": [
+    {
+     "from": "PAYLOAD",
+     "to": "DOWNLINK",
+     "accepted": true,
+     "reason": "ACK"
+    }
+   ],
+   "transitions": [
+    "PAYLOAD->DOWNLINK"
+   ],
+   "checks": {
+    "REQ-COM-L": true,
+    "REQ-COM-T": true,
+    "REQ-COM-C": true
+   },
+   "status": "PASS",
+   "detected": false,
+   "telemetry_start": {
+    "time_s": 420.0,
+    "mode": "DOWNLINK",
+    "battery_soc_pct": 62.089,
+    "bus_voltage_v": 7.5284,
+    "bus_current_a": 0.851,
+    "load_w": 6.4,
+    "solar_w": 7.2,
+    "temperature_c": 27.036,
+    "redundant_temperature_c": 37.197,
+    "packet_loss_fraction": 0.012,
+    "latency_ms": 80.0,
+    "checksum_ok": true,
+    "cpu_responsive": true,
+    "alarms": [
+     "SENSOR_DISAGREEMENT"
+    ]
+   },
+   "telemetry_end": {
+    "time_s": 600.0,
+    "mode": "SAFE",
+    "battery_soc_pct": 62.826,
+    "bus_voltage_v": 7.2719,
+    "bus_current_a": 0.264,
+    "load_w": 1.92,
+    "solar_w": 0.0,
+    "temperature_c": 28.151,
+    "redundant_temperature_c": 38.223,
+    "packet_loss_fraction": 0.0,
+    "latency_ms": 0.0,
+    "checksum_ok": true,
+    "cpu_responsive": true,
+    "alarms": [
+     "SENSOR_DISAGREEMENT"
+    ]
+   },
+   "samples": 19,
+   "window_extrema": {
+    "minimum_bus_voltage_v": 7.1097,
+    "maximum_temperature_c": 28.151,
+    "maximum_bus_current_a": 0.851,
+    "maximum_sensor_disagreement_c": 10.366
+   },
+   "observed_events": [
+    {
+     "time_s": 420.0,
+     "type": "command",
+     "from_mode": "PAYLOAD",
+     "to_mode": "DOWNLINK",
+     "accepted": true,
+     "reason": "ACK"
+    },
+    {
+     "time_s": 490.0,
+     "type": "autonomous_safe_mode",
+     "cause": "LOW_VOLTAGE"
+    }
+   ],
+   "communication_window": {
+    "sample_count": 7,
+    "maximum_packet_loss_fraction": 0.012,
+    "first_abnormal_time_s": null,
+    "sample_start_s": 420.0,
+    "sample_end_s": 480.0
+   },
+   "warnings": {
+    "EPS": 7.0,
+    "THERMAL": 7.0
+   },
+   "check_details": {},
+   "test_window_monitor": {
+    "comms_warning": false,
+    "observed_comms_samples": 7
+   },
+   "repeat_index": 0,
+   "decision": {
+    "reason": "Fixed catalog order",
+    "observation_time_s": 420,
+    "selected_policy": "fixed",
+    "score": null,
+    "expected_information_bits": 0.27677,
+    "warning": true,
+    "test_window_comms_warning": false,
+    "forecast_voltage_risk": false,
+    "forecast_temperature_risk": false,
+    "safety_excluded": [],
+    "posterior_before": {
+     "healthy": 0.11929494199335329,
+     "resistance_ramp": 0.09327378412319792,
+     "intermittent_resistance": 0.08392707886756764,
+     "sensor_drift": 0.11725069916931352,
+     "heater_fault": 0.11725069916931352,
+     "radio_burst": 0.11725069916931352,
+     "adcs_wheel_weak": 0.11725069916931352,
+     "adcs_gyro_bias": 0.11725069916931352,
+     "adcs_star_dropout": 0.11725069916931352
+    }
+   },
+   "posterior": {
+    "healthy": 0.124409,
+    "resistance_ramp": 0.096554,
+    "intermittent_resistance": 0.086879,
+    "sensor_drift": 0.121374,
+    "heater_fault": 0.121374,
+    "radio_burst": 0.085286,
+    "adcs_wheel_weak": 0.121374,
+    "adcs_gyro_bias": 0.121374,
+    "adcs_star_dropout": 0.121374
+   }
+  },
+  {
+   "test_id": "T06",
+   "test_name": "Payload thermal soak",
+   "subsystem": "THERMAL",
+   "start_s": 600,
+   "end_s": 840,
+   "cost_min": 4,
+   "mode_requested": "PAYLOAD",
+   "actions": [
+    {
+     "from": "SAFE",
+     "to": "NOMINAL",
+     "accepted": true,
+     "reason": "ACK"
+    },
+    {
+     "from": "NOMINAL",
+     "to": "PAYLOAD",
+     "accepted": true,
+     "reason": "ACK"
+    }
+   ],
+   "transitions": [
+    "SAFE->NOMINAL",
+    "NOMINAL->PAYLOAD"
+   ],
+   "checks": {
+    "REQ-THM-T": true
+   },
+   "status": "PASS",
+   "detected": false,
+   "telemetry_start": {
+    "time_s": 600.0,
+    "mode": "PAYLOAD",
+    "battery_soc_pct": 62.826,
+    "bus_voltage_v": 6.214,
+    "bus_current_a": 1.0486,
+    "load_w": 6.52,
+    "solar_w": 0.0,
+    "temperature_c": 27.956,
+    "redundant_temperature_c": 38.226,
+    "packet_loss_fraction": 0.0,
+    "latency_ms": 0.0,
+    "checksum_ok": true,
+    "cpu_responsive": true,
+    "alarms": [
+     "EPS_UNDERVOLTAGE",
+     "SENSOR_DISAGREEMENT"
+    ]
+   },
+   "telemetry_end": {
+    "time_s": 840.0,
+    "mode": "SAFE",
+    "battery_soc_pct": 62.231,
+    "bus_voltage_v": 7.2764,
+    "bus_current_a": 0.2642,
+    "load_w": 1.92,
+    "solar_w": 0.0,
+    "temperature_c": 28.728,
+    "redundant_temperature_c": 38.639,
+    "packet_loss_fraction": 0.0,
+    "latency_ms": 0.0,
+    "checksum_ok": true,
+    "cpu_responsive": true,
+    "alarms": [
+     "SENSOR_DISAGREEMENT"
+    ]
+   },
+   "samples": 25,
+   "window_extrema": {
+    "minimum_bus_voltage_v": 6.214,
+    "maximum_temperature_c": 28.741,
+    "maximum_bus_current_a": 1.0486,
+    "maximum_sensor_disagreement_c": 10.496
+   },
+   "observed_events": [
+    {
+     "time_s": 600.0,
+     "type": "command",
+     "from_mode": "SAFE",
+     "to_mode": "NOMINAL",
+     "accepted": true,
+     "reason": "ACK"
+    },
+    {
+     "time_s": 600.0,
+     "type": "command",
+     "from_mode": "NOMINAL",
+     "to_mode": "PAYLOAD",
+     "accepted": true,
+     "reason": "ACK"
+    },
+    {
+     "time_s": 610.0,
+     "type": "autonomous_safe_mode",
+     "cause": "LOW_VOLTAGE"
+    }
+   ],
+   "communication_window": {},
+   "warnings": {
+    "EPS": 7.0,
+    "THERMAL": 7.0
+   },
+   "check_details": {
+    "REQ-THM-T": {
+     "metric": "Maximum measured temperature",
+     "measured": 28.741,
+     "operator": "<=",
+     "threshold": 70.0,
+     "unit": "\u00b0C",
+     "context": "Worst sampled value during the executed procedure"
+    }
+   },
+   "test_window_monitor": {
+    "comms_warning": false,
+    "observed_comms_samples": 0
+   },
+   "repeat_index": 0,
+   "decision": {
+    "reason": "Fixed catalog order",
+    "observation_time_s": 600,
+    "selected_policy": "fixed",
+    "score": null,
+    "expected_information_bits": 0.27252,
+    "warning": true,
+    "test_window_comms_warning": false,
+    "forecast_voltage_risk": false,
+    "forecast_temperature_risk": false,
+    "safety_excluded": [],
+    "posterior_before": {
+     "healthy": 0.12440868844216404,
+     "resistance_ramp": 0.09655419961066634,
+     "intermittent_resistance": 0.08687877308607934,
+     "sensor_drift": 0.12137437671801775,
+     "heater_fault": 0.12137437671801775,
+     "radio_burst": 0.08528645527100157,
+     "adcs_wheel_weak": 0.12137437671801775,
+     "adcs_gyro_bias": 0.12137437671801775,
+     "adcs_star_dropout": 0.12137437671801775
+    }
+   },
+   "posterior": {
+    "healthy": 0.127688,
+    "resistance_ramp": 0.096691,
+    "intermittent_resistance": 0.088949,
+    "sensor_drift": 0.124266,
+    "heater_fault": 0.102288,
+    "radio_burst": 0.087319,
+    "adcs_wheel_weak": 0.124266,
+    "adcs_gyro_bias": 0.124266,
+    "adcs_star_dropout": 0.124266
+   }
+  },
+  {
+   "test_id": "T07",
+   "test_name": "Peak-load EPS check",
+   "subsystem": "EPS",
+   "start_s": 840,
+   "end_s": 1080,
+   "cost_min": 4,
+   "mode_requested": "PAYLOAD",
+   "actions": [
+    {
+     "from": "SAFE",
+     "to": "NOMINAL",
+     "accepted": true,
+     "reason": "ACK"
+    },
+    {
+     "from": "NOMINAL",
+     "to": "PAYLOAD",
+     "accepted": true,
+     "reason": "ACK"
+    }
+   ],
+   "transitions": [
+    "SAFE->NOMINAL",
+    "NOMINAL->PAYLOAD"
+   ],
+   "checks": {
+    "REQ-EPS-V": false,
+    "REQ-EPS-I": true
+   },
+   "status": "FAIL",
+   "detected": true,
+   "telemetry_start": {
+    "time_s": 840.0,
+    "mode": "PAYLOAD",
+    "battery_soc_pct": 62.231,
+    "bus_voltage_v": 6.2124,
+    "bus_current_a": 1.0494,
+    "load_w": 6.52,
+    "solar_w": 0.0,
+    "temperature_c": 28.478,
+    "redundant_temperature_c": 38.821,
+    "packet_loss_fraction": 0.0,
+    "latency_ms": 0.0,
+    "checksum_ok": true,
+    "cpu_responsive": true,
+    "alarms": [
+     "EPS_UNDERVOLTAGE",
+     "SENSOR_DISAGREEMENT"
+    ]
+   },
+   "telemetry_end": {
+    "time_s": 1080.0,
+    "mode": "SAFE",
+    "battery_soc_pct": 61.637,
+    "bus_voltage_v": 7.2565,
+    "bus_current_a": 0.2643,
+    "load_w": 1.92,
+    "solar_w": 0.0,
+    "temperature_c": 29.163,
+    "redundant_temperature_c": 39.082,
+    "packet_loss_fraction": 0.0,
+    "latency_ms": 0.0,
+    "checksum_ok": true,
+    "cpu_responsive": true,
+    "alarms": [
+     "SENSOR_DISAGREEMENT"
+    ]
+   },
+   "samples": 25,
+   "window_extrema": {
+    "minimum_bus_voltage_v": 6.2124,
+    "maximum_temperature_c": 29.207,
+    "maximum_bus_current_a": 1.0494,
+    "maximum_sensor_disagreement_c": 10.59
+   },
+   "observed_events": [
+    {
+     "time_s": 840.0,
+     "type": "command",
+     "from_mode": "SAFE",
+     "to_mode": "NOMINAL",
+     "accepted": true,
+     "reason": "ACK"
+    },
+    {
+     "time_s": 840.0,
+     "type": "command",
+     "from_mode": "NOMINAL",
+     "to_mode": "PAYLOAD",
+     "accepted": true,
+     "reason": "ACK"
+    },
+    {
+     "time_s": 850.0,
+     "type": "autonomous_safe_mode",
+     "cause": "LOW_VOLTAGE"
+    }
+   ],
+   "communication_window": {},
+   "warnings": {
+    "EPS": 7.0,
+    "THERMAL": 7.0
+   },
+   "check_details": {
+    "REQ-EPS-V": {
+     "metric": "Minimum measured bus voltage",
+     "measured": 6.2124,
+     "operator": ">=",
+     "threshold": 6.7,
+     "unit": "V",
+     "context": "Worst sampled value during the executed procedure"
+    },
+    "REQ-EPS-I": {
+     "metric": "Maximum measured bus current",
+     "measured": 1.0494,
+     "operator": "<=",
+     "threshold": 1.3,
+     "unit": "A",
+     "context": "Worst sampled value during the executed procedure"
+    }
+   },
+   "test_window_monitor": {
+    "comms_warning": false,
+    "observed_comms_samples": 0
+   },
+   "repeat_index": 0,
+   "decision": {
+    "reason": "Fixed catalog order",
+    "observation_time_s": 840,
+    "selected_policy": "fixed",
+    "score": null,
+    "expected_information_bits": 0.26718,
+    "warning": true,
+    "test_window_comms_warning": false,
+    "forecast_voltage_risk": false,
+    "forecast_temperature_risk": false,
+    "safety_excluded": [],
+    "posterior_before": {
+     "healthy": 0.1276879163968766,
+     "resistance_ramp": 0.09669136174135867,
+     "intermittent_resistance": 0.08894886234565842,
+     "sensor_drift": 0.12426640413400267,
+     "heater_fault": 0.10228763913271925,
+     "radio_burst": 0.08731860384737644,
+     "adcs_wheel_weak": 0.12426640413400267,
+     "adcs_gyro_bias": 0.12426640413400267,
+     "adcs_star_dropout": 0.12426640413400267
+    }
+   },
+   "posterior": {
+    "healthy": 0.015948,
+    "resistance_ramp": 0.376749,
+    "intermittent_resistance": 0.426692,
+    "sensor_drift": 0.032685,
+    "heater_fault": 0.026904,
+    "radio_burst": 0.022967,
+    "adcs_wheel_weak": 0.032685,
+    "adcs_gyro_bias": 0.032685,
+    "adcs_star_dropout": 0.032685
+   }
+  }
+ ],
+ "observations": [
+  {
+   "time_s": 0.0,
+   "mode": "BOOT",
+   "battery_soc_pct": 61.0,
+   "bus_voltage_v": 7.5769,
+   "bus_current_a": 0.3034,
+   "load_w": 2.3,
+   "solar_w": 7.2,
+   "temperature_c": 22.969,
+   "redundant_temperature_c": 23.061,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 0.0,
+   "mode": "BOOT",
+   "battery_soc_pct": 61.0,
+   "bus_voltage_v": 7.577,
+   "bus_current_a": 0.3034,
+   "load_w": 2.3,
+   "solar_w": 7.2,
+   "temperature_c": 22.962,
+   "redundant_temperature_c": 22.888,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 10.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.061,
+   "bus_voltage_v": 7.5963,
+   "bus_current_a": 0.2531,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 23.051,
+   "redundant_temperature_c": 22.829,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 20.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.122,
+   "bus_voltage_v": 7.5807,
+   "bus_current_a": 0.2531,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 22.848,
+   "redundant_temperature_c": 22.95,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 30.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.183,
+   "bus_voltage_v": 7.5915,
+   "bus_current_a": 0.2531,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 23.009,
+   "redundant_temperature_c": 23.123,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 40.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.244,
+   "bus_voltage_v": 7.5782,
+   "bus_current_a": 0.2531,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 23.258,
+   "redundant_temperature_c": 23.04,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 50.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.306,
+   "bus_voltage_v": 7.576,
+   "bus_current_a": 0.253,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 23.172,
+   "redundant_temperature_c": 23.089,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 60.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.367,
+   "bus_voltage_v": 7.57,
+   "bus_current_a": 0.253,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 23.2,
+   "redundant_temperature_c": 23.222,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 60.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.367,
+   "bus_voltage_v": 7.578,
+   "bus_current_a": 0.253,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 23.132,
+   "redundant_temperature_c": 23.158,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 70.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.397,
+   "bus_voltage_v": 7.5496,
+   "bus_current_a": 0.6097,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 23.374,
+   "redundant_temperature_c": 23.433,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 80.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.427,
+   "bus_voltage_v": 7.5302,
+   "bus_current_a": 0.6096,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 23.276,
+   "redundant_temperature_c": 23.295,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 90.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.457,
+   "bus_voltage_v": 7.5485,
+   "bus_current_a": 0.6096,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 23.194,
+   "redundant_temperature_c": 23.263,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 100.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.487,
+   "bus_voltage_v": 7.5369,
+   "bus_current_a": 0.6096,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 23.224,
+   "redundant_temperature_c": 23.569,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 110.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.517,
+   "bus_voltage_v": 7.5512,
+   "bus_current_a": 0.6096,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 23.633,
+   "redundant_temperature_c": 23.644,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 120.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.547,
+   "bus_voltage_v": 7.5615,
+   "bus_current_a": 0.6096,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 23.768,
+   "redundant_temperature_c": 23.514,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 120.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.547,
+   "bus_voltage_v": 7.5244,
+   "bus_current_a": 0.6096,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 23.627,
+   "redundant_temperature_c": 23.804,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 130.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.577,
+   "bus_voltage_v": 7.5541,
+   "bus_current_a": 0.6096,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 23.772,
+   "redundant_temperature_c": 23.829,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 140.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.607,
+   "bus_voltage_v": 7.5468,
+   "bus_current_a": 0.6096,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 23.828,
+   "redundant_temperature_c": 24.003,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 150.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.637,
+   "bus_voltage_v": 7.5451,
+   "bus_current_a": 0.6095,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 23.912,
+   "redundant_temperature_c": 23.8,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 160.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.668,
+   "bus_voltage_v": 7.5316,
+   "bus_current_a": 0.6095,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 23.929,
+   "redundant_temperature_c": 24.203,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 170.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.698,
+   "bus_voltage_v": 7.5488,
+   "bus_current_a": 0.6095,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 24.242,
+   "redundant_temperature_c": 24.18,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 180.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.728,
+   "bus_voltage_v": 7.5472,
+   "bus_current_a": 0.6095,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 24.259,
+   "redundant_temperature_c": 24.294,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 190.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.758,
+   "bus_voltage_v": 7.5429,
+   "bus_current_a": 0.6095,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 24.351,
+   "redundant_temperature_c": 24.26,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 200.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.788,
+   "bus_voltage_v": 7.5168,
+   "bus_current_a": 0.6095,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 24.444,
+   "redundant_temperature_c": 24.618,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 210.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.818,
+   "bus_voltage_v": 7.5556,
+   "bus_current_a": 0.6095,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 24.512,
+   "redundant_temperature_c": 24.432,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 220.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.848,
+   "bus_voltage_v": 7.5468,
+   "bus_current_a": 0.6094,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 24.611,
+   "redundant_temperature_c": 24.502,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 230.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.878,
+   "bus_voltage_v": 7.5341,
+   "bus_current_a": 0.6094,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 24.596,
+   "redundant_temperature_c": 24.775,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 240.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.908,
+   "bus_voltage_v": 7.5441,
+   "bus_current_a": 0.6094,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 24.918,
+   "redundant_temperature_c": 24.535,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 250.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.938,
+   "bus_voltage_v": 7.5311,
+   "bus_current_a": 0.6094,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 24.502,
+   "redundant_temperature_c": 24.955,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 260.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.969,
+   "bus_voltage_v": 7.551,
+   "bus_current_a": 0.6094,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 25.052,
+   "redundant_temperature_c": 24.891,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 270.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 61.999,
+   "bus_voltage_v": 7.5453,
+   "bus_current_a": 0.6094,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 25.177,
+   "redundant_temperature_c": 25.119,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 280.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 62.029,
+   "bus_voltage_v": 7.5575,
+   "bus_current_a": 0.6093,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 25.045,
+   "redundant_temperature_c": 25.093,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 290.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 62.059,
+   "bus_voltage_v": 7.5377,
+   "bus_current_a": 0.6093,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 24.979,
+   "redundant_temperature_c": 25.234,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 300.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 62.089,
+   "bus_voltage_v": 7.5382,
+   "bus_current_a": 0.6093,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 25.334,
+   "redundant_temperature_c": 25.421,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 300.0,
+   "mode": "NOMINAL",
+   "battery_soc_pct": 62.089,
+   "bus_voltage_v": 7.5681,
+   "bus_current_a": 0.6093,
+   "load_w": 4.6,
+   "solar_w": 7.2,
+   "temperature_c": 25.435,
+   "redundant_temperature_c": 25.137,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 310.0,
+   "mode": "PAYLOAD",
+   "battery_soc_pct": 62.089,
+   "bus_voltage_v": 7.5124,
+   "bus_current_a": 0.959,
+   "load_w": 7.2,
+   "solar_w": 7.2,
+   "temperature_c": 25.316,
+   "redundant_temperature_c": 25.436,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 320.0,
+   "mode": "PAYLOAD",
+   "battery_soc_pct": 62.089,
+   "bus_voltage_v": 7.5053,
+   "bus_current_a": 0.959,
+   "load_w": 7.2,
+   "solar_w": 7.2,
+   "temperature_c": 25.71,
+   "redundant_temperature_c": 25.705,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 330.0,
+   "mode": "PAYLOAD",
+   "battery_soc_pct": 62.089,
+   "bus_voltage_v": 7.5043,
+   "bus_current_a": 0.959,
+   "load_w": 7.2,
+   "solar_w": 7.2,
+   "temperature_c": 25.689,
+   "redundant_temperature_c": 25.845,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 340.0,
+   "mode": "PAYLOAD",
+   "battery_soc_pct": 62.089,
+   "bus_voltage_v": 7.5001,
+   "bus_current_a": 0.959,
+   "load_w": 7.2,
+   "solar_w": 7.2,
+   "temperature_c": 25.915,
+   "redundant_temperature_c": 25.855,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 350.0,
+   "mode": "PAYLOAD",
+   "battery_soc_pct": 62.089,
+   "bus_voltage_v": 7.5199,
+   "bus_current_a": 0.959,
+   "load_w": 7.2,
+   "solar_w": 7.2,
+   "temperature_c": 26.118,
+   "redundant_temperature_c": 25.951,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 360.0,
+   "mode": "PAYLOAD",
+   "battery_soc_pct": 62.089,
+   "bus_voltage_v": 7.4944,
+   "bus_current_a": 0.959,
+   "load_w": 7.2,
+   "solar_w": 7.2,
+   "temperature_c": 26.206,
+   "redundant_temperature_c": 25.875,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 370.0,
+   "mode": "PAYLOAD",
+   "battery_soc_pct": 62.089,
+   "bus_voltage_v": 7.5071,
+   "bus_current_a": 0.959,
+   "load_w": 7.2,
+   "solar_w": 7.2,
+   "temperature_c": 26.24,
+   "redundant_temperature_c": 26.219,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": []
+  },
+  {
+   "time_s": 380.0,
+   "mode": "PAYLOAD",
+   "battery_soc_pct": 62.089,
+   "bus_voltage_v": 7.5195,
+   "bus_current_a": 0.959,
+   "load_w": 7.2,
+   "solar_w": 7.2,
+   "temperature_c": 26.388,
+   "redundant_temperature_c": 36.611,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 390.0,
+   "mode": "PAYLOAD",
+   "battery_soc_pct": 62.089,
+   "bus_voltage_v": 7.5003,
+   "bus_current_a": 0.959,
+   "load_w": 7.2,
+   "solar_w": 7.2,
+   "temperature_c": 26.652,
+   "redundant_temperature_c": 36.491,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 400.0,
+   "mode": "PAYLOAD",
+   "battery_soc_pct": 62.089,
+   "bus_voltage_v": 7.4933,
+   "bus_current_a": 0.959,
+   "load_w": 7.2,
+   "solar_w": 7.2,
+   "temperature_c": 26.76,
+   "redundant_temperature_c": 36.848,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 410.0,
+   "mode": "PAYLOAD",
+   "battery_soc_pct": 62.089,
+   "bus_voltage_v": 7.4982,
+   "bus_current_a": 0.959,
+   "load_w": 7.2,
+   "solar_w": 7.2,
+   "temperature_c": 26.735,
+   "redundant_temperature_c": 36.86,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 420.0,
+   "mode": "PAYLOAD",
+   "battery_soc_pct": 62.089,
+   "bus_voltage_v": 7.5114,
+   "bus_current_a": 0.959,
+   "load_w": 7.2,
+   "solar_w": 7.2,
+   "temperature_c": 26.986,
+   "redundant_temperature_c": 36.824,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 420.0,
+   "mode": "PAYLOAD",
+   "battery_soc_pct": 62.089,
+   "bus_voltage_v": 7.4969,
+   "bus_current_a": 0.959,
+   "load_w": 7.2,
+   "solar_w": 7.2,
+   "temperature_c": 26.909,
+   "redundant_temperature_c": 36.839,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 430.0,
+   "mode": "DOWNLINK",
+   "battery_soc_pct": 62.098,
+   "bus_voltage_v": 7.5284,
+   "bus_current_a": 0.851,
+   "load_w": 6.4,
+   "solar_w": 7.2,
+   "temperature_c": 27.101,
+   "redundant_temperature_c": 37.387,
+   "packet_loss_fraction": 0.012,
+   "latency_ms": 80.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 440.0,
+   "mode": "DOWNLINK",
+   "battery_soc_pct": 62.107,
+   "bus_voltage_v": 7.5149,
+   "bus_current_a": 0.851,
+   "load_w": 6.4,
+   "solar_w": 7.2,
+   "temperature_c": 27.339,
+   "redundant_temperature_c": 37.311,
+   "packet_loss_fraction": 0.012,
+   "latency_ms": 80.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 450.0,
+   "mode": "DOWNLINK",
+   "battery_soc_pct": 62.117,
+   "bus_voltage_v": 7.5289,
+   "bus_current_a": 0.851,
+   "load_w": 6.4,
+   "solar_w": 7.2,
+   "temperature_c": 27.592,
+   "redundant_temperature_c": 37.355,
+   "packet_loss_fraction": 0.012,
+   "latency_ms": 80.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 460.0,
+   "mode": "DOWNLINK",
+   "battery_soc_pct": 62.126,
+   "bus_voltage_v": 7.5196,
+   "bus_current_a": 0.851,
+   "load_w": 6.4,
+   "solar_w": 7.2,
+   "temperature_c": 27.529,
+   "redundant_temperature_c": 37.477,
+   "packet_loss_fraction": 0.012,
+   "latency_ms": 80.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 470.0,
+   "mode": "DOWNLINK",
+   "battery_soc_pct": 62.135,
+   "bus_voltage_v": 7.5164,
+   "bus_current_a": 0.851,
+   "load_w": 6.4,
+   "solar_w": 7.2,
+   "temperature_c": 27.516,
+   "redundant_temperature_c": 37.582,
+   "packet_loss_fraction": 0.012,
+   "latency_ms": 80.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 480.0,
+   "mode": "DOWNLINK",
+   "battery_soc_pct": 62.144,
+   "bus_voltage_v": 7.5344,
+   "bus_current_a": 0.851,
+   "load_w": 6.4,
+   "solar_w": 7.2,
+   "temperature_c": 27.557,
+   "redundant_temperature_c": 38.143,
+   "packet_loss_fraction": 0.012,
+   "latency_ms": 80.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 490.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.154,
+   "bus_voltage_v": 7.1382,
+   "bus_current_a": 0.3645,
+   "load_w": 2.6,
+   "solar_w": 7.2,
+   "temperature_c": 27.834,
+   "redundant_temperature_c": 38.143,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 500.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.215,
+   "bus_voltage_v": 7.2598,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 27.918,
+   "redundant_temperature_c": 37.998,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 510.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.276,
+   "bus_voltage_v": 7.2708,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 27.732,
+   "redundant_temperature_c": 38.012,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 520.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.337,
+   "bus_voltage_v": 7.2529,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 27.955,
+   "redundant_temperature_c": 37.852,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 530.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.398,
+   "bus_voltage_v": 7.2725,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 27.946,
+   "redundant_temperature_c": 37.909,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 540.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.459,
+   "bus_voltage_v": 7.2683,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 27.929,
+   "redundant_temperature_c": 37.944,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 550.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.52,
+   "bus_voltage_v": 7.2797,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 27.909,
+   "redundant_temperature_c": 38.01,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 560.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.581,
+   "bus_voltage_v": 7.2725,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 27.902,
+   "redundant_temperature_c": 38.054,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 570.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.643,
+   "bus_voltage_v": 7.2836,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 27.769,
+   "redundant_temperature_c": 38.136,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 580.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.704,
+   "bus_voltage_v": 7.2721,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 27.822,
+   "redundant_temperature_c": 37.875,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 590.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.765,
+   "bus_voltage_v": 7.2907,
+   "bus_current_a": 0.264,
+   "load_w": 1.92,
+   "solar_w": 7.2,
+   "temperature_c": 27.64,
+   "redundant_temperature_c": 37.996,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 600.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.826,
+   "bus_voltage_v": 7.2742,
+   "bus_current_a": 0.264,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.036,
+   "redundant_temperature_c": 38.198,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 600.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.826,
+   "bus_voltage_v": 7.2838,
+   "bus_current_a": 0.264,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.045,
+   "redundant_temperature_c": 38.337,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 610.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.743,
+   "bus_voltage_v": 7.1477,
+   "bus_current_a": 0.3643,
+   "load_w": 2.6,
+   "solar_w": 0.0,
+   "temperature_c": 28.307,
+   "redundant_temperature_c": 38.415,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 620.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.72,
+   "bus_voltage_v": 7.3026,
+   "bus_current_a": 0.264,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.17,
+   "redundant_temperature_c": 38.372,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 630.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.698,
+   "bus_voltage_v": 7.2736,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.214,
+   "redundant_temperature_c": 38.238,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 640.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.676,
+   "bus_voltage_v": 7.2776,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.233,
+   "redundant_temperature_c": 38.497,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 650.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.654,
+   "bus_voltage_v": 7.2635,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.329,
+   "redundant_temperature_c": 38.285,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 660.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.631,
+   "bus_voltage_v": 7.2777,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.023,
+   "redundant_temperature_c": 38.347,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 670.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.609,
+   "bus_voltage_v": 7.2769,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.11,
+   "redundant_temperature_c": 38.665,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 680.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.587,
+   "bus_voltage_v": 7.2818,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.079,
+   "redundant_temperature_c": 38.556,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 690.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.565,
+   "bus_voltage_v": 7.2577,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.102,
+   "redundant_temperature_c": 38.26,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 700.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.543,
+   "bus_voltage_v": 7.2787,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.36,
+   "redundant_temperature_c": 38.572,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 710.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.52,
+   "bus_voltage_v": 7.2573,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.286,
+   "redundant_temperature_c": 38.385,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 720.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.498,
+   "bus_voltage_v": 7.2698,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.173,
+   "redundant_temperature_c": 38.38,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 730.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.476,
+   "bus_voltage_v": 7.2742,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.289,
+   "redundant_temperature_c": 38.629,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 740.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.454,
+   "bus_voltage_v": 7.2702,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.07,
+   "redundant_temperature_c": 38.444,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 750.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.431,
+   "bus_voltage_v": 7.2659,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.248,
+   "redundant_temperature_c": 38.548,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 760.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.409,
+   "bus_voltage_v": 7.2687,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.327,
+   "redundant_temperature_c": 38.577,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 770.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.387,
+   "bus_voltage_v": 7.2605,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.283,
+   "redundant_temperature_c": 38.566,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 780.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.365,
+   "bus_voltage_v": 7.2642,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.475,
+   "redundant_temperature_c": 38.69,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 790.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.343,
+   "bus_voltage_v": 7.2405,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.493,
+   "redundant_temperature_c": 38.777,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 800.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.32,
+   "bus_voltage_v": 7.2843,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.775,
+   "redundant_temperature_c": 38.698,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 810.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.298,
+   "bus_voltage_v": 7.2558,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.492,
+   "redundant_temperature_c": 38.737,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 820.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.276,
+   "bus_voltage_v": 7.2689,
+   "bus_current_a": 0.2641,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.781,
+   "redundant_temperature_c": 38.665,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 830.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.254,
+   "bus_voltage_v": 7.277,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.574,
+   "redundant_temperature_c": 38.778,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 840.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.231,
+   "bus_voltage_v": 7.2632,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.561,
+   "redundant_temperature_c": 38.756,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 840.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.231,
+   "bus_voltage_v": 7.277,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.501,
+   "redundant_temperature_c": 38.641,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 850.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.148,
+   "bus_voltage_v": 7.1466,
+   "bus_current_a": 0.3645,
+   "load_w": 2.6,
+   "solar_w": 0.0,
+   "temperature_c": 28.8,
+   "redundant_temperature_c": 39.11,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 860.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.126,
+   "bus_voltage_v": 7.2672,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.872,
+   "redundant_temperature_c": 38.865,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 870.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.104,
+   "bus_voltage_v": 7.2481,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.648,
+   "redundant_temperature_c": 38.778,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 880.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.081,
+   "bus_voltage_v": 7.2544,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.771,
+   "redundant_temperature_c": 38.959,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 890.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.059,
+   "bus_voltage_v": 7.2645,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.861,
+   "redundant_temperature_c": 39.045,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 900.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.037,
+   "bus_voltage_v": 7.2658,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 29.027,
+   "redundant_temperature_c": 39.096,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 910.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 62.015,
+   "bus_voltage_v": 7.2732,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.812,
+   "redundant_temperature_c": 39.055,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 920.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.993,
+   "bus_voltage_v": 7.2444,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.871,
+   "redundant_temperature_c": 39.37,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 930.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.97,
+   "bus_voltage_v": 7.2711,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.933,
+   "redundant_temperature_c": 39.021,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 940.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.948,
+   "bus_voltage_v": 7.2542,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.793,
+   "redundant_temperature_c": 39.064,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 950.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.926,
+   "bus_voltage_v": 7.2701,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.991,
+   "redundant_temperature_c": 39.169,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 960.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.904,
+   "bus_voltage_v": 7.2599,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.926,
+   "redundant_temperature_c": 39.149,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 970.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.881,
+   "bus_voltage_v": 7.2595,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 29.021,
+   "redundant_temperature_c": 39.333,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 980.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.859,
+   "bus_voltage_v": 7.2577,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.997,
+   "redundant_temperature_c": 39.232,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 990.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.837,
+   "bus_voltage_v": 7.2449,
+   "bus_current_a": 0.2642,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 29.147,
+   "redundant_temperature_c": 39.247,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 1000.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.815,
+   "bus_voltage_v": 7.2632,
+   "bus_current_a": 0.2643,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 29.033,
+   "redundant_temperature_c": 38.974,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 1010.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.793,
+   "bus_voltage_v": 7.2696,
+   "bus_current_a": 0.2643,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.84,
+   "redundant_temperature_c": 39.022,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 1020.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.77,
+   "bus_voltage_v": 7.2574,
+   "bus_current_a": 0.2643,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 29.286,
+   "redundant_temperature_c": 39.121,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 1030.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.748,
+   "bus_voltage_v": 7.2683,
+   "bus_current_a": 0.2643,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 28.892,
+   "redundant_temperature_c": 39.233,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 1040.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.726,
+   "bus_voltage_v": 7.2641,
+   "bus_current_a": 0.2643,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 29.103,
+   "redundant_temperature_c": 39.198,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 1050.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.704,
+   "bus_voltage_v": 7.2559,
+   "bus_current_a": 0.2643,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 29.018,
+   "redundant_temperature_c": 39.328,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 1060.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.681,
+   "bus_voltage_v": 7.2672,
+   "bus_current_a": 0.2643,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 29.03,
+   "redundant_temperature_c": 39.233,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 1070.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.659,
+   "bus_voltage_v": 7.241,
+   "bus_current_a": 0.2643,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 29.135,
+   "redundant_temperature_c": 39.12,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  },
+  {
+   "time_s": 1080.0,
+   "mode": "SAFE",
+   "battery_soc_pct": 61.637,
+   "bus_voltage_v": 7.2573,
+   "bus_current_a": 0.2643,
+   "load_w": 1.92,
+   "solar_w": 0.0,
+   "temperature_c": 29.212,
+   "redundant_temperature_c": 39.238,
+   "packet_loss_fraction": 0.0,
+   "latency_ms": 0.0,
+   "checksum_ok": true,
+   "cpu_responsive": true,
+   "alarms": [
+    "SENSOR_DISAGREEMENT"
+   ]
+  }
+ ],
+ "monitoring_warning_times": 3,
+ "monitor_events": [],
+ "forecast_risk_seen": false,
+ "last_forecast": {
+  "bus_voltage_v": {
+   "ml_estimate": 7.41372,
+   "physics_estimate": 7.27298,
+   "linear_estimate": 7.26587,
+   "lower": 7.01669,
+   "upper": 7.81074,
+   "limit": 6.7,
+   "possible_crossing": false,
+   "point_crossing": false
+  },
+  "temperature_c": {
+   "ml_estimate": 30.91318,
+   "physics_estimate": 28.87062,
+   "linear_estimate": 29.48501,
+   "lower": 19.57194,
+   "upper": 42.25442,
+   "limit": 70.0,
+   "possible_crossing": false,
+   "point_crossing": false
+  }
+ },
+ "stages": {
+  "detection": {
+   "summary": "3 pre-test warning decisions; 0 in-test communication warnings",
+   "methods": [
+    "limit",
+    "cusum",
+    "physics_residual"
+   ],
+   "test_window_events": []
+  },
+  "forecasting": {
+   "summary": "5-minute prediction: no predicted crossing at sampled decisions",
+   "latest": {
+    "bus_voltage_v": {
+     "ml_estimate": 7.41372,
+     "physics_estimate": 7.27298,
+     "linear_estimate": 7.26587,
+     "lower": 7.01669,
+     "upper": 7.81074,
+     "limit": 6.7,
+     "possible_crossing": false,
+     "point_crossing": false
+    },
+    "temperature_c": {
+     "ml_estimate": 30.91318,
+     "physics_estimate": 28.87062,
+     "linear_estimate": 29.48501,
+     "lower": 19.57194,
+     "upper": 42.25442,
+     "limit": 70.0,
+     "possible_crossing": false,
+     "point_crossing": false
+    }
+   },
+   "forecast_is_not_verification": true
+  },
+  "diagnosis": {
+   "summary": "Top test-outcome hypothesis: intermittent_resistance (42.7%, uncalibrated)",
+   "posterior": {
+    "healthy": 0.015947967517462695,
+    "resistance_ramp": 0.3767494962853598,
+    "intermittent_resistance": 0.4266918204265461,
+    "sensor_drift": 0.03268496281863193,
+    "heater_fault": 0.02690403496550328,
+    "radio_burst": 0.02296682953060051,
+    "adcs_wheel_weak": 0.03268496281863193,
+    "adcs_gyro_bias": 0.03268496281863193,
+    "adcs_star_dropout": 0.03268496281863193
+   }
+  },
+  "verification": {
+   "summary": "7 tests run; a requirement failed",
+   "method": "fixed",
+   "safety_guard_exclusions": 0
+  },
+  "audit": {
+   "summary": "Evidence consistent",
+   "passed": true,
+   "problems": [],
+   "checked_steps": 7,
+   "meaning": "Structural evidence consistency, not physics validation",
+   "provenance": {
+    "passed": true,
+    "problems": [],
+    "checked_steps": 7,
+    "checked_metrics": 6,
+    "scope": "Policy consistency, time ordering, and available numeric bounds; not independent physics validation"
+   }
+  }
+ },
+ "audit": {
+  "passed": true,
+  "problems": [],
+  "checked_steps": 7,
+  "meaning": "Structural evidence consistency, not physics validation",
+  "provenance": {
+   "passed": true,
+   "problems": [],
+   "checked_steps": 7,
+   "checked_metrics": 6,
+   "scope": "Policy consistency, time ordering, and available numeric bounds; not independent physics validation"
+  }
+ },
+ "decision_history": [
+  {
+   "time_s": 0,
+   "warning": false,
+   "forecast_risk": false,
+   "test": "T01"
+  },
+  {
+   "time_s": 60,
+   "warning": false,
+   "forecast_risk": false,
+   "test": "T02"
+  },
+  {
+   "time_s": 120,
+   "warning": false,
+   "forecast_risk": false,
+   "test": "T03"
+  },
+  {
+   "time_s": 300,
+   "warning": false,
+   "forecast_risk": false,
+   "test": "T04"
+  },
+  {
+   "time_s": 420,
+   "warning": true,
+   "forecast_risk": false,
+   "test": "T05"
+  },
+  {
+   "time_s": 600,
+   "warning": true,
+   "forecast_risk": false,
+   "test": "T06"
+  },
+  {
+   "time_s": 840,
+   "warning": true,
+   "forecast_risk": false,
+   "test": "T07"
+  }
+ ],
+ "notes": "Research model: simulated failures; forecasts and warnings are not formal verification.",
+ "oracle_after_run": {
+  "faults": [
+   {
+    "mechanism": "sensor_drift",
+    "onset_s": 380,
+    "end_s": 2220,
+    "severity": 2.033,
+    "ramp_s": 0
+   },
+   {
+    "mechanism": "battery_resistance",
+    "onset_s": 490,
+    "end_s": 2220,
+    "severity": 2.04,
+    "ramp_s": 0
+   }
+  ],
+  "fault_count": 2,
+  "healthy": false,
+  "generator": "seeded, model-dependent stress generator; held-out combinations, not independent flight physics"
+ },
+ "challenge_assessment": {
+  "fault_exposures": [
+   {
+    "fault": "sensor_drift",
+    "onset_s": 380,
+    "end_s": 2220,
+    "duration_s": 1840,
+    "severity": 2.033,
+    "relevant_tests": [
+     "T11",
+     "T16"
+    ],
+    "relevant_tests_performed": [],
+    "overlapping_checks": [],
+    "explanation": "No relevant diagnostic procedure overlapped this fault episode. This does not prove that it was undetectable."
+   },
+   {
+    "fault": "battery_resistance",
+    "onset_s": 490,
+    "end_s": 2220,
+    "duration_s": 1730,
+    "severity": 2.04,
+    "relevant_tests": [
+     "T03",
+     "T07",
+     "T13",
+     "T14"
+    ],
+    "relevant_tests_performed": [
+     "T03",
+     "T07"
+    ],
+    "overlapping_checks": [
+     {
+      "test_id": "T07",
+      "start_s": 840,
+      "end_s": 1080,
+      "result": "FAIL",
+      "check_details": {
+       "REQ-EPS-V": {
+        "metric": "Minimum measured bus voltage",
+        "measured": 6.2124,
+        "operator": ">=",
+        "threshold": 6.7,
+        "unit": "V",
+        "context": "Worst sampled value during the executed procedure"
+       },
+       "REQ-EPS-I": {
+        "metric": "Maximum measured bus current",
+        "measured": 1.0494,
+        "operator": "<=",
+        "threshold": 1.3,
+        "unit": "A",
+        "context": "Worst sampled value during the executed procedure"
+       }
+      }
+     }
+    ],
+    "explanation": "Relevant test(s) overlapped this fault, but a passing check can still occur when the disturbance is too small or too brief."
+   }
+  ],
+  "interpretation": "A missed detection requires exposure analysis. Random faults are not guaranteed to violate any requirement.",
+  "not_a_detectability_proof": true
+ },
+ "generator_note": "Ground truth revealed only after completed experiment, never to the decision algorithm.",
+ "diagnosis_match": true,
+ "diagnosis_match_note": "Top single-cause hypothesis matches the healthy condition or at least one injected fault; not complete multi-fault diagnosis."
+}

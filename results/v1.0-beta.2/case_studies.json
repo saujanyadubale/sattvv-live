@@ -1,0 +1,71 @@
+[
+  {
+    "difficulty": "mixed",
+    "intensity": "exploratory",
+    "budget_min": 90,
+    "seed": 7,
+    "policy": "predictive_active",
+    "verified_requirement_failure": false,
+    "early_warning_times_min": [
+      77.0
+    ],
+    "early_warning_subsystems": [
+      "THERMAL"
+    ],
+    "injected_faults_post_run_only": [
+      {
+        "mechanism": "sensor_drift",
+        "onset_s": 4580,
+        "end_s": 4930,
+        "severity": 0.482,
+        "ramp_s": 0
+      }
+    ],
+    "interpretation": "Early warnings are prototype heuristic outputs, not flight-calibrated anomaly probabilities; sampled synthetic campaign only."
+  },
+  {
+    "difficulty": "control",
+    "intensity": "exploratory",
+    "budget_min": 35,
+    "seed": 7,
+    "policy": "fixed",
+    "verified_requirement_failure": false,
+    "early_warning_times_min": [],
+    "early_warning_subsystems": [],
+    "injected_faults_post_run_only": [],
+    "interpretation": "Early warnings are prototype heuristic outputs, not flight-calibrated anomaly probabilities; sampled synthetic campaign only."
+  },
+  {
+    "difficulty": "mixed",
+    "intensity": "high_impact",
+    "budget_min": 35,
+    "seed": 7,
+    "policy": "predictive_active",
+    "verified_requirement_failure": true,
+    "early_warning_times_min": [
+      6.67,
+      8.5
+    ],
+    "early_warning_subsystems": [
+      "THERMAL",
+      "EPS"
+    ],
+    "injected_faults_post_run_only": [
+      {
+        "mechanism": "sensor_drift",
+        "onset_s": 380,
+        "end_s": 2220,
+        "severity": 2.033,
+        "ramp_s": 0
+      },
+      {
+        "mechanism": "battery_resistance",
+        "onset_s": 490,
+        "end_s": 2220,
+        "severity": 2.04,
+        "ramp_s": 0
+      }
+    ],
+    "interpretation": "Early warnings are prototype heuristic outputs, not flight-calibrated anomaly probabilities; sampled synthetic campaign only."
+  }
+]

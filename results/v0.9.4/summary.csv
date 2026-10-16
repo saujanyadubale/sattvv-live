@@ -1,0 +1,21 @@
+budget_min,policy,population,positives,campaigns,fraction,meaning,mean_detection_delay_min_when_detected,single_fault_top1_rate
+20,fixed,faulty,4,18,0.2222222222222222,Requirement-failure detection frequency,13.0,0.0
+20,fixed,healthy,0,6,0.0,False requirement-failure frequency,,
+20,information_gain,faulty,14,18,0.7777777777777778,Requirement-failure detection frequency,12.929,0.5
+20,information_gain,healthy,0,6,0.0,False requirement-failure frequency,,
+20,learned_risk,faulty,9,18,0.5,Requirement-failure detection frequency,5.556,0.25
+20,learned_risk,healthy,0,6,0.0,False requirement-failure frequency,,
+20,predictive_active,faulty,13,18,0.7222222222222222,Requirement-failure detection frequency,12.462,0.5
+20,predictive_active,healthy,0,6,0.0,False requirement-failure frequency,,
+20,temporal_adaptive,faulty,11,18,0.6111111111111112,Requirement-failure detection frequency,12.545,0.5
+20,temporal_adaptive,healthy,0,6,0.0,False requirement-failure frequency,,
+26,fixed,faulty,4,18,0.2222222222222222,Requirement-failure detection frequency,13.0,0.0
+26,fixed,healthy,0,6,0.0,False requirement-failure frequency,,
+26,information_gain,faulty,14,18,0.7777777777777778,Requirement-failure detection frequency,12.929,0.5
+26,information_gain,healthy,0,6,0.0,False requirement-failure frequency,,
+26,learned_risk,faulty,15,18,0.8333333333333334,Requirement-failure detection frequency,10.4,0.25
+26,learned_risk,healthy,0,6,0.0,False requirement-failure frequency,,
+26,predictive_active,faulty,14,18,0.7777777777777778,Requirement-failure detection frequency,12.929,0.5
+26,predictive_active,healthy,0,6,0.0,False requirement-failure frequency,,
+26,temporal_adaptive,faulty,13,18,0.7222222222222222,Requirement-failure detection frequency,13.231,0.5
+26,temporal_adaptive,healthy,0,6,0.0,False requirement-failure frequency,,

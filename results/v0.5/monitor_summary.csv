@@ -1,0 +1,7 @@
+method,fault_detection_fraction,healthy_false_alert_episodes_per_hour,median_detection_delay_s,fault_campaigns,healthy_campaigns
+limit,0.45,0.0,480.0,40,16
+trend,0.4,0.0,90.0,40,16
+cusum,0.4,0.0,270.0,40,16
+physics_residual,0.6,0.0,300.0,40,16
+isolation_forest,0.0,0.25,,40,16
+gradient_boosting,1.0,0.125,150.0,40,16

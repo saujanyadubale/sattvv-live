@@ -1,0 +1,2416 @@
+{
+  "meta": {
+    "version": "0.6",
+    "signal": "bus_voltage_v",
+    "horizon_s": 300,
+    "forecast_warning_not_verification": true,
+    "band": "campaign-max split-conformal on independent synthetic calibration campaigns; assumes exchangeability",
+    "limits": "Forecast is conditional on patterns learned in a synthetic simulator, NOT flight-validated"
+  },
+  "limit": 6.7,
+  "interval_half_width": 0.3970243372445621,
+  "forecasts": [
+    {
+      "issue_time_s": 90.0,
+      "target_time_s": 390.0,
+      "observed": 7.6321,
+      "predictions": {
+        "persistence": 7.6321,
+        "physics_baseline": 7.63379,
+        "linear_trend": 7.6638,
+        "gradient_boosting": 7.6305
+      },
+      "ml_lower": 7.23347,
+      "ml_upper": 8.02752,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 120.0,
+      "target_time_s": 420.0,
+      "observed": 7.6361,
+      "predictions": {
+        "persistence": 7.6361,
+        "physics_baseline": 7.63779,
+        "linear_trend": 7.6603,
+        "gradient_boosting": 7.62926
+      },
+      "ml_lower": 7.23223,
+      "ml_upper": 8.02628,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 150.0,
+      "target_time_s": 450.0,
+      "observed": 7.6093,
+      "predictions": {
+        "persistence": 7.6093,
+        "physics_baseline": 7.61099,
+        "linear_trend": 7.58961,
+        "gradient_boosting": 7.60046
+      },
+      "ml_lower": 7.20343,
+      "ml_upper": 7.99748,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 180.0,
+      "target_time_s": 480.0,
+      "observed": 7.634,
+      "predictions": {
+        "persistence": 7.634,
+        "physics_baseline": 7.63569,
+        "linear_trend": 7.62721,
+        "gradient_boosting": 7.62926
+      },
+      "ml_lower": 7.23223,
+      "ml_upper": 8.02628,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 210.0,
+      "target_time_s": 510.0,
+      "observed": 7.6228,
+      "predictions": {
+        "persistence": 7.6228,
+        "physics_baseline": 7.62449,
+        "linear_trend": 7.60448,
+        "gradient_boosting": 7.62745
+      },
+      "ml_lower": 7.23043,
+      "ml_upper": 8.02448,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 240.0,
+      "target_time_s": 540.0,
+      "observed": 7.6228,
+      "predictions": {
+        "persistence": 7.6228,
+        "physics_baseline": 7.62449,
+        "linear_trend": 7.59473,
+        "gradient_boosting": 7.62869
+      },
+      "ml_lower": 7.23167,
+      "ml_upper": 8.02572,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 270.0,
+      "target_time_s": 570.0,
+      "observed": 7.6452,
+      "predictions": {
+        "persistence": 7.6452,
+        "physics_baseline": 7.64689,
+        "linear_trend": 7.65456,
+        "gradient_boosting": 7.63215
+      },
+      "ml_lower": 7.23512,
+      "ml_upper": 8.02917,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 300.0,
+      "target_time_s": 600.0,
+      "observed": 7.6269,
+      "predictions": {
+        "persistence": 7.6269,
+        "physics_baseline": 7.62859,
+        "linear_trend": 7.63869,
+        "gradient_boosting": 7.62896
+      },
+      "ml_lower": 7.23194,
+      "ml_upper": 8.02598,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 330.0,
+      "target_time_s": 630.0,
+      "observed": 7.6342,
+      "predictions": {
+        "persistence": 7.6342,
+        "physics_baseline": 7.63589,
+        "linear_trend": 7.66381,
+        "gradient_boosting": 7.63257
+      },
+      "ml_lower": 7.23554,
+      "ml_upper": 8.02959,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 360.0,
+      "target_time_s": 660.0,
+      "observed": 7.6251,
+      "predictions": {
+        "persistence": 7.6251,
+        "physics_baseline": 7.62679,
+        "linear_trend": 7.62517,
+        "gradient_boosting": 7.62871
+      },
+      "ml_lower": 7.23168,
+      "ml_upper": 8.02573,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 390.0,
+      "target_time_s": 690.0,
+      "observed": 7.6345,
+      "predictions": {
+        "persistence": 7.6345,
+        "physics_baseline": 7.63619,
+        "linear_trend": 7.64475,
+        "gradient_boosting": 7.63186
+      },
+      "ml_lower": 7.23484,
+      "ml_upper": 8.02889,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 420.0,
+      "target_time_s": 720.0,
+      "observed": 7.6323,
+      "predictions": {
+        "persistence": 7.6323,
+        "physics_baseline": 7.63399,
+        "linear_trend": 7.63419,
+        "gradient_boosting": 7.62996
+      },
+      "ml_lower": 7.23293,
+      "ml_upper": 8.02698,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 450.0,
+      "target_time_s": 750.0,
+      "observed": 7.628,
+      "predictions": {
+        "persistence": 7.628,
+        "physics_baseline": 7.62969,
+        "linear_trend": 7.61354,
+        "gradient_boosting": 7.62871
+      },
+      "ml_lower": 7.23168,
+      "ml_upper": 8.02573,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 480.0,
+      "target_time_s": 780.0,
+      "observed": 7.638,
+      "predictions": {
+        "persistence": 7.638,
+        "physics_baseline": 7.63969,
+        "linear_trend": 7.64804,
+        "gradient_boosting": 7.6334
+      },
+      "ml_lower": 7.23638,
+      "ml_upper": 8.03043,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 510.0,
+      "target_time_s": 810.0,
+      "observed": 7.6092,
+      "predictions": {
+        "persistence": 7.6092,
+        "physics_baseline": 7.61089,
+        "linear_trend": 7.58931,
+        "gradient_boosting": 7.60179
+      },
+      "ml_lower": 7.20477,
+      "ml_upper": 7.99882,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 540.0,
+      "target_time_s": 840.0,
+      "observed": 7.5835,
+      "predictions": {
+        "persistence": 7.5835,
+        "physics_baseline": 7.58519,
+        "linear_trend": 7.52289,
+        "gradient_boosting": 7.30388
+      },
+      "ml_lower": 6.90686,
+      "ml_upper": 7.70091,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 570.0,
+      "target_time_s": 870.0,
+      "observed": 7.5173,
+      "predictions": {
+        "persistence": 7.5173,
+        "physics_baseline": 7.51899,
+        "linear_trend": 7.35016,
+        "gradient_boosting": 7.15863
+      },
+      "ml_lower": 6.76161,
+      "ml_upper": 7.55566,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 600.0,
+      "target_time_s": 900.0,
+      "observed": 7.4938,
+      "predictions": {
+        "persistence": 7.4938,
+        "physics_baseline": 7.49549,
+        "linear_trend": 7.24687,
+        "gradient_boosting": 7.24983
+      },
+      "ml_lower": 6.85281,
+      "ml_upper": 7.64686,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 630.0,
+      "target_time_s": 930.0,
+      "observed": 7.4589,
+      "predictions": {
+        "persistence": 7.4589,
+        "physics_baseline": 7.46059,
+        "linear_trend": 7.1419,
+        "gradient_boosting": 7.24312
+      },
+      "ml_lower": 6.8461,
+      "ml_upper": 7.64015,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 660.0,
+      "target_time_s": 960.0,
+      "observed": 7.4135,
+      "predictions": {
+        "persistence": 7.4135,
+        "physics_baseline": 7.41519,
+        "linear_trend": 7.03357,
+        "gradient_boosting": 7.22672
+      },
+      "ml_lower": 6.82969,
+      "ml_upper": 7.62374,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 690.0,
+      "target_time_s": 990.0,
+      "observed": 7.4033,
+      "predictions": {
+        "persistence": 7.4033,
+        "physics_baseline": 7.40499,
+        "linear_trend": 7.04041,
+        "gradient_boosting": 7.23503
+      },
+      "ml_lower": 6.838,
+      "ml_upper": 7.63205,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 720.0,
+      "target_time_s": 1020.0,
+      "observed": 7.3657,
+      "predictions": {
+        "persistence": 7.3657,
+        "physics_baseline": 7.36739,
+        "linear_trend": 7.02224,
+        "gradient_boosting": 7.22366
+      },
+      "ml_lower": 6.82664,
+      "ml_upper": 7.62069,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 750.0,
+      "target_time_s": 1050.0,
+      "observed": 7.3378,
+      "predictions": {
+        "persistence": 7.3378,
+        "physics_baseline": 7.33949,
+        "linear_trend": 7.03412,
+        "gradient_boosting": 7.19278
+      },
+      "ml_lower": 6.79575,
+      "ml_upper": 7.5898,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 780.0,
+      "target_time_s": 1080.0,
+      "observed": 7.2933,
+      "predictions": {
+        "persistence": 7.2933,
+        "physics_baseline": 7.29499,
+        "linear_trend": 6.97491,
+        "gradient_boosting": 7.19477
+      },
+      "ml_lower": 6.79775,
+      "ml_upper": 7.59179,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 810.0,
+      "target_time_s": 1110.0,
+      "observed": 7.2617,
+      "predictions": {
+        "persistence": 7.2617,
+        "physics_baseline": 7.26339,
+        "linear_trend": 6.94116,
+        "gradient_boosting": 7.1936
+      },
+      "ml_lower": 6.79658,
+      "ml_upper": 7.59062,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 840.0,
+      "target_time_s": 1140.0,
+      "observed": 7.199,
+      "predictions": {
+        "persistence": 7.199,
+        "physics_baseline": 7.20069,
+        "linear_trend": 6.84218,
+        "gradient_boosting": 7.17264
+      },
+      "ml_lower": 6.77561,
+      "ml_upper": 7.56966,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 870.0,
+      "target_time_s": 1170.0,
+      "observed": 7.1873,
+      "predictions": {
+        "persistence": 7.1873,
+        "physics_baseline": 7.18899,
+        "linear_trend": 6.80962,
+        "gradient_boosting": 7.17783
+      },
+      "ml_lower": 6.7808,
+      "ml_upper": 7.57485,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 900.0,
+      "target_time_s": 1200.0,
+      "observed": 7.1538,
+      "predictions": {
+        "persistence": 7.1538,
+        "physics_baseline": 7.15549,
+        "linear_trend": 6.78559,
+        "gradient_boosting": 7.16818
+      },
+      "ml_lower": 6.77116,
+      "ml_upper": 7.56521,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 930.0,
+      "target_time_s": 1230.0,
+      "observed": 7.1182,
+      "predictions": {
+        "persistence": 7.1182,
+        "physics_baseline": 7.11989,
+        "linear_trend": 6.7567,
+        "gradient_boosting": 7.3796
+      },
+      "ml_lower": 6.98257,
+      "ml_upper": 7.77662,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 960.0,
+      "target_time_s": 1260.0,
+      "observed": 7.0745,
+      "predictions": {
+        "persistence": 7.0745,
+        "physics_baseline": 7.07619,
+        "linear_trend": 6.72143,
+        "gradient_boosting": 7.58116
+      },
+      "ml_lower": 7.18413,
+      "ml_upper": 7.97818,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 990.0,
+      "target_time_s": 1290.0,
+      "observed": 7.037,
+      "predictions": {
+        "persistence": 7.037,
+        "physics_baseline": 7.03869,
+        "linear_trend": 6.68264,
+        "gradient_boosting": 7.56651
+      },
+      "ml_lower": 7.16949,
+      "ml_upper": 7.96354,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1020.0,
+      "target_time_s": 1320.0,
+      "observed": 6.9822,
+      "predictions": {
+        "persistence": 6.9822,
+        "physics_baseline": 6.98389,
+        "linear_trend": 6.61424,
+        "gradient_boosting": 7.56651
+      },
+      "ml_lower": 7.16949,
+      "ml_upper": 7.96354,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1050.0,
+      "target_time_s": 1350.0,
+      "observed": 6.9508,
+      "predictions": {
+        "persistence": 6.9508,
+        "physics_baseline": 6.95249,
+        "linear_trend": 6.54584,
+        "gradient_boosting": 7.57308
+      },
+      "ml_lower": 7.17606,
+      "ml_upper": 7.97011,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1080.0,
+      "target_time_s": 1380.0,
+      "observed": 6.928,
+      "predictions": {
+        "persistence": 6.928,
+        "physics_baseline": 6.92969,
+        "linear_trend": 6.53354,
+        "gradient_boosting": 7.57308
+      },
+      "ml_lower": 7.17606,
+      "ml_upper": 7.97011,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1110.0,
+      "target_time_s": 1410.0,
+      "observed": 6.8681,
+      "predictions": {
+        "persistence": 6.8681,
+        "physics_baseline": 6.86979,
+        "linear_trend": 6.46471,
+        "gradient_boosting": 7.58186
+      },
+      "ml_lower": 7.18484,
+      "ml_upper": 7.97888,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1140.0,
+      "target_time_s": 1440.0,
+      "observed": 6.8454,
+      "predictions": {
+        "persistence": 6.8454,
+        "physics_baseline": 6.84709,
+        "linear_trend": 6.45994,
+        "gradient_boosting": 7.57529
+      },
+      "ml_lower": 7.17827,
+      "ml_upper": 7.97231,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1170.0,
+      "target_time_s": 1470.0,
+      "observed": 6.7715,
+      "predictions": {
+        "persistence": 6.7715,
+        "physics_baseline": 6.77319,
+        "linear_trend": 6.35979,
+        "gradient_boosting": 7.57308
+      },
+      "ml_lower": 7.17606,
+      "ml_upper": 7.97011,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1200.0,
+      "target_time_s": 1500.0,
+      "observed": 6.7864,
+      "predictions": {
+        "persistence": 6.7864,
+        "physics_baseline": 6.78809,
+        "linear_trend": 6.41904,
+        "gradient_boosting": 7.57529
+      },
+      "ml_lower": 7.17827,
+      "ml_upper": 7.97231,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1230.0,
+      "target_time_s": 1530.0,
+      "observed": 6.7747,
+      "predictions": {
+        "persistence": 6.7747,
+        "physics_baseline": 6.77639,
+        "linear_trend": 6.45038,
+        "gradient_boosting": 7.57967
+      },
+      "ml_lower": 7.18265,
+      "ml_upper": 7.9767,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1260.0,
+      "target_time_s": 1560.0,
+      "observed": 6.7711,
+      "predictions": {
+        "persistence": 6.7711,
+        "physics_baseline": 6.77279,
+        "linear_trend": 6.51521,
+        "gradient_boosting": 7.5709
+      },
+      "ml_lower": 7.17387,
+      "ml_upper": 7.96792,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1290.0,
+      "target_time_s": 1590.0,
+      "observed": 6.7734,
+      "predictions": {
+        "persistence": 6.7734,
+        "physics_baseline": 6.77509,
+        "linear_trend": 6.62001,
+        "gradient_boosting": 7.58069
+      },
+      "ml_lower": 7.18367,
+      "ml_upper": 7.97772,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1320.0,
+      "target_time_s": 1620.0,
+      "observed": 6.7977,
+      "predictions": {
+        "persistence": 6.7977,
+        "physics_baseline": 6.79939,
+        "linear_trend": 6.74249,
+        "gradient_boosting": 7.61715
+      },
+      "ml_lower": 7.22013,
+      "ml_upper": 8.01418,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1350.0,
+      "target_time_s": 1650.0,
+      "observed": 6.7693,
+      "predictions": {
+        "persistence": 6.7693,
+        "physics_baseline": 6.77099,
+        "linear_trend": 6.77455,
+        "gradient_boosting": 7.64173
+      },
+      "ml_lower": 7.24471,
+      "ml_upper": 8.03876,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1380.0,
+      "target_time_s": 1680.0,
+      "observed": 6.7699,
+      "predictions": {
+        "persistence": 6.7699,
+        "physics_baseline": 6.77159,
+        "linear_trend": 6.75786,
+        "gradient_boosting": 7.6402
+      },
+      "ml_lower": 7.24317,
+      "ml_upper": 8.03722,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1410.0,
+      "target_time_s": 1710.0,
+      "observed": 6.7434,
+      "predictions": {
+        "persistence": 6.7434,
+        "physics_baseline": 6.74509,
+        "linear_trend": 6.70754,
+        "gradient_boosting": 7.63895
+      },
+      "ml_lower": 7.24192,
+      "ml_upper": 8.03597,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1440.0,
+      "target_time_s": 1740.0,
+      "observed": 6.7791,
+      "predictions": {
+        "persistence": 6.7791,
+        "physics_baseline": 6.78079,
+        "linear_trend": 6.75631,
+        "gradient_boosting": 7.64048
+      },
+      "ml_lower": 7.24346,
+      "ml_upper": 8.03751,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1470.0,
+      "target_time_s": 1770.0,
+      "observed": 6.7824,
+      "predictions": {
+        "persistence": 6.7824,
+        "physics_baseline": 6.78409,
+        "linear_trend": 6.76951,
+        "gradient_boosting": 7.63895
+      },
+      "ml_lower": 7.24192,
+      "ml_upper": 8.03597,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1500.0,
+      "target_time_s": 1800.0,
+      "observed": 6.8039,
+      "predictions": {
+        "persistence": 6.8039,
+        "physics_baseline": 6.80559,
+        "linear_trend": 6.82319,
+        "gradient_boosting": 7.63895
+      },
+      "ml_lower": 7.24192,
+      "ml_upper": 8.03597,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1530.0,
+      "target_time_s": 1830.0,
+      "observed": 6.7738,
+      "predictions": {
+        "persistence": 6.7738,
+        "physics_baseline": 6.77549,
+        "linear_trend": 6.81684,
+        "gradient_boosting": 7.59991
+      },
+      "ml_lower": 7.20289,
+      "ml_upper": 7.99694,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1560.0,
+      "target_time_s": 1860.0,
+      "observed": 6.7424,
+      "predictions": {
+        "persistence": 6.7424,
+        "physics_baseline": 6.74409,
+        "linear_trend": 6.74351,
+        "gradient_boosting": 7.64048
+      },
+      "ml_lower": 7.24346,
+      "ml_upper": 8.03751,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1590.0,
+      "target_time_s": 1890.0,
+      "observed": 6.7613,
+      "predictions": {
+        "persistence": 6.7613,
+        "physics_baseline": 6.76299,
+        "linear_trend": 6.75119,
+        "gradient_boosting": 7.64048
+      },
+      "ml_lower": 7.24346,
+      "ml_upper": 8.03751,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1620.0,
+      "target_time_s": 1920.0,
+      "observed": 6.7858,
+      "predictions": {
+        "persistence": 6.7858,
+        "physics_baseline": 6.78749,
+        "linear_trend": 6.75594,
+        "gradient_boosting": 7.64048
+      },
+      "ml_lower": 7.24346,
+      "ml_upper": 8.03751,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1650.0,
+      "target_time_s": 1950.0,
+      "observed": 6.7715,
+      "predictions": {
+        "persistence": 6.7715,
+        "physics_baseline": 6.77319,
+        "linear_trend": 6.74243,
+        "gradient_boosting": 7.63895
+      },
+      "ml_lower": 7.24192,
+      "ml_upper": 8.03597,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1680.0,
+      "target_time_s": 1980.0,
+      "observed": 6.789,
+      "predictions": {
+        "persistence": 6.789,
+        "physics_baseline": 6.79069,
+        "linear_trend": 6.78689,
+        "gradient_boosting": 7.63895
+      },
+      "ml_lower": 7.24192,
+      "ml_upper": 8.03597,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1710.0,
+      "target_time_s": 2010.0,
+      "observed": 6.7587,
+      "predictions": {
+        "persistence": 6.7587,
+        "physics_baseline": 6.76039,
+        "linear_trend": 6.77945,
+        "gradient_boosting": 7.64117
+      },
+      "ml_lower": 7.24414,
+      "ml_upper": 8.03819,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1740.0,
+      "target_time_s": 2040.0,
+      "observed": 6.7784,
+      "predictions": {
+        "persistence": 6.7784,
+        "physics_baseline": 6.78009,
+        "linear_trend": 6.81626,
+        "gradient_boosting": 7.59798
+      },
+      "ml_lower": 7.20096,
+      "ml_upper": 7.99501,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1770.0,
+      "target_time_s": 2070.0,
+      "observed": 6.7788,
+      "predictions": {
+        "persistence": 6.7788,
+        "physics_baseline": 6.78049,
+        "linear_trend": 6.78769,
+        "gradient_boosting": 7.63895
+      },
+      "ml_lower": 7.24192,
+      "ml_upper": 8.03597,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1800.0,
+      "target_time_s": 2100.0,
+      "observed": 6.7756,
+      "predictions": {
+        "persistence": 6.7756,
+        "physics_baseline": 6.77729,
+        "linear_trend": 6.7661,
+        "gradient_boosting": 7.64048
+      },
+      "ml_lower": 7.24346,
+      "ml_upper": 8.03751,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1830.0,
+      "target_time_s": 2130.0,
+      "observed": 6.7734,
+      "predictions": {
+        "persistence": 6.7734,
+        "physics_baseline": 6.77509,
+        "linear_trend": 6.77304,
+        "gradient_boosting": 7.64048
+      },
+      "ml_lower": 7.24346,
+      "ml_upper": 8.03751,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1860.0,
+      "target_time_s": 2160.0,
+      "observed": 6.7881,
+      "predictions": {
+        "persistence": 6.7881,
+        "physics_baseline": 6.78979,
+        "linear_trend": 6.79664,
+        "gradient_boosting": 7.64173
+      },
+      "ml_lower": 7.24471,
+      "ml_upper": 8.03876,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1890.0,
+      "target_time_s": 2190.0,
+      "observed": 6.7857,
+      "predictions": {
+        "persistence": 6.7857,
+        "physics_baseline": 6.78739,
+        "linear_trend": 6.81963,
+        "gradient_boosting": 7.59952
+      },
+      "ml_lower": 7.2025,
+      "ml_upper": 7.99654,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1920.0,
+      "target_time_s": 2220.0,
+      "observed": 6.7591,
+      "predictions": {
+        "persistence": 6.7591,
+        "physics_baseline": 6.76079,
+        "linear_trend": 6.74781,
+        "gradient_boosting": 7.63963
+      },
+      "ml_lower": 7.24261,
+      "ml_upper": 8.03665,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1950.0,
+      "target_time_s": 2250.0,
+      "observed": 6.7661,
+      "predictions": {
+        "persistence": 6.7661,
+        "physics_baseline": 6.76779,
+        "linear_trend": 6.7451,
+        "gradient_boosting": 7.63963
+      },
+      "ml_lower": 7.24261,
+      "ml_upper": 8.03665,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 1980.0,
+      "target_time_s": 2280.0,
+      "observed": 7.6557,
+      "predictions": {
+        "persistence": 7.6557,
+        "physics_baseline": 7.65739,
+        "linear_trend": 8.4057,
+        "gradient_boosting": 7.55282
+      },
+      "ml_lower": 7.15579,
+      "ml_upper": 7.94984,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 2010.0,
+      "target_time_s": 2310.0,
+      "observed": 7.6294,
+      "predictions": {
+        "persistence": 7.6294,
+        "physics_baseline": 7.63109,
+        "linear_trend": 8.3794,
+        "gradient_boosting": 7.6005
+      },
+      "ml_lower": 7.20347,
+      "ml_upper": 7.99752,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 2040.0,
+      "target_time_s": 2340.0,
+      "observed": 7.65,
+      "predictions": {
+        "persistence": 7.65,
+        "physics_baseline": 7.65169,
+        "linear_trend": 8.4,
+        "gradient_boosting": 7.59657
+      },
+      "ml_lower": 7.19955,
+      "ml_upper": 7.9936,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 2070.0,
+      "target_time_s": 2370.0,
+      "observed": 7.6597,
+      "predictions": {
+        "persistence": 7.6597,
+        "physics_baseline": 7.66139,
+        "linear_trend": 8.4097,
+        "gradient_boosting": 7.56163
+      },
+      "ml_lower": 7.16461,
+      "ml_upper": 7.95866,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 2100.0,
+      "target_time_s": 2400.0,
+      "observed": 7.6175,
+      "predictions": {
+        "persistence": 7.6175,
+        "physics_baseline": 7.61919,
+        "linear_trend": 8.3675,
+        "gradient_boosting": 7.56448
+      },
+      "ml_lower": 7.16745,
+      "ml_upper": 7.9615,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 2130.0,
+      "target_time_s": 2430.0,
+      "observed": 7.6341,
+      "predictions": {
+        "persistence": 7.6341,
+        "physics_baseline": 7.63579,
+        "linear_trend": 8.3841,
+        "gradient_boosting": 7.56147
+      },
+      "ml_lower": 7.16445,
+      "ml_upper": 7.95849,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 2160.0,
+      "target_time_s": 2460.0,
+      "observed": 7.6595,
+      "predictions": {
+        "persistence": 7.6595,
+        "physics_baseline": 7.66119,
+        "linear_trend": 7.65532,
+        "gradient_boosting": 7.63526
+      },
+      "ml_lower": 7.23824,
+      "ml_upper": 8.03229,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 2190.0,
+      "target_time_s": 2490.0,
+      "observed": 7.6595,
+      "predictions": {
+        "persistence": 7.6595,
+        "physics_baseline": 7.66119,
+        "linear_trend": 7.68939,
+        "gradient_boosting": 7.64176
+      },
+      "ml_lower": 7.24473,
+      "ml_upper": 8.03878,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 2220.0,
+      "target_time_s": 2520.0,
+      "observed": 7.6329,
+      "predictions": {
+        "persistence": 7.6329,
+        "physics_baseline": 7.63459,
+        "linear_trend": 7.62944,
+        "gradient_boosting": 7.62114
+      },
+      "ml_lower": 7.22412,
+      "ml_upper": 8.01817,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 2250.0,
+      "target_time_s": 2550.0,
+      "observed": 7.6435,
+      "predictions": {
+        "persistence": 7.6435,
+        "physics_baseline": 7.64519,
+        "linear_trend": 7.64621,
+        "gradient_boosting": 7.63603
+      },
+      "ml_lower": 7.23901,
+      "ml_upper": 8.03306,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 2280.0,
+      "target_time_s": 2580.0,
+      "observed": 7.6146,
+      "predictions": {
+        "persistence": 7.6146,
+        "physics_baseline": 7.61629,
+        "linear_trend": 7.60871,
+        "gradient_boosting": 7.62712
+      },
+      "ml_lower": 7.23009,
+      "ml_upper": 8.02414,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 2310.0,
+      "target_time_s": 2610.0,
+      "observed": 7.6522,
+      "predictions": {
+        "persistence": 7.6522,
+        "physics_baseline": 7.65389,
+        "linear_trend": 7.63381,
+        "gradient_boosting": 7.63933
+      },
+      "ml_lower": 7.2423,
+      "ml_upper": 8.03635,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 2340.0,
+      "target_time_s": 2640.0,
+      "observed": 7.6424,
+      "predictions": {
+        "persistence": 7.6424,
+        "physics_baseline": 7.64409,
+        "linear_trend": 7.61233,
+        "gradient_boosting": 7.63603
+      },
+      "ml_lower": 7.23901,
+      "ml_upper": 8.03306,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 2370.0,
+      "target_time_s": 2670.0,
+      "observed": 7.6586,
+      "predictions": {
+        "persistence": 7.6586,
+        "physics_baseline": 7.66029,
+        "linear_trend": 7.66753,
+        "gradient_boosting": 7.63872
+      },
+      "ml_lower": 7.24169,
+      "ml_upper": 8.03574,
+      "forecast_warning": false
+    },
+    {
+      "issue_time_s": 2400.0,
+      "target_time_s": 2700.0,
+      "observed": 7.6607,
+      "predictions": {
+        "persistence": 7.6607,
+        "physics_baseline": 7.66239,
+        "linear_trend": 7.7112,
+        "gradient_boosting": 7.61651
+      },
+      "ml_lower": 7.21949,
+      "ml_upper": 8.01354,
+      "forecast_warning": false
+    }
+  ],
+  "scenario": {
+    "version": "0.5",
+    "scenario": "resistance_ramp",
+    "severity": 1.5,
+    "onset_s": 480,
+    "duration_s": 2400,
+    "step_s": 30,
+    "seed": 7,
+    "eclipse": false,
+    "initial_soc": 0.8,
+    "model": "Uncalibrated synthetic coupled EPS/thermal system"
+  },
+  "telemetry": [
+    {
+      "time_s": 0.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.0,
+      "bus_voltage_v": 7.6266,
+      "bus_current_a": 0.8389,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 22.969,
+      "redundant_temperature_c": 23.061,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 30.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.028,
+      "bus_voltage_v": 7.6269,
+      "bus_current_a": 0.8388,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 23.355,
+      "redundant_temperature_c": 23.281,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 60.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.056,
+      "bus_voltage_v": 7.6421,
+      "bus_current_a": 0.8388,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 23.916,
+      "redundant_temperature_c": 23.834,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 90.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.083,
+      "bus_voltage_v": 7.6321,
+      "bus_current_a": 0.8388,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 24.199,
+      "redundant_temperature_c": 24.216,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 120.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.111,
+      "bus_voltage_v": 7.6361,
+      "bus_current_a": 0.8388,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 24.352,
+      "redundant_temperature_c": 24.655,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 150.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.139,
+      "bus_voltage_v": 7.6093,
+      "bus_current_a": 0.8388,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 24.992,
+      "redundant_temperature_c": 24.729,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 180.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.167,
+      "bus_voltage_v": 7.634,
+      "bus_current_a": 0.8388,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 25.201,
+      "redundant_temperature_c": 25.252,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 210.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.194,
+      "bus_voltage_v": 7.6228,
+      "bus_current_a": 0.8387,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 25.676,
+      "redundant_temperature_c": 25.744,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 240.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.222,
+      "bus_voltage_v": 7.6228,
+      "bus_current_a": 0.8387,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 26.088,
+      "redundant_temperature_c": 26.099,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 270.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.25,
+      "bus_voltage_v": 7.6452,
+      "bus_current_a": 0.8387,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 26.624,
+      "redundant_temperature_c": 26.485,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 300.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.278,
+      "bus_voltage_v": 7.6269,
+      "bus_current_a": 0.8387,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 26.707,
+      "redundant_temperature_c": 26.693,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 330.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.306,
+      "bus_voltage_v": 7.6342,
+      "bus_current_a": 0.8387,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 27.13,
+      "redundant_temperature_c": 27.218,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 360.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.333,
+      "bus_voltage_v": 7.6251,
+      "bus_current_a": 0.8386,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 27.446,
+      "redundant_temperature_c": 27.385,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 390.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.361,
+      "bus_voltage_v": 7.6345,
+      "bus_current_a": 0.8386,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 28.0,
+      "redundant_temperature_c": 27.757,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 420.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.389,
+      "bus_voltage_v": 7.6323,
+      "bus_current_a": 0.8386,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 28.256,
+      "redundant_temperature_c": 28.026,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 450.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.417,
+      "bus_voltage_v": 7.628,
+      "bus_current_a": 0.8386,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 28.71,
+      "redundant_temperature_c": 28.312,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 480.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.444,
+      "bus_voltage_v": 7.638,
+      "bus_current_a": 0.8386,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 28.886,
+      "redundant_temperature_c": 28.801,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 510.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.472,
+      "bus_voltage_v": 7.6092,
+      "bus_current_a": 0.8422,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 29.233,
+      "redundant_temperature_c": 29.065,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 540.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.5,
+      "bus_voltage_v": 7.5835,
+      "bus_current_a": 0.8459,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 29.664,
+      "redundant_temperature_c": 29.697,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 570.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.528,
+      "bus_voltage_v": 7.5173,
+      "bus_current_a": 0.8496,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 29.97,
+      "redundant_temperature_c": 29.941,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 600.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.556,
+      "bus_voltage_v": 7.4938,
+      "bus_current_a": 0.8534,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 30.343,
+      "redundant_temperature_c": 30.196,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 630.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.583,
+      "bus_voltage_v": 7.4589,
+      "bus_current_a": 0.8573,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 30.461,
+      "redundant_temperature_c": 30.497,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 660.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.611,
+      "bus_voltage_v": 7.4135,
+      "bus_current_a": 0.8613,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 31.112,
+      "redundant_temperature_c": 30.714,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 690.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.639,
+      "bus_voltage_v": 7.4033,
+      "bus_current_a": 0.8653,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 31.331,
+      "redundant_temperature_c": 31.475,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 720.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.667,
+      "bus_voltage_v": 7.3657,
+      "bus_current_a": 0.8694,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 31.42,
+      "redundant_temperature_c": 31.345,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 750.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.694,
+      "bus_voltage_v": 7.3378,
+      "bus_current_a": 0.8736,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 31.905,
+      "redundant_temperature_c": 31.859,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 780.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.722,
+      "bus_voltage_v": 7.2933,
+      "bus_current_a": 0.8779,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 32.473,
+      "redundant_temperature_c": 32.359,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 810.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.75,
+      "bus_voltage_v": 7.2617,
+      "bus_current_a": 0.8822,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 32.74,
+      "redundant_temperature_c": 32.879,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 840.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.778,
+      "bus_voltage_v": 7.199,
+      "bus_current_a": 0.8867,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 33.099,
+      "redundant_temperature_c": 33.102,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 870.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.806,
+      "bus_voltage_v": 7.1873,
+      "bus_current_a": 0.8912,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 33.54,
+      "redundant_temperature_c": 33.501,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 900.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.833,
+      "bus_voltage_v": 7.1538,
+      "bus_current_a": 0.8959,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 33.5,
+      "redundant_temperature_c": 33.661,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 930.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.861,
+      "bus_voltage_v": 7.1182,
+      "bus_current_a": 0.9006,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 33.871,
+      "redundant_temperature_c": 34.067,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 960.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.889,
+      "bus_voltage_v": 7.0745,
+      "bus_current_a": 0.9055,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 34.284,
+      "redundant_temperature_c": 34.635,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 990.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.917,
+      "bus_voltage_v": 7.037,
+      "bus_current_a": 0.9105,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 34.778,
+      "redundant_temperature_c": 34.835,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1020.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.944,
+      "bus_voltage_v": 6.9822,
+      "bus_current_a": 0.9156,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 35.166,
+      "redundant_temperature_c": 35.289,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1050.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 80.972,
+      "bus_voltage_v": 6.9508,
+      "bus_current_a": 0.9208,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 35.459,
+      "redundant_temperature_c": 35.633,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1080.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.0,
+      "bus_voltage_v": 6.928,
+      "bus_current_a": 0.9261,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 35.761,
+      "redundant_temperature_c": 35.981,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1110.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.028,
+      "bus_voltage_v": 6.8681,
+      "bus_current_a": 0.9316,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 36.174,
+      "redundant_temperature_c": 36.062,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1140.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.056,
+      "bus_voltage_v": 6.8454,
+      "bus_current_a": 0.9372,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 36.572,
+      "redundant_temperature_c": 36.554,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1170.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.083,
+      "bus_voltage_v": 6.7715,
+      "bus_current_a": 0.943,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 36.83,
+      "redundant_temperature_c": 37.105,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1200.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.111,
+      "bus_voltage_v": 6.7864,
+      "bus_current_a": 0.945,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 37.225,
+      "redundant_temperature_c": 37.395,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1230.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.139,
+      "bus_voltage_v": 6.7747,
+      "bus_current_a": 0.9449,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 37.787,
+      "redundant_temperature_c": 37.726,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1260.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.167,
+      "bus_voltage_v": 6.7711,
+      "bus_current_a": 0.9449,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 38.064,
+      "redundant_temperature_c": 38.115,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1290.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.194,
+      "bus_voltage_v": 6.7734,
+      "bus_current_a": 0.9449,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 38.437,
+      "redundant_temperature_c": 38.473,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1320.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.222,
+      "bus_voltage_v": 6.7977,
+      "bus_current_a": 0.9448,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 38.851,
+      "redundant_temperature_c": 38.827,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1350.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.25,
+      "bus_voltage_v": 6.7693,
+      "bus_current_a": 0.9448,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 39.151,
+      "redundant_temperature_c": 39.06,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1380.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.278,
+      "bus_voltage_v": 6.7699,
+      "bus_current_a": 0.9448,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 39.459,
+      "redundant_temperature_c": 39.572,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1410.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.306,
+      "bus_voltage_v": 6.7434,
+      "bus_current_a": 0.9448,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 39.853,
+      "redundant_temperature_c": 40.027,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1440.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.333,
+      "bus_voltage_v": 6.7791,
+      "bus_current_a": 0.9447,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 40.015,
+      "redundant_temperature_c": 40.179,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1470.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.361,
+      "bus_voltage_v": 6.7824,
+      "bus_current_a": 0.9447,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 40.519,
+      "redundant_temperature_c": 40.439,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1500.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.389,
+      "bus_voltage_v": 6.8039,
+      "bus_current_a": 0.9447,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 40.861,
+      "redundant_temperature_c": 40.765,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1530.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.417,
+      "bus_voltage_v": 6.7738,
+      "bus_current_a": 0.9447,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 41.205,
+      "redundant_temperature_c": 41.095,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1560.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.444,
+      "bus_voltage_v": 6.7424,
+      "bus_current_a": 0.9446,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 41.466,
+      "redundant_temperature_c": 41.486,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1590.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.472,
+      "bus_voltage_v": 6.7613,
+      "bus_current_a": 0.9446,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 41.764,
+      "redundant_temperature_c": 41.943,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1620.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.5,
+      "bus_voltage_v": 6.7858,
+      "bus_current_a": 0.9446,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 42.14,
+      "redundant_temperature_c": 42.262,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1650.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.528,
+      "bus_voltage_v": 6.7715,
+      "bus_current_a": 0.9445,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 42.65,
+      "redundant_temperature_c": 42.266,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1680.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.556,
+      "bus_voltage_v": 6.789,
+      "bus_current_a": 0.9445,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 42.75,
+      "redundant_temperature_c": 42.866,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1710.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.583,
+      "bus_voltage_v": 6.7587,
+      "bus_current_a": 0.9445,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 42.786,
+      "redundant_temperature_c": 43.239,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1740.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.611,
+      "bus_voltage_v": 6.7784,
+      "bus_current_a": 0.9445,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 43.505,
+      "redundant_temperature_c": 43.244,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1770.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.639,
+      "bus_voltage_v": 6.7788,
+      "bus_current_a": 0.9444,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 43.878,
+      "redundant_temperature_c": 43.717,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1800.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.667,
+      "bus_voltage_v": 6.7756,
+      "bus_current_a": 0.9444,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 44.14,
+      "redundant_temperature_c": 44.061,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1830.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.694,
+      "bus_voltage_v": 6.7734,
+      "bus_current_a": 0.9444,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 44.535,
+      "redundant_temperature_c": 44.476,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1860.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.722,
+      "bus_voltage_v": 6.7881,
+      "bus_current_a": 0.9444,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 44.984,
+      "redundant_temperature_c": 44.517,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1890.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.75,
+      "bus_voltage_v": 6.7857,
+      "bus_current_a": 0.9443,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 44.924,
+      "redundant_temperature_c": 44.972,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1920.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.778,
+      "bus_voltage_v": 6.7591,
+      "bus_current_a": 0.9443,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 45.281,
+      "redundant_temperature_c": 45.331,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1950.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.806,
+      "bus_voltage_v": 6.7661,
+      "bus_current_a": 0.9443,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 45.369,
+      "redundant_temperature_c": 45.624,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 1980.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.833,
+      "bus_voltage_v": 7.6557,
+      "bus_current_a": 0.8376,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 45.721,
+      "redundant_temperature_c": 45.668,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 2010.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.861,
+      "bus_voltage_v": 7.6294,
+      "bus_current_a": 0.8376,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 46.13,
+      "redundant_temperature_c": 46.217,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 2040.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.889,
+      "bus_voltage_v": 7.65,
+      "bus_current_a": 0.8376,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 46.235,
+      "redundant_temperature_c": 46.098,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 2070.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.917,
+      "bus_voltage_v": 7.6597,
+      "bus_current_a": 0.8376,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 46.618,
+      "redundant_temperature_c": 46.321,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 2100.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.944,
+      "bus_voltage_v": 7.6175,
+      "bus_current_a": 0.8376,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 46.738,
+      "redundant_temperature_c": 46.598,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 2130.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 81.972,
+      "bus_voltage_v": 7.6341,
+      "bus_current_a": 0.8376,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 46.977,
+      "redundant_temperature_c": 46.797,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 2160.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 82.0,
+      "bus_voltage_v": 7.6595,
+      "bus_current_a": 0.8375,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 47.044,
+      "redundant_temperature_c": 47.046,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 2190.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 82.028,
+      "bus_voltage_v": 7.6595,
+      "bus_current_a": 0.8375,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 47.06,
+      "redundant_temperature_c": 47.319,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 2220.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 82.056,
+      "bus_voltage_v": 7.6329,
+      "bus_current_a": 0.8375,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 47.542,
+      "redundant_temperature_c": 47.346,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 2250.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 82.083,
+      "bus_voltage_v": 7.6435,
+      "bus_current_a": 0.8375,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 47.673,
+      "redundant_temperature_c": 47.564,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 2280.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 82.111,
+      "bus_voltage_v": 7.6146,
+      "bus_current_a": 0.8375,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 47.903,
+      "redundant_temperature_c": 47.7,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 2310.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 82.139,
+      "bus_voltage_v": 7.6522,
+      "bus_current_a": 0.8374,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 47.865,
+      "redundant_temperature_c": 47.689,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 2340.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 82.167,
+      "bus_voltage_v": 7.6424,
+      "bus_current_a": 0.8374,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 48.128,
+      "redundant_temperature_c": 48.017,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 2370.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 82.194,
+      "bus_voltage_v": 7.6586,
+      "bus_current_a": 0.8374,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 48.367,
+      "redundant_temperature_c": 48.277,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    },
+    {
+      "time_s": 2400.0,
+      "mode": "PAYLOAD",
+      "battery_soc_pct": 82.222,
+      "bus_voltage_v": 7.6607,
+      "bus_current_a": 0.8374,
+      "load_w": 6.4,
+      "solar_w": 7.2,
+      "temperature_c": 48.435,
+      "redundant_temperature_c": 48.567,
+      "packet_loss_fraction": 0.0,
+      "latency_ms": 0.0,
+      "checksum_ok": true,
+      "cpu_responsive": true,
+      "alarms": []
+    }
+  ]
+}

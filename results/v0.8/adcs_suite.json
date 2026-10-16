@@ -1,0 +1,65 @@
+{
+  "scenario": "adcs_wheel_weak",
+  "procedures": {
+    "T17": {
+      "status": "FAIL",
+      "adcs_end": {
+        "theta_deg": 9.0,
+        "omega_rads": 0.0,
+        "gyro_rads": 5.2e-05,
+        "star_rate_rads": -6.7e-05,
+        "momentum_nms": 0.0,
+        "star_available": true,
+        "target_deg": 0.0,
+        "bus_voltage_v": 7.674919025707069,
+        "time_s": 240.0
+      },
+      "min_bus_voltage_v": 7.67055186536723
+    },
+    "T18": {
+      "status": "FAIL",
+      "adcs_end": {
+        "theta_deg": 0.0,
+        "omega_rads": 0.0,
+        "gyro_rads": -9.7e-05,
+        "star_rate_rads": 5.8e-05,
+        "momentum_nms": 0.0,
+        "star_available": true,
+        "target_deg": 15.0,
+        "bus_voltage_v": 7.629335930811702,
+        "time_s": 300.0
+      },
+      "min_bus_voltage_v": 7.629335930811702
+    },
+    "T19": {
+      "status": "PASS",
+      "adcs_end": {
+        "theta_deg": 0.0,
+        "omega_rads": 0.0,
+        "gyro_rads": -5.1e-05,
+        "star_rate_rads": 2.2e-05,
+        "momentum_nms": 0.0,
+        "star_available": true,
+        "target_deg": 0.0,
+        "bus_voltage_v": 7.673827239259818,
+        "time_s": 180.0
+      },
+      "min_bus_voltage_v": 7.67055186536723
+    },
+    "T20": {
+      "status": "PASS",
+      "adcs_end": {
+        "theta_deg": 8.0,
+        "omega_rads": 0.0,
+        "gyro_rads": -9.2e-05,
+        "star_rate_rads": 0.000131,
+        "momentum_nms": 0.06,
+        "star_available": true,
+        "target_deg": 0.0,
+        "bus_voltage_v": 7.677102591332455,
+        "time_s": 360.0
+      },
+      "min_bus_voltage_v": 7.67055186536723
+    }
+  }
+}

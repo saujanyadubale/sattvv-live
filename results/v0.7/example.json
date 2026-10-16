@@ -1,0 +1,911 @@
+{
+  "meta": {
+    "version": "0.7",
+    "policy": "information_gain",
+    "budget_min": 35,
+    "onset_s": 600,
+    "scenario": "sensor_drift",
+    "seed": 7,
+    "limitations": "Calibration on small synthetic test outcomes. Diagnosis is not ground-truth certainty."
+  },
+  "detected": true,
+  "detection_s": 1200,
+  "spent_s": 1200,
+  "tests_run": 8,
+  "requirements_checked": [
+    "REQ-COM-C",
+    "REQ-COM-L",
+    "REQ-COM-T",
+    "REQ-EPS-R",
+    "REQ-EPS-REC",
+    "REQ-EPS-V",
+    "REQ-MODE",
+    "REQ-OBC-G",
+    "REQ-PAY",
+    "REQ-THM-D"
+  ],
+  "estimated_cause": "sensor_drift",
+  "cause_confidence": 0.43836,
+  "posterior": {
+    "healthy": 0.21918,
+    "resistance_ramp": 0.05479,
+    "intermittent_resistance": 0.05479,
+    "sensor_drift": 0.43836,
+    "heater_fault": 0.21918,
+    "radio_burst": 0.0137
+  },
+  "evidence": [
+    {
+      "test_id": "T01",
+      "test_name": "Boot to safe health",
+      "subsystem": "OBC",
+      "start_s": 0,
+      "end_s": 60,
+      "cost_min": 1,
+      "mode_requested": "SAFE",
+      "actions": [
+        {
+          "from": "BOOT",
+          "to": "SAFE",
+          "accepted": true,
+          "reason": "ACK"
+        }
+      ],
+      "transitions": [
+        "BOOT->SAFE"
+      ],
+      "checks": {
+        "REQ-MODE": true,
+        "REQ-EPS-V": true
+      },
+      "status": "PASS",
+      "detected": false,
+      "telemetry_start": {
+        "time_s": 0.0,
+        "mode": "SAFE",
+        "battery_soc_pct": 80.0,
+        "bus_voltage_v": 7.6992,
+        "bus_current_a": 0.2337,
+        "load_w": 1.8,
+        "solar_w": 7.2,
+        "temperature_c": 22.969,
+        "redundant_temperature_c": 23.061,
+        "packet_loss_fraction": 0.0,
+        "latency_ms": 0.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": []
+      },
+      "telemetry_end": {
+        "time_s": 60.0,
+        "mode": "SAFE",
+        "battery_soc_pct": 80.375,
+        "bus_voltage_v": 7.7079,
+        "bus_current_a": 0.2336,
+        "load_w": 1.8,
+        "solar_w": 7.2,
+        "temperature_c": 23.048,
+        "redundant_temperature_c": 23.098,
+        "packet_loss_fraction": 0.0,
+        "latency_ms": 0.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": []
+      },
+      "samples": 7,
+      "window_extrema": {
+        "minimum_bus_voltage_v": 7.6829,
+        "maximum_temperature_c": 23.189,
+        "maximum_bus_current_a": 0.2337,
+        "maximum_sensor_disagreement_c": 0.303
+      },
+      "observed_events": [
+        {
+          "time_s": 0.0,
+          "type": "command",
+          "from_mode": "BOOT",
+          "to_mode": "SAFE",
+          "accepted": true,
+          "reason": "ACK"
+        }
+      ],
+      "warnings": {},
+      "decision": {
+        "score": 8.7,
+        "estimated_information_bits": 0.0,
+        "prior_top": "healthy",
+        "prior_probabilities": {
+          "healthy": 0.1667,
+          "resistance_ramp": 0.1667,
+          "intermittent_resistance": 0.1667,
+          "sensor_drift": 0.1667,
+          "heater_fault": 0.1667,
+          "radio_burst": 0.1667
+        }
+      },
+      "posterior": {
+        "healthy": 0.16667,
+        "resistance_ramp": 0.16667,
+        "intermittent_resistance": 0.16667,
+        "sensor_drift": 0.16667,
+        "heater_fault": 0.16667,
+        "radio_burst": 0.16667
+      },
+      "repeat_index": 0
+    },
+    {
+      "test_id": "T05",
+      "test_name": "Downlink packet test",
+      "subsystem": "COMMS",
+      "start_s": 60,
+      "end_s": 240,
+      "cost_min": 3,
+      "mode_requested": "DOWNLINK",
+      "actions": [
+        {
+          "from": "SAFE",
+          "to": "NOMINAL",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "from": "NOMINAL",
+          "to": "PAYLOAD",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "from": "PAYLOAD",
+          "to": "DOWNLINK",
+          "accepted": true,
+          "reason": "ACK"
+        }
+      ],
+      "transitions": [
+        "SAFE->NOMINAL",
+        "NOMINAL->PAYLOAD",
+        "PAYLOAD->DOWNLINK"
+      ],
+      "checks": {
+        "REQ-COM-L": true,
+        "REQ-COM-T": true,
+        "REQ-COM-C": true
+      },
+      "status": "PASS",
+      "detected": false,
+      "telemetry_start": {
+        "time_s": 60.0,
+        "mode": "DOWNLINK",
+        "battery_soc_pct": 80.375,
+        "bus_voltage_v": 7.6366,
+        "bus_current_a": 0.7326,
+        "load_w": 5.6,
+        "solar_w": 7.2,
+        "temperature_c": 23.149,
+        "redundant_temperature_c": 23.217,
+        "packet_loss_fraction": 0.012,
+        "latency_ms": 80.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": []
+      },
+      "telemetry_end": {
+        "time_s": 240.0,
+        "mode": "DOWNLINK",
+        "battery_soc_pct": 80.708,
+        "bus_voltage_v": 7.6581,
+        "bus_current_a": 0.7324,
+        "load_w": 5.6,
+        "solar_w": 7.2,
+        "temperature_c": 25.04,
+        "redundant_temperature_c": 24.994,
+        "packet_loss_fraction": 0.012,
+        "latency_ms": 80.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": []
+      },
+      "samples": 19,
+      "window_extrema": {
+        "minimum_bus_voltage_v": 7.6285,
+        "maximum_temperature_c": 25.04,
+        "maximum_bus_current_a": 0.7326,
+        "maximum_sensor_disagreement_c": 0.398
+      },
+      "observed_events": [
+        {
+          "time_s": 60.0,
+          "type": "command",
+          "from_mode": "SAFE",
+          "to_mode": "NOMINAL",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "time_s": 60.0,
+          "type": "command",
+          "from_mode": "NOMINAL",
+          "to_mode": "PAYLOAD",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "time_s": 60.0,
+          "type": "command",
+          "from_mode": "PAYLOAD",
+          "to_mode": "DOWNLINK",
+          "accepted": true,
+          "reason": "ACK"
+        }
+      ],
+      "warnings": {},
+      "decision": {
+        "score": 7.0095,
+        "estimated_information_bits": 0.15936,
+        "prior_top": "healthy",
+        "prior_probabilities": {
+          "healthy": 0.1667,
+          "resistance_ramp": 0.1667,
+          "intermittent_resistance": 0.1667,
+          "sensor_drift": 0.1667,
+          "heater_fault": 0.1667,
+          "radio_burst": 0.1667
+        }
+      },
+      "posterior": {
+        "healthy": 0.19048,
+        "resistance_ramp": 0.19048,
+        "intermittent_resistance": 0.19048,
+        "sensor_drift": 0.19048,
+        "heater_fault": 0.19048,
+        "radio_burst": 0.04762
+      },
+      "repeat_index": 0
+    },
+    {
+      "test_id": "T04",
+      "test_name": "Payload power-up",
+      "subsystem": "PAYLOAD",
+      "start_s": 240,
+      "end_s": 360,
+      "cost_min": 2,
+      "mode_requested": "PAYLOAD",
+      "actions": [
+        {
+          "from": "DOWNLINK",
+          "to": "SAFE",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "from": "SAFE",
+          "to": "NOMINAL",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "from": "NOMINAL",
+          "to": "PAYLOAD",
+          "accepted": true,
+          "reason": "ACK"
+        }
+      ],
+      "transitions": [
+        "DOWNLINK->SAFE",
+        "SAFE->NOMINAL",
+        "NOMINAL->PAYLOAD"
+      ],
+      "checks": {
+        "REQ-MODE": true,
+        "REQ-PAY": true
+      },
+      "status": "PASS",
+      "detected": false,
+      "telemetry_start": {
+        "time_s": 240.0,
+        "mode": "PAYLOAD",
+        "battery_soc_pct": 80.708,
+        "bus_voltage_v": 7.6366,
+        "bus_current_a": 0.8384,
+        "load_w": 6.4,
+        "solar_w": 7.2,
+        "temperature_c": 25.261,
+        "redundant_temperature_c": 25.147,
+        "packet_loss_fraction": 0.0,
+        "latency_ms": 0.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": []
+      },
+      "telemetry_end": {
+        "time_s": 360.0,
+        "mode": "PAYLOAD",
+        "battery_soc_pct": 80.819,
+        "bus_voltage_v": 7.6512,
+        "bus_current_a": 0.8383,
+        "load_w": 6.4,
+        "solar_w": 7.2,
+        "temperature_c": 26.59,
+        "redundant_temperature_c": 26.572,
+        "packet_loss_fraction": 0.0,
+        "latency_ms": 0.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": []
+      },
+      "samples": 13,
+      "window_extrema": {
+        "minimum_bus_voltage_v": 7.6149,
+        "maximum_temperature_c": 26.59,
+        "maximum_bus_current_a": 0.8384,
+        "maximum_sensor_disagreement_c": 0.351
+      },
+      "observed_events": [
+        {
+          "time_s": 240.0,
+          "type": "command",
+          "from_mode": "DOWNLINK",
+          "to_mode": "SAFE",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "time_s": 240.0,
+          "type": "command",
+          "from_mode": "SAFE",
+          "to_mode": "NOMINAL",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "time_s": 240.0,
+          "type": "command",
+          "from_mode": "NOMINAL",
+          "to_mode": "PAYLOAD",
+          "accepted": true,
+          "reason": "ACK"
+        }
+      ],
+      "warnings": {},
+      "decision": {
+        "score": 5.5093,
+        "estimated_information_bits": 0.0,
+        "prior_top": "healthy",
+        "prior_probabilities": {
+          "healthy": 0.1905,
+          "resistance_ramp": 0.1905,
+          "intermittent_resistance": 0.1905,
+          "sensor_drift": 0.1905,
+          "heater_fault": 0.1905,
+          "radio_burst": 0.0476
+        }
+      },
+      "posterior": {
+        "healthy": 0.19048,
+        "resistance_ramp": 0.19048,
+        "intermittent_resistance": 0.19048,
+        "sensor_drift": 0.19048,
+        "heater_fault": 0.19048,
+        "radio_burst": 0.04762
+      },
+      "repeat_index": 0
+    },
+    {
+      "test_id": "T12",
+      "test_name": "Illegal transition guard",
+      "subsystem": "OBC",
+      "start_s": 360,
+      "end_s": 480,
+      "cost_min": 2,
+      "mode_requested": "SAFE",
+      "actions": [
+        {
+          "from": "PAYLOAD",
+          "to": "SAFE",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "from": "SAFE",
+          "to": "DOWNLINK",
+          "accepted": false,
+          "reason": "ILLEGAL_TRANSITION"
+        }
+      ],
+      "transitions": [
+        "PAYLOAD->SAFE"
+      ],
+      "checks": {
+        "REQ-OBC-G": true
+      },
+      "status": "PASS",
+      "detected": false,
+      "telemetry_start": {
+        "time_s": 360.0,
+        "mode": "SAFE",
+        "battery_soc_pct": 80.819,
+        "bus_voltage_v": 7.6917,
+        "bus_current_a": 0.2336,
+        "load_w": 1.8,
+        "solar_w": 7.2,
+        "temperature_c": 26.485,
+        "redundant_temperature_c": 26.759,
+        "packet_loss_fraction": 0.0,
+        "latency_ms": 0.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": []
+      },
+      "telemetry_end": {
+        "time_s": 480.0,
+        "mode": "SAFE",
+        "battery_soc_pct": 81.569,
+        "bus_voltage_v": 7.7102,
+        "bus_current_a": 0.2334,
+        "load_w": 1.8,
+        "solar_w": 7.2,
+        "temperature_c": 26.834,
+        "redundant_temperature_c": 26.725,
+        "packet_loss_fraction": 0.0,
+        "latency_ms": 0.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": []
+      },
+      "samples": 13,
+      "window_extrema": {
+        "minimum_bus_voltage_v": 7.6791,
+        "maximum_temperature_c": 26.834,
+        "maximum_bus_current_a": 0.2336,
+        "maximum_sensor_disagreement_c": 0.274
+      },
+      "observed_events": [
+        {
+          "time_s": 360.0,
+          "type": "command",
+          "from_mode": "PAYLOAD",
+          "to_mode": "SAFE",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "time_s": 360.0,
+          "type": "command",
+          "from_mode": "SAFE",
+          "to_mode": "DOWNLINK",
+          "accepted": false,
+          "reason": "ILLEGAL_TRANSITION"
+        }
+      ],
+      "warnings": {},
+      "decision": {
+        "score": 4.4191,
+        "estimated_information_bits": 0.0,
+        "prior_top": "healthy",
+        "prior_probabilities": {
+          "healthy": 0.1905,
+          "resistance_ramp": 0.1905,
+          "intermittent_resistance": 0.1905,
+          "sensor_drift": 0.1905,
+          "heater_fault": 0.1905,
+          "radio_burst": 0.0476
+        }
+      },
+      "posterior": {
+        "healthy": 0.19048,
+        "resistance_ramp": 0.19048,
+        "intermittent_resistance": 0.19048,
+        "sensor_drift": 0.19048,
+        "heater_fault": 0.19048,
+        "radio_burst": 0.04762
+      },
+      "repeat_index": 0
+    },
+    {
+      "test_id": "T01",
+      "test_name": "Boot to safe health",
+      "subsystem": "OBC",
+      "start_s": 480,
+      "end_s": 540,
+      "cost_min": 1,
+      "mode_requested": "SAFE",
+      "actions": [],
+      "transitions": [],
+      "checks": {
+        "REQ-MODE": true,
+        "REQ-EPS-V": true
+      },
+      "status": "PASS",
+      "detected": false,
+      "telemetry_start": {
+        "time_s": 480.0,
+        "mode": "SAFE",
+        "battery_soc_pct": 81.569,
+        "bus_voltage_v": 7.6787,
+        "bus_current_a": 0.2334,
+        "load_w": 1.8,
+        "solar_w": 7.2,
+        "temperature_c": 26.765,
+        "redundant_temperature_c": 26.784,
+        "packet_loss_fraction": 0.0,
+        "latency_ms": 0.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": []
+      },
+      "telemetry_end": {
+        "time_s": 540.0,
+        "mode": "SAFE",
+        "battery_soc_pct": 81.944,
+        "bus_voltage_v": 7.7158,
+        "bus_current_a": 0.2334,
+        "load_w": 1.8,
+        "solar_w": 7.2,
+        "temperature_c": 26.963,
+        "redundant_temperature_c": 26.702,
+        "packet_loss_fraction": 0.0,
+        "latency_ms": 0.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": []
+      },
+      "samples": 7,
+      "window_extrema": {
+        "minimum_bus_voltage_v": 7.6787,
+        "maximum_temperature_c": 27.016,
+        "maximum_bus_current_a": 0.2334,
+        "maximum_sensor_disagreement_c": 0.452
+      },
+      "observed_events": [],
+      "warnings": {},
+      "decision": {
+        "score": 5.7167,
+        "estimated_information_bits": 0.0,
+        "prior_top": "healthy",
+        "prior_probabilities": {
+          "healthy": 0.1905,
+          "resistance_ramp": 0.1905,
+          "intermittent_resistance": 0.1905,
+          "sensor_drift": 0.1905,
+          "heater_fault": 0.1905,
+          "radio_burst": 0.0476
+        }
+      },
+      "posterior": {
+        "healthy": 0.19048,
+        "resistance_ramp": 0.19048,
+        "intermittent_resistance": 0.19048,
+        "sensor_drift": 0.19048,
+        "heater_fault": 0.19048,
+        "radio_burst": 0.04762
+      },
+      "repeat_index": 1
+    },
+    {
+      "test_id": "T05",
+      "test_name": "Downlink packet test",
+      "subsystem": "COMMS",
+      "start_s": 540,
+      "end_s": 720,
+      "cost_min": 3,
+      "mode_requested": "DOWNLINK",
+      "actions": [
+        {
+          "from": "SAFE",
+          "to": "NOMINAL",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "from": "NOMINAL",
+          "to": "PAYLOAD",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "from": "PAYLOAD",
+          "to": "DOWNLINK",
+          "accepted": true,
+          "reason": "ACK"
+        }
+      ],
+      "transitions": [
+        "SAFE->NOMINAL",
+        "NOMINAL->PAYLOAD",
+        "PAYLOAD->DOWNLINK"
+      ],
+      "checks": {
+        "REQ-COM-L": true,
+        "REQ-COM-T": true,
+        "REQ-COM-C": true
+      },
+      "status": "PASS",
+      "detected": false,
+      "telemetry_start": {
+        "time_s": 540.0,
+        "mode": "DOWNLINK",
+        "battery_soc_pct": 81.944,
+        "bus_voltage_v": 7.6562,
+        "bus_current_a": 0.7317,
+        "load_w": 5.6,
+        "solar_w": 7.2,
+        "temperature_c": 27.025,
+        "redundant_temperature_c": 26.863,
+        "packet_loss_fraction": 0.012,
+        "latency_ms": 80.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": []
+      },
+      "telemetry_end": {
+        "time_s": 720.0,
+        "mode": "DOWNLINK",
+        "battery_soc_pct": 82.278,
+        "bus_voltage_v": 7.6657,
+        "bus_current_a": 0.7315,
+        "load_w": 5.6,
+        "solar_w": 7.2,
+        "temperature_c": 28.62,
+        "redundant_temperature_c": 29.111,
+        "packet_loss_fraction": 0.012,
+        "latency_ms": 80.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": []
+      },
+      "samples": 19,
+      "window_extrema": {
+        "minimum_bus_voltage_v": 7.6282,
+        "maximum_temperature_c": 28.741,
+        "maximum_bus_current_a": 0.7317,
+        "maximum_sensor_disagreement_c": 0.703
+      },
+      "observed_events": [
+        {
+          "time_s": 540.0,
+          "type": "command",
+          "from_mode": "SAFE",
+          "to_mode": "NOMINAL",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "time_s": 540.0,
+          "type": "command",
+          "from_mode": "NOMINAL",
+          "to_mode": "PAYLOAD",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "time_s": 540.0,
+          "type": "command",
+          "from_mode": "PAYLOAD",
+          "to_mode": "DOWNLINK",
+          "accepted": true,
+          "reason": "ACK"
+        }
+      ],
+      "warnings": {},
+      "decision": {
+        "score": 6.3508,
+        "estimated_information_bits": 0.05358,
+        "prior_top": "healthy",
+        "prior_probabilities": {
+          "healthy": 0.1905,
+          "resistance_ramp": 0.1905,
+          "intermittent_resistance": 0.1905,
+          "sensor_drift": 0.1905,
+          "heater_fault": 0.1905,
+          "radio_burst": 0.0476
+        }
+      },
+      "posterior": {
+        "healthy": 0.19753,
+        "resistance_ramp": 0.19753,
+        "intermittent_resistance": 0.19753,
+        "sensor_drift": 0.19753,
+        "heater_fault": 0.19753,
+        "radio_burst": 0.01235
+      },
+      "repeat_index": 1
+    },
+    {
+      "kind": "test",
+      "test_id": "T14",
+      "test_name": "Battery load-step and recovery",
+      "subsystem": "EPS",
+      "start_s": 720,
+      "end_s": 1020,
+      "cost_min": 5,
+      "status": "PASS",
+      "detected": false,
+      "checks": {
+        "REQ-EPS-R": true,
+        "REQ-EPS-REC": true
+      },
+      "actions": [
+        {
+          "from": "DOWNLINK",
+          "to": "PAYLOAD",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "from": "PAYLOAD",
+          "to": "NOMINAL",
+          "accepted": true,
+          "reason": "ACK"
+        }
+      ],
+      "transitions": [
+        "DOWNLINK->PAYLOAD",
+        "PAYLOAD->NOMINAL"
+      ],
+      "telemetry_start": {
+        "time_s": 720.0,
+        "mode": "NOMINAL",
+        "battery_soc_pct": 82.278,
+        "bus_voltage_v": 7.6842,
+        "bus_current_a": 0.4945,
+        "load_w": 3.8,
+        "solar_w": 7.2,
+        "temperature_c": 28.704,
+        "redundant_temperature_c": 29.26,
+        "packet_loss_fraction": 0.0,
+        "latency_ms": 0.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": []
+      },
+      "telemetry_end": {
+        "time_s": 1020.0,
+        "mode": "NOMINAL",
+        "battery_soc_pct": 82.833,
+        "bus_voltage_v": 7.7079,
+        "bus_current_a": 0.4943,
+        "load_w": 3.8,
+        "solar_w": 7.2,
+        "temperature_c": 31.523,
+        "redundant_temperature_c": 33.839,
+        "packet_loss_fraction": 0.0,
+        "latency_ms": 0.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": []
+      },
+      "window_extrema": {
+        "minimum_bus_voltage_v": 7.6136,
+        "maximum_temperature_c": 31.538,
+        "maximum_bus_current_a": 0.8903
+      },
+      "observed_events": [
+        {
+          "time_s": 720.0,
+          "type": "command",
+          "from_mode": "DOWNLINK",
+          "to_mode": "PAYLOAD",
+          "accepted": true,
+          "reason": "ACK"
+        },
+        {
+          "time_s": 720.0,
+          "type": "command",
+          "from_mode": "PAYLOAD",
+          "to_mode": "NOMINAL",
+          "accepted": true,
+          "reason": "ACK"
+        }
+      ],
+      "warnings": {
+        "THERMAL": 7.0
+      },
+      "samples": 33,
+      "decision": {
+        "score": 4.2398,
+        "estimated_information_bits": 0.2666,
+        "prior_top": "healthy",
+        "prior_probabilities": {
+          "healthy": 0.1975,
+          "resistance_ramp": 0.1975,
+          "intermittent_resistance": 0.1975,
+          "sensor_drift": 0.1975,
+          "heater_fault": 0.1975,
+          "radio_burst": 0.0123
+        }
+      },
+      "posterior": {
+        "healthy": 0.2807,
+        "resistance_ramp": 0.07018,
+        "intermittent_resistance": 0.07018,
+        "sensor_drift": 0.2807,
+        "heater_fault": 0.2807,
+        "radio_burst": 0.01754
+      },
+      "repeat_index": 0
+    },
+    {
+      "test_id": "T11",
+      "test_name": "Sensor cross-check",
+      "subsystem": "THERMAL",
+      "start_s": 1020,
+      "end_s": 1200,
+      "cost_min": 3,
+      "mode_requested": "NOMINAL",
+      "actions": [],
+      "transitions": [],
+      "checks": {
+        "REQ-THM-D": false
+      },
+      "status": "FAIL",
+      "detected": true,
+      "telemetry_start": {
+        "time_s": 1020.0,
+        "mode": "NOMINAL",
+        "battery_soc_pct": 82.833,
+        "bus_voltage_v": 7.694,
+        "bus_current_a": 0.4943,
+        "load_w": 3.8,
+        "solar_w": 7.2,
+        "temperature_c": 31.499,
+        "redundant_temperature_c": 33.773,
+        "packet_loss_fraction": 0.0,
+        "latency_ms": 0.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": []
+      },
+      "telemetry_end": {
+        "time_s": 1200.0,
+        "mode": "NOMINAL",
+        "battery_soc_pct": 83.542,
+        "bus_voltage_v": 7.7008,
+        "bus_current_a": 0.494,
+        "load_w": 3.8,
+        "solar_w": 7.2,
+        "temperature_c": 32.281,
+        "redundant_temperature_c": 35.496,
+        "packet_loss_fraction": 0.0,
+        "latency_ms": 0.0,
+        "checksum_ok": true,
+        "cpu_responsive": true,
+        "alarms": [
+          "SENSOR_DISAGREEMENT"
+        ]
+      },
+      "samples": 19,
+      "window_extrema": {
+        "minimum_bus_voltage_v": 7.669,
+        "maximum_temperature_c": 32.311,
+        "maximum_bus_current_a": 0.4943,
+        "maximum_sensor_disagreement_c": 3.215
+      },
+      "observed_events": [],
+      "warnings": {
+        "THERMAL": 7.0
+      },
+      "decision": {
+        "score": 7.4301,
+        "estimated_information_bits": 0.02904,
+        "prior_top": "healthy",
+        "prior_probabilities": {
+          "healthy": 0.2807,
+          "resistance_ramp": 0.0702,
+          "intermittent_resistance": 0.0702,
+          "sensor_drift": 0.2807,
+          "heater_fault": 0.2807,
+          "radio_burst": 0.0175
+        }
+      },
+      "posterior": {
+        "healthy": 0.21918,
+        "resistance_ramp": 0.05479,
+        "intermittent_resistance": 0.05479,
+        "sensor_drift": 0.43836,
+        "heater_fault": 0.21918,
+        "radio_burst": 0.0137
+      },
+      "repeat_index": 0
+    }
+  ]
+}

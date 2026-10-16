@@ -1,0 +1,506 @@
+[
+  {
+    "scenario": "healthy",
+    "seed": 51,
+    "policy": "information_gain",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "healthy",
+    "seed": 51,
+    "policy": "coverage",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "healthy",
+    "seed": 51,
+    "policy": "temporal_adaptive",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "healthy",
+    "seed": 52,
+    "policy": "information_gain",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "healthy",
+    "seed": 52,
+    "policy": "coverage",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "healthy",
+    "seed": 52,
+    "policy": "temporal_adaptive",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "healthy",
+    "seed": 53,
+    "policy": "information_gain",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "healthy",
+    "seed": 53,
+    "policy": "coverage",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "healthy",
+    "seed": 53,
+    "policy": "temporal_adaptive",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "resistance_ramp",
+    "seed": 51,
+    "policy": "information_gain",
+    "detected": true,
+    "time_min": 17.0,
+    "estimated_cause": "resistance_ramp"
+  },
+  {
+    "scenario": "resistance_ramp",
+    "seed": 51,
+    "policy": "coverage",
+    "detected": true,
+    "time_min": 31.0,
+    "estimated_cause": "resistance_ramp"
+  },
+  {
+    "scenario": "resistance_ramp",
+    "seed": 51,
+    "policy": "temporal_adaptive",
+    "detected": true,
+    "time_min": 31.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "resistance_ramp",
+    "seed": 52,
+    "policy": "information_gain",
+    "detected": true,
+    "time_min": 17.0,
+    "estimated_cause": "resistance_ramp"
+  },
+  {
+    "scenario": "resistance_ramp",
+    "seed": 52,
+    "policy": "coverage",
+    "detected": true,
+    "time_min": 31.0,
+    "estimated_cause": "resistance_ramp"
+  },
+  {
+    "scenario": "resistance_ramp",
+    "seed": 52,
+    "policy": "temporal_adaptive",
+    "detected": true,
+    "time_min": 31.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "resistance_ramp",
+    "seed": 53,
+    "policy": "information_gain",
+    "detected": true,
+    "time_min": 17.0,
+    "estimated_cause": "resistance_ramp"
+  },
+  {
+    "scenario": "resistance_ramp",
+    "seed": 53,
+    "policy": "coverage",
+    "detected": true,
+    "time_min": 31.0,
+    "estimated_cause": "resistance_ramp"
+  },
+  {
+    "scenario": "resistance_ramp",
+    "seed": 53,
+    "policy": "temporal_adaptive",
+    "detected": true,
+    "time_min": 31.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "intermittent_resistance",
+    "seed": 51,
+    "policy": "information_gain",
+    "detected": true,
+    "time_min": 22.0,
+    "estimated_cause": "resistance_ramp"
+  },
+  {
+    "scenario": "intermittent_resistance",
+    "seed": 51,
+    "policy": "coverage",
+    "detected": true,
+    "time_min": 22.0,
+    "estimated_cause": "resistance_ramp"
+  },
+  {
+    "scenario": "intermittent_resistance",
+    "seed": 51,
+    "policy": "temporal_adaptive",
+    "detected": true,
+    "time_min": 22.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "intermittent_resistance",
+    "seed": 52,
+    "policy": "information_gain",
+    "detected": true,
+    "time_min": 22.0,
+    "estimated_cause": "resistance_ramp"
+  },
+  {
+    "scenario": "intermittent_resistance",
+    "seed": 52,
+    "policy": "coverage",
+    "detected": true,
+    "time_min": 22.0,
+    "estimated_cause": "resistance_ramp"
+  },
+  {
+    "scenario": "intermittent_resistance",
+    "seed": 52,
+    "policy": "temporal_adaptive",
+    "detected": true,
+    "time_min": 22.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "intermittent_resistance",
+    "seed": 53,
+    "policy": "information_gain",
+    "detected": true,
+    "time_min": 22.0,
+    "estimated_cause": "resistance_ramp"
+  },
+  {
+    "scenario": "intermittent_resistance",
+    "seed": 53,
+    "policy": "coverage",
+    "detected": true,
+    "time_min": 22.0,
+    "estimated_cause": "resistance_ramp"
+  },
+  {
+    "scenario": "intermittent_resistance",
+    "seed": 53,
+    "policy": "temporal_adaptive",
+    "detected": true,
+    "time_min": 22.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "sensor_drift",
+    "seed": 51,
+    "policy": "information_gain",
+    "detected": true,
+    "time_min": 20.0,
+    "estimated_cause": "sensor_drift"
+  },
+  {
+    "scenario": "sensor_drift",
+    "seed": 51,
+    "policy": "coverage",
+    "detected": true,
+    "time_min": 21.0,
+    "estimated_cause": "sensor_drift"
+  },
+  {
+    "scenario": "sensor_drift",
+    "seed": 51,
+    "policy": "temporal_adaptive",
+    "detected": true,
+    "time_min": 21.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "sensor_drift",
+    "seed": 52,
+    "policy": "information_gain",
+    "detected": true,
+    "time_min": 20.0,
+    "estimated_cause": "sensor_drift"
+  },
+  {
+    "scenario": "sensor_drift",
+    "seed": 52,
+    "policy": "coverage",
+    "detected": true,
+    "time_min": 21.0,
+    "estimated_cause": "sensor_drift"
+  },
+  {
+    "scenario": "sensor_drift",
+    "seed": 52,
+    "policy": "temporal_adaptive",
+    "detected": true,
+    "time_min": 21.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "sensor_drift",
+    "seed": 53,
+    "policy": "information_gain",
+    "detected": true,
+    "time_min": 20.0,
+    "estimated_cause": "sensor_drift"
+  },
+  {
+    "scenario": "sensor_drift",
+    "seed": 53,
+    "policy": "coverage",
+    "detected": true,
+    "time_min": 21.0,
+    "estimated_cause": "sensor_drift"
+  },
+  {
+    "scenario": "sensor_drift",
+    "seed": 53,
+    "policy": "temporal_adaptive",
+    "detected": true,
+    "time_min": 21.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "heater_fault",
+    "seed": 51,
+    "policy": "information_gain",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "heater_fault",
+    "seed": 51,
+    "policy": "coverage",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "heater_fault",
+    "seed": 51,
+    "policy": "temporal_adaptive",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "heater_fault",
+    "seed": 52,
+    "policy": "information_gain",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "heater_fault",
+    "seed": 52,
+    "policy": "coverage",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "heater_fault",
+    "seed": 52,
+    "policy": "temporal_adaptive",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "heater_fault",
+    "seed": 53,
+    "policy": "information_gain",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "heater_fault",
+    "seed": 53,
+    "policy": "coverage",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "heater_fault",
+    "seed": 53,
+    "policy": "temporal_adaptive",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "radio_burst",
+    "seed": 51,
+    "policy": "information_gain",
+    "detected": true,
+    "time_min": 12.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "radio_burst",
+    "seed": 51,
+    "policy": "coverage",
+    "detected": true,
+    "time_min": 12.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "radio_burst",
+    "seed": 51,
+    "policy": "temporal_adaptive",
+    "detected": true,
+    "time_min": 12.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "radio_burst",
+    "seed": 52,
+    "policy": "information_gain",
+    "detected": true,
+    "time_min": 12.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "radio_burst",
+    "seed": 52,
+    "policy": "coverage",
+    "detected": true,
+    "time_min": 12.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "radio_burst",
+    "seed": 52,
+    "policy": "temporal_adaptive",
+    "detected": true,
+    "time_min": 12.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "radio_burst",
+    "seed": 53,
+    "policy": "information_gain",
+    "detected": true,
+    "time_min": 12.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "radio_burst",
+    "seed": 53,
+    "policy": "coverage",
+    "detected": true,
+    "time_min": 12.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "radio_burst",
+    "seed": 53,
+    "policy": "temporal_adaptive",
+    "detected": true,
+    "time_min": 12.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "normal_load_cycle",
+    "seed": 51,
+    "policy": "information_gain",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "normal_load_cycle",
+    "seed": 51,
+    "policy": "coverage",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "normal_load_cycle",
+    "seed": 51,
+    "policy": "temporal_adaptive",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "normal_load_cycle",
+    "seed": 52,
+    "policy": "information_gain",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "normal_load_cycle",
+    "seed": 52,
+    "policy": "coverage",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "normal_load_cycle",
+    "seed": 52,
+    "policy": "temporal_adaptive",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": null
+  },
+  {
+    "scenario": "normal_load_cycle",
+    "seed": 53,
+    "policy": "information_gain",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "normal_load_cycle",
+    "seed": 53,
+    "policy": "coverage",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": "healthy"
+  },
+  {
+    "scenario": "normal_load_cycle",
+    "seed": 53,
+    "policy": "temporal_adaptive",
+    "detected": false,
+    "time_min": 35.0,
+    "estimated_cause": null
+  }
+]

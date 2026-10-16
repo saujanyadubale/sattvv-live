@@ -1,0 +1,9 @@
+signal,method,campaigns,macro_mae,forecast_precision,forecast_recall,false_forecast_points,true_future_violation_points,interval_point_coverage,simultaneous_campaign_coverage,median_early_warning_s
+bus_voltage_v,persistence,28,0.0546,,0.0,0,1,,,
+bus_voltage_v,physics_baseline,28,0.0545,,0.0,0,1,,,
+bus_voltage_v,linear_trend,28,0.0941,0.0,0.0,33,1,,,
+bus_voltage_v,gradient_boosting,28,0.0621,,0.0,0,1,0.961,0.821,
+temperature_c,persistence,28,3.1591,,0.0,0,20,,,
+temperature_c,physics_baseline,28,1.1534,,0.0,0,20,,,
+temperature_c,linear_trend,28,0.7114,1.0,0.7,0,20,,,210.0
+temperature_c,gradient_boosting,28,1.1553,1.0,0.75,0,20,0.987,0.929,225.0
