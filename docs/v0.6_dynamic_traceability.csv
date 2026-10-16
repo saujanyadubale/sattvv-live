@@ -1,0 +1,29 @@
+article,requirement_id,dynamic_specification,test_id,test_name,cost_sim_min,subsystem
+SATVV-DYNAMIC-TOY-06,REQ-MODE,Commanded legal mode must be reached,T01,Boot to safe health,1,OBC
+SATVV-DYNAMIC-TOY-06,REQ-EPS-V,Loaded EPS bus >= 6.70 V,T01,Boot to safe health,1,OBC
+SATVV-DYNAMIC-TOY-06,REQ-MODE,Commanded legal mode must be reached,T02,Safe to nominal,1,OBC
+SATVV-DYNAMIC-TOY-06,REQ-EPS-V,Loaded EPS bus >= 6.70 V,T03,Nominal EPS load,3,EPS
+SATVV-DYNAMIC-TOY-06,REQ-EPS-I,Loaded EPS current <= 1.30 A for the dynamic simulated article,T03,Nominal EPS load,3,EPS
+SATVV-DYNAMIC-TOY-06,REQ-MODE,Commanded legal mode must be reached,T04,Payload power-up,2,PAYLOAD
+SATVV-DYNAMIC-TOY-06,REQ-PAY,Payload successfully enables,T04,Payload power-up,2,PAYLOAD
+SATVV-DYNAMIC-TOY-06,REQ-COM-L,Downlink packet loss fraction <= 0.10,T05,Downlink packet test,3,COMMS
+SATVV-DYNAMIC-TOY-06,REQ-COM-T,Telemetry latency <= 250 ms,T05,Downlink packet test,3,COMMS
+SATVV-DYNAMIC-TOY-06,REQ-COM-C,Downlink checksum valid,T05,Downlink packet test,3,COMMS
+SATVV-DYNAMIC-TOY-06,REQ-THM-T,Thermal sensor temperature <= 70 C,T06,Payload thermal soak,4,THERMAL
+SATVV-DYNAMIC-TOY-06,REQ-EPS-V,Loaded EPS bus >= 6.70 V,T07,Peak-load EPS check,4,EPS
+SATVV-DYNAMIC-TOY-06,REQ-EPS-I,Loaded EPS current <= 1.30 A for the dynamic simulated article,T07,Peak-load EPS check,4,EPS
+SATVV-DYNAMIC-TOY-06,REQ-COM-L,Downlink packet loss fraction <= 0.10,T08,Link retry and checksum,4,COMMS
+SATVV-DYNAMIC-TOY-06,REQ-COM-T,Telemetry latency <= 250 ms,T08,Link retry and checksum,4,COMMS
+SATVV-DYNAMIC-TOY-06,REQ-COM-C,Downlink checksum valid,T08,Link retry and checksum,4,COMMS
+SATVV-DYNAMIC-TOY-06,REQ-MODE,Commanded legal mode must be reached,T09,Payload cycle,3,PAYLOAD
+SATVV-DYNAMIC-TOY-06,REQ-PAY,Payload successfully enables,T09,Payload cycle,3,PAYLOAD
+SATVV-DYNAMIC-TOY-06,REQ-OBC-W,Watchdog recovers from injected hang,T10,Watchdog recovery,3,OBC
+SATVV-DYNAMIC-TOY-06,REQ-THM-D,Redundant thermal sensors differ by <= 3 C,T11,Sensor cross-check,3,THERMAL
+SATVV-DYNAMIC-TOY-06,REQ-OBC-G,Illegal SAFE to DOWNLINK transition rejected,T12,Illegal transition guard,2,OBC
+SATVV-DYNAMIC-TOY-06,REQ-ECL-V,Bus >=6.70 V during scripted 5-min eclipse,T13,Eclipse EPS endurance,5,EPS
+SATVV-DYNAMIC-TOY-06,REQ-ECL-S,Battery SOC remains >=10% through eclipse,T13,Eclipse EPS endurance,5,EPS
+SATVV-DYNAMIC-TOY-06,REQ-EPS-R,Loaded bus voltage is within 0.26 V of healthy prediction,T14,Battery load-step and recovery,5,EPS
+SATVV-DYNAMIC-TOY-06,REQ-EPS-REC,Bus voltage recovers within 0.18 V of pre-load baseline,T14,Battery load-step and recovery,5,EPS
+SATVV-DYNAMIC-TOY-06,REQ-THM-T,Thermal sensor temperature <= 70 C,T15,Payload thermal recovery,7,THERMAL
+SATVV-DYNAMIC-TOY-06,REQ-THM-R,Payload heating rate drops >=0.2 C/min when load is reduced,T15,Payload thermal recovery,7,THERMAL
+SATVV-DYNAMIC-TOY-06,REQ-THM-DR,Thermal sensor disagreement stays <=3.0 C in a timed test,T16,Time-series sensor drift consistency,4,THERMAL

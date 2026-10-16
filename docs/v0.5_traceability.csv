@@ -1,0 +1,5 @@
+test_id,description,requirement_ids,verification_method,measurement,acceptance_limit,status
+T13,Eclipse EPS endurance,REQ-ECL-V;REQ-ECL-S,Simulation under forced eclipse,voltage;SOC,bus >=6.70 V and SOC >=10%,implemented
+T14,Battery load step and recovery,REQ-EPS-R;REQ-EPS-REC,Simulation load step,voltage residual;recovery voltage,residual <=0.26 V and recovered difference <=0.18 V,implemented
+T15,Payload thermal recovery,REQ-THM-T;REQ-THM-R,Simulated payload and nominal heating,temperature;heating rate,T <=70 C and heating rate decrease >=0.2 C/min,implemented
+T16,Thermal sensor timed consistency,REQ-THM-DR,Simulated time-series cross-check,two sensor temperatures,absolute discrepancy <=3 C,implemented

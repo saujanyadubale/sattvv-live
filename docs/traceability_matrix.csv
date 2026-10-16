@@ -1,0 +1,22 @@
+requirement_id,requirement,test_id,test_name,subsystem,cost_synthetic_units
+REQ-MODE,Commanded legal mode must be reached,T01,Boot to safe health,OBC,1
+REQ-EPS-V,Loaded EPS bus >= 6.70 V,T01,Boot to safe health,OBC,1
+REQ-MODE,Commanded legal mode must be reached,T02,Safe to nominal,OBC,1
+REQ-EPS-V,Loaded EPS bus >= 6.70 V,T03,Nominal EPS load,EPS,3
+REQ-EPS-I,Loaded EPS current <= 2.60 A,T03,Nominal EPS load,EPS,3
+REQ-MODE,Commanded legal mode must be reached,T04,Payload power-up,PAYLOAD,2
+REQ-PAY,Payload successfully enables,T04,Payload power-up,PAYLOAD,2
+REQ-COM-L,Downlink packet loss fraction <= 0.10,T05,Downlink packet test,COMMS,3
+REQ-COM-T,Telemetry latency <= 250 ms,T05,Downlink packet test,COMMS,3
+REQ-COM-C,Downlink checksum valid,T05,Downlink packet test,COMMS,3
+REQ-THM-T,Thermal sensor temperature <= 70 C,T06,Payload thermal soak,THERMAL,4
+REQ-EPS-V,Loaded EPS bus >= 6.70 V,T07,Peak-load EPS check,EPS,4
+REQ-EPS-I,Loaded EPS current <= 2.60 A,T07,Peak-load EPS check,EPS,4
+REQ-COM-L,Downlink packet loss fraction <= 0.10,T08,Link retry and checksum,COMMS,4
+REQ-COM-T,Telemetry latency <= 250 ms,T08,Link retry and checksum,COMMS,4
+REQ-COM-C,Downlink checksum valid,T08,Link retry and checksum,COMMS,4
+REQ-MODE,Commanded legal mode must be reached,T09,Payload cycle,PAYLOAD,3
+REQ-PAY,Payload successfully enables,T09,Payload cycle,PAYLOAD,3
+REQ-OBC-W,Watchdog recovers from injected hang,T10,Watchdog recovery,OBC,3
+REQ-THM-D,Redundant thermal sensors differ by <= 3 C,T11,Sensor cross-check,THERMAL,3
+REQ-OBC-G,Illegal SAFE to DOWNLINK transition rejected,T12,Illegal transition guard,OBC,2
