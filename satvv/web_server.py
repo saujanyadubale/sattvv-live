@@ -90,13 +90,23 @@ class PreviewHandler(BaseHTTPRequestHandler):
             procedures=[{'id':t.id,'name':t.name,'subsystem':t.subsystem,'cost_min':t.cost,
                          'requirements':[{'id':rid,'specification':specs.get((t.id,rid),ADCS_REQUIREMENTS.get(rid))} for rid in t.checks]} for t in CATALOG]
             self._send(200,json.dumps({'procedures':procedures,'scope':'synthetic dynamic specifications'}).encode(),'application/json')
+        elif self.path == '/learning':
+            self._send(200,(WEB_DIR/'learning_public.html').read_bytes(),'text/html; charset=utf-8')
+        elif self.path == '/learning/public.js':
+            self._send(200,(WEB_DIR/'learning_public.js').read_bytes(),'application/javascript; charset=utf-8')
+        elif self.path == '/api/learning-public/status':
+            from .public_learning_v111 import public_status
+            try:
+                self._send(200,json.dumps(public_status()).encode(),'application/json')
+            except RuntimeError:
+                self._send(503,b'{"error":"Frozen research model unavailable"}','application/json')
         elif self.path == '/api/health':
             self._send(200, b'{"ok":true,"version":"1.0.0"}', 'application/json')
         else:
             self._send(404, b'Not found', 'text/plain')
 
     def do_POST(self) -> None:
-        if self.path not in ('/api/simulate', '/api/compare', '/api/compare-temporal', '/api/v05', '/api/forecast-v06', '/api/research', '/api/lab-run', '/api/challenge', '/api/unified'):
+        if self.path not in ('/api/simulate', '/api/compare', '/api/compare-temporal', '/api/v05', '/api/forecast-v06', '/api/research', '/api/lab-run', '/api/challenge', '/api/unified', '/api/learning-public/compare'):
             self._send(404, b'Not found', 'text/plain')
             return
         try:
@@ -106,7 +116,8 @@ class PreviewHandler(BaseHTTPRequestHandler):
             data = json.loads(self.rfile.read(size))
             if not isinstance(data, dict):
                 raise ValueError('Expected a JSON object')
-            allowed = ({'mode','difficulty','policy','seed','budget_min','intensity','scenario','onset_s','severity','eclipse','initial_soc','horizon_s','detector'} if self.path == '/api/unified' else
+            allowed = ({'seed','budget_min','difficulty','intensity'} if self.path == '/api/learning-public/compare' else
+                       {'mode','difficulty','policy','seed','budget_min','intensity','scenario','onset_s','severity','eclipse','initial_soc','horizon_s','detector'} if self.path == '/api/unified' else
                        {'difficulty','policy','seed','budget_min','intensity'} if self.path == '/api/challenge' else
                        {'scenario','policy','onset_s','budget_min','seed','severity','eclipse',
                         'initial_soc','horizon_s','detector'} if self.path == '/api/lab-run' else
@@ -135,7 +146,14 @@ class PreviewHandler(BaseHTTPRequestHandler):
             for key in ('sunlit', 'probe_watchdog', 'eclipse'):
                 if key in data and type(data[key]) is not bool:
                     raise ValueError(f'{key} must be boolean')
-            if self.path == '/api/unified':
+            if self.path == '/api/learning-public/compare':
+                from .public_learning_v111 import public_compare
+                try:
+                    result=public_compare(data)
+                except RuntimeError:
+                    self._send(503,b'{"error":"Frozen research model unavailable"}','application/json')
+                    return
+            elif self.path == '/api/unified':
                 from .challenge_v096 import run_challenge
                 from .pipeline_v093 import run_pipeline
                 from .insights_v11 import analyse
