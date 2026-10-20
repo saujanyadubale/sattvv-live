@@ -13,6 +13,16 @@ POLICY_REASONS={
     'learned_risk':'Offline-trained test failure likelihood',
     'predictive_active':'Risk-aware test planning with short-budget greedy fallback',
     'predictive_greedy_v101':'Expected information gain + forecast risk + coverage',
+    'predictive_ml_feedback':'v1.0.2 bounded planner with causal ML monitoring feedback',
+    'predictive_coverage':'v1.0.2 bounded planner with untried-test priority',
+    'predictive_ml_coverage':'v1.0.2 bounded planner with causal ML feedback and untried-test priority',
+    'predictive_learned':'v1.0.2 lookahead with offline learned test-outcome scores',
+    'predictive_learned_coverage':'v1.0.2 lookahead with learned test ranking, continuous ML and coverage first',
+    'predictive_soft_coverage':'v1.1.1 soft coverage without learned ranking',
+    'predictive_learned_soft':'v1.1.1 learned ranker with soft coverage bonus',
+    'predictive_learned_retest':'v1.1.1 learned ranker with time-aware retesting',
+    'predictive_learned_soft_retest':'v1.1.1 learned ranker with soft coverage and time-aware retesting',
+    'predictive_learned_soft_ml_retest':'v1.1.1 learned ranker with soft coverage, retesting and localized ML evidence',
 }
 
 

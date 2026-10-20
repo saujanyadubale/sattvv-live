@@ -21,7 +21,7 @@ class PlanDecision:
 
 
 def ranked_plan(safe, belief, coverage, ages, repeats, *, time_s, remaining_min,
-                warning_weights, risk, adcs_risk=0., beam_width=12, depth=3):
+                warning_weights, risk, adcs_risk=0., beam_width=12, depth=3, learned_priorities=None, soft_coverage_bonus=0., retest_bonuses=None):
     """Bounded beam search with observable state and frozen heuristic beliefs.
 
     Rewards an early expected FAIL, new requirements, subsystem diversity,
@@ -29,6 +29,11 @@ def ranked_plan(safe, belief, coverage, ages, repeats, *, time_s, remaining_min,
     Sequence outcomes are approximated as independent and do not leak simulated faults.
     """
     if not safe:raise ValueError('No safe affordable procedures')
+    learned_priorities=learned_priorities or {}
+    retest_bonuses=retest_bonuses or {}
+    if not 0<=soft_coverage_bonus<=8:raise ValueError('Invalid soft coverage weight')
+    if any(not isfinite(float(z)) or z<0 or z>12 for z in retest_bonuses.values()):
+        raise ValueError('Invalid retest bonus')
     if not isinstance(remaining_min,(int,float)) or not isfinite(remaining_min) or remaining_min<=0:
         raise ValueError('Invalid remaining budget')
     if not isinstance(depth,int) or not 1<=depth<=5 or not 1<=beam_width<=64:
@@ -83,7 +88,10 @@ def ranked_plan(safe, belief, coverage, ages, repeats, *, time_s, remaining_min,
                 detection_value=survival*effective_prob*8.0/(1.+.025*(cost+t.cost))
                 immediate=(detection_value + 1.55*novel + 1.3*novel_sub +
                            .36*ig + .35*subrisk + .75*expired + renewal + .23*t.criticality -
-                           1.9*repeats_before - .20*subrepeats)
+                           1.9*repeats_before - .20*subrepeats +
+                           5.0*max(0.,min(1.,float(learned_priorities.get(t.id,0.)))) +
+                           (soft_coverage_bonus if repeats_before==0 else 0.) +
+                           (max(0.,float(retest_bonuses.get(t.id,0.))) if repeats_before else 0.))
                 # Avoid unrealistic pressure to fill every minute with short tests.
                 immediate-=.32*t.cost
                 value=score+immediate*(.88**cost)

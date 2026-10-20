@@ -126,13 +126,16 @@ def assess_exposure(result, oracle):
          'A missed detection requires exposure analysis. Random faults are not guaranteed to violate any requirement.'),
         'not_a_detectability_proof':True}
 
-def run_challenge(difficulty='mixed',seed=7,budget_min=35,policy='predictive_active',intensity='exploratory', _weak_monitor_priority=True):
+def run_challenge(difficulty='mixed',seed=7,budget_min=35,policy='predictive_active',intensity='exploratory', _weak_monitor_priority=True,_continue_after_fail=False,
+                  _learning_model=None,_learning_version=None):
     from .pipeline_v093 import run_pipeline
     spec=generate(difficulty,seed,budget_min,intensity)
     # Use the same deterministic scenario for all policies, but independent sim copies.
     result=run_pipeline('healthy',policy=policy,budget_min=budget_min,seed=seed,
                         onset_s=0,initial_soc=spec.initial_soc,eclipse=spec.eclipse,
-                        _sim=make_sim(spec),_weak_monitor_priority=_weak_monitor_priority)
+                        _sim=make_sim(spec),_weak_monitor_priority=_weak_monitor_priority,
+                        _continue_after_fail=_continue_after_fail,
+                        _learning_model=_learning_model,_learning_version=_learning_version)
     result['meta'].update({'version':'0.9.8','scenario':'random_challenge','challenge_level':difficulty,
                            'challenge_seed':seed,'challenge_intensity':intensity,'generated_environment':{'soc':spec.initial_soc,'eclipse':spec.eclipse}})
     result['oracle_after_run']=spec.oracle()
