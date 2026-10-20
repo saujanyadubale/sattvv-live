@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SAT-V&amp;V | Experimental Learning Laboratory</title>
+<style>
+:root{color-scheme:dark;--bg:#07131f;--card:#102536;--border:#315163;--mint:#83dbcb;--muted:#b3c6ce;--white:#edf7f7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--white);font:14px/1.5 system-ui,-apple-system,sans-serif}
+main{max-width:1080px;margin:0 auto;padding:30px 20px 80px}a{color:var(--mint)}h1{font-size:clamp(25px,4vw,38px);line-height:1.2;margin:10px 0}h2{font-size:19px}h3{font-size:15px}p{color:var(--muted)}
+.kicker{color:var(--mint);text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:bold}
+.card{border:1px solid var(--border);border-radius:12px;background:var(--card);padding:20px;margin:18px 0}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+label{display:grid;gap:6px;color:var(--muted);font-weight:600;font-size:12px}
+input,select{background:#081926;color:var(--white);border:1px solid #426173;border-radius:6px;padding:10px;width:100%;font:inherit}
+button{background:var(--mint);color:#10252b;padding:11px 18px;border:0;border-radius:7px;cursor:pointer;font-weight:bold;margin-top:14px}button:disabled{opacity:.55;cursor:wait}
+.status{color:var(--mint);min-height:1.5rem}.result{background:#0b1c2a;border:1px solid #355e68;border-radius:9px;padding:14px}
+.metric{font-size:22px;font-weight:700;color:var(--mint)}.muted{color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;border-bottom:1px solid #29465a;padding:7px 10px;white-space:nowrap}.scroll{overflow-x:auto}
+.caution{font-size:12px;padding:12px;background:#162b38;border-left:3px solid #e4b574;color:#dce8ed}
+@media(max-width:750px){.grid,.grid2{grid-template-columns:1fr 1fr}}@media(max-width:480px){.grid,.grid2{grid-template-columns:1fr}}
+</style>
+<script defer src="/learning/public.js"></script></head>
+<body><main>
+<div class="kicker">SAT-V&amp;V / Experimental Learning Lab v1.1.1</div>
+<p><a href="/">← Back to the original complete laboratory</a></p>
+<h1>Can learned test selection uncover failures sooner?</h1>
+<p>Compare the frozen original v1.0.2 predictive planner with the experimental learned-ranking, soft-coverage and time-aware retesting strategy. Each policy runs a separate spacecraft simulation under the same seeded initial challenge.</p>
+<div class="card"><h2>Frozen research model</h2><p id="model-info">Checking model…</p><p>The model predicts synthetic test outcomes. It is never retrained on this website; no campaign database is written.</p></div>
+<form id="comparison" class="card"><h2>Configure a paired comparison</h2><div class="grid">
+<label>Seed<input name="seed" type="number" min="0" max="1000000" step="1" value="8" required></label>
+<label>Budget (simulated min)<select name="budget_min"><option>30</option><option>60</option><option selected>90</option></select></label>
+<label>Challenge<select name="difficulty"><option>control</option><option>single</option><option selected>mixed</option><option>stress</option></select></label>
+<label>Fault intensity<select name="intensity"><option selected>exploratory</option><option>high_impact</option></select></label></div>
+<button type="submit" id="run">Run two-policy comparison</button><p id="status" class="status" role="status"></p></form>
+<section class="card" id="output" hidden><h2>Matched-seed outcome</h2><div id="results" class="grid2"></div><div class="caution" style="margin-top:14px">Formal FAIL is reported only for an executed requirement test. A learned score or anomaly warning is not proof of failure. These are synthetic, same-generator research demonstrations, not real-spacecraft qualification.</div>
+<h3>Executed-test sequences</h3><div class="scroll"><table><thead><tr><th>Policy</th><th>Time (min)</th><th>Test</th><th>Result</th><th>Repeat?</th><th>Learned score*</th></tr></thead><tbody id="trace"></tbody></table></div>
+<p class="muted">*Model score is not a calibrated failure probability. Diagnostic ground truth is revealed only after a simulated run is completed.</p><details><summary>Injected faults (post-run truth)</summary><pre id="faults" style="white-space:pre-wrap"></pre></details></section>
+<p class="muted">Research warning: paired seeded policies have independent, state-changing test trajectories. A better result for one seed does not establish overall superiority. The original live application remains available through the link above.</p>
+</main></body></html>
